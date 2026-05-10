@@ -7,7 +7,6 @@ const activeCountEl = document.getElementById("activeCount");
 const lineWarning = document.getElementById("lineWarning");
 const clearBtn = document.getElementById("clearBtn");
 const solutionBtn = document.getElementById("solutionBtn");
-const solutionPanel = document.getElementById("solutionPanel");
 const solutionText = document.getElementById("solutionText");
 const targetCount = document.getElementById("targetCount");
 const symmetrySelect = document.getElementById("symmetry");
@@ -36,31 +35,6 @@ function gcd(a, b) {
   return a;
 }
 
-// function canonicalLine(row, col, dRow, dCol) {
-//   const divisor = gcd(dRow, dCol);
-//   let stepRow = dRow / divisor;
-//   let stepCol = dCol / divisor;
-
-//   if (stepRow < 0 || (stepRow === 0 && stepCol < 0)) {
-//     stepRow *= -1;
-//     stepCol *= -1;
-//   }
-
-//   let startRow = row;
-//   let startCol = col;
-//   while (
-//     startRow - stepRow >= 0 &&
-//     startRow - stepRow < size &&
-//     startCol - stepCol >= 0 &&
-//     startCol - stepCol < size
-//   ) {
-//     startRow -= stepRow;
-//     startCol -= stepCol;
-//   }
-
-//   return `${startRow},${startCol}|${stepRow},${stepCol}`;
-// }
-//
 function canonicalLine(row, col, dRow, dCol) {
   const divisor = gcd(dRow, dCol);
   let stepRow = dRow / divisor;
@@ -166,7 +140,6 @@ function renderGrid() {
   grid.appendChild(fragment);
   updateSolutionButton();
   updateDisplay();
-  hideSolutionPanel();
 }
 
 function updateDisplay() {
@@ -208,7 +181,8 @@ function setActiveCells(cells) {
 
 function clearGrid() {
   activeCells.clear();
-  hideSolutionPanel();
+  symmetrySelect.value = "iden";
+  symmetry = iden;
   updateDisplay();
 }
 
@@ -216,18 +190,15 @@ function updateSolutionButton() {
   solutionBtn.disabled = !optimalSolutions?.[size];
 }
 
-function hideSolutionPanel() {
-  solutionPanel.classList.remove("visible");
-  solutionText.textContent = "";
-}
-
 function showOptimalSolution() {
   const solution = optimalSolutions[size];
   if (!solution) return;
+  const symmetryGroup = solution.symmetryGroup;
+  symmetry = symmetryGroup == "rct4" ? "rot4" : symmetryGroup;
+  symmetrySelect.value = symmetry;
+  console.log(`symmetry set to ${symmetry}`);
 
   setActiveCells(solution.cells || []);
-  solutionText.textContent = `Grid ${size} × ${size}. Symmetry group: ${solution.symmetryGroup || "not specified"}.`;
-  solutionPanel.classList.add("visible");
 }
 
 function populateSizeSelect() {
@@ -244,7 +215,6 @@ grid.addEventListener("click", (event) => {
   const cell = event.target.closest(".cell");
   if (!cell) return;
   toggleCell(cell.dataset.row, cell.dataset.col);
-  hideSolutionPanel();
   updateDisplay();
 });
 
