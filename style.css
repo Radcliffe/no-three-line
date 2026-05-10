@@ -85,6 +85,10 @@ select {
     color: var(--text);
 }
 
+select#symmetry {
+    width: 200px;
+}
+
 button {
     padding: 0 16px;
     background: white;

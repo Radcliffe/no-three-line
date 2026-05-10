@@ -25,6 +25,20 @@
                     Grid size
                     <select id="gridSize" aria-label="Grid size"></select>
                 </label>
+                <label for="symmetry">
+                    Symmetry
+                    <!--iden rot2 dia1 ort1 rot4 rct4 dia2 ort2 full-->
+                    <select id="symmetry" aria-label="Symmetry">
+                        <option value="iden" selected>Identity</option>
+                        <option value="rot2">180° rotation</option>
+                        <option value="dia1">Diagonal reflection</option>
+                        <option value="ort1">Vertical reflection</option>
+                        <option value="rot4">90° rotation</option>
+                        <option value="dia2">Bidiagonal</option>
+                        <option value="ort2">Horizontal and vertical</option>
+                        <option value="full">Full symmetry</option>
+                    </select>
+                </label>
 
                 <button id="clearBtn" type="button">Clear</button>
                 <button id="solutionBtn" class="primary" type="button" disabled>

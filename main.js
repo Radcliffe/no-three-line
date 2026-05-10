@@ -1,20 +1,6 @@
 const MIN_SIZE = 3;
 const MAX_SIZE = 68;
 
-// const optimalSolutions = {
-//     3: {
-//         cells: [
-//             [0, 0],
-//             [0, 1],
-//             [1, 0],
-//             [1, 2],
-//             [2, 1],
-//             [2, 2],
-//         ],
-//         symmetryGroup: "D2",
-//     },
-// };
-
 const gridSizeSelect = document.getElementById("gridSize");
 const grid = document.getElementById("grid");
 const activeCountEl = document.getElementById("activeCount");
@@ -24,10 +10,12 @@ const solutionBtn = document.getElementById("solutionBtn");
 const solutionPanel = document.getElementById("solutionPanel");
 const solutionText = document.getElementById("solutionText");
 const targetCount = document.getElementById("targetCount");
+const symmetrySelect = document.getElementById("symmetry");
 
 let size = 3;
 let activeCells = new Set();
 let cellsByKey = new Map();
+let symmetry = "iden";
 
 function key(row, col) {
   return `${row},${col}`;
@@ -45,9 +33,34 @@ function gcd(a, b) {
     b = a % b;
     a = temp;
   }
-  return a || 1;
+  return a;
 }
 
+// function canonicalLine(row, col, dRow, dCol) {
+//   const divisor = gcd(dRow, dCol);
+//   let stepRow = dRow / divisor;
+//   let stepCol = dCol / divisor;
+
+//   if (stepRow < 0 || (stepRow === 0 && stepCol < 0)) {
+//     stepRow *= -1;
+//     stepCol *= -1;
+//   }
+
+//   let startRow = row;
+//   let startCol = col;
+//   while (
+//     startRow - stepRow >= 0 &&
+//     startRow - stepRow < size &&
+//     startCol - stepCol >= 0 &&
+//     startCol - stepCol < size
+//   ) {
+//     startRow -= stepRow;
+//     startCol -= stepCol;
+//   }
+
+//   return `${startRow},${startCol}|${stepRow},${stepCol}`;
+// }
+//
 function canonicalLine(row, col, dRow, dCol) {
   const divisor = gcd(dRow, dCol);
   let stepRow = dRow / divisor;
@@ -58,17 +71,22 @@ function canonicalLine(row, col, dRow, dCol) {
     stepCol *= -1;
   }
 
-  let startRow = row;
-  let startCol = col;
-  while (
-    startRow - stepRow >= 0 &&
-    startRow - stepRow < size &&
-    startCol - stepCol >= 0 &&
-    startCol - stepCol < size
-  ) {
-    startRow -= stepRow;
-    startCol -= stepCol;
+  let maxBack = Infinity;
+
+  if (stepRow > 0) {
+    maxBack = Math.min(maxBack, Math.floor(row / stepRow));
+  } else if (stepRow < 0) {
+    maxBack = Math.min(maxBack, Math.floor((size - 1 - row) / -stepRow));
   }
+
+  if (stepCol > 0) {
+    maxBack = Math.min(maxBack, Math.floor(col / stepCol));
+  } else if (stepCol < 0) {
+    maxBack = Math.min(maxBack, Math.floor((size - 1 - col) / -stepCol));
+  }
+
+  const startRow = row - maxBack * stepRow;
+  const startCol = col - maxBack * stepCol;
 
   return `${startRow},${startCol}|${stepRow},${stepCol}`;
 }
@@ -195,7 +213,7 @@ function clearGrid() {
 }
 
 function updateSolutionButton() {
-  solutionBtn.disabled = !optimalSolutions[size];
+  solutionBtn.disabled = !optimalSolutions?.[size];
 }
 
 function hideSolutionPanel() {
@@ -225,13 +243,7 @@ function populateSizeSelect() {
 grid.addEventListener("click", (event) => {
   const cell = event.target.closest(".cell");
   if (!cell) return;
-
-  const cellKey = key(Number(cell.dataset.row), Number(cell.dataset.col));
-  if (activeCells.has(cellKey)) {
-    activeCells.delete(cellKey);
-  } else {
-    activeCells.add(cellKey);
-  }
+  toggleCell(cell.dataset.row, cell.dataset.col);
   hideSolutionPanel();
   updateDisplay();
 });
@@ -239,8 +251,76 @@ grid.addEventListener("click", (event) => {
 gridSizeSelect.addEventListener("change", () => {
   size = Number(gridSizeSelect.value);
   targetCount.textContent = String(size * 2);
+  symmetry = "iden";
+  symmetrySelect.value = symmetry;
   renderGrid();
 });
+
+symmetrySelect.addEventListener("change", () => {
+  symmetry = symmetrySelect.value;
+  makeGridSymmetric();
+});
+
+function updateCell(row, col, method) {
+  const cellKey = key(row, col);
+  method(cellKey);
+  // (r, c) -> (c, r)
+  if (symmetry === "dia1" || symmetry === "dia2" || symmetry === "full") {
+    method(key(col, row));
+  }
+  // (r, c) -> (s-r-1, c), (r, c) -> (c, s-r-1)
+  if (symmetry === "dia1" || symmetry === "dia2" || symmetry === "full") {
+    method(key(size - row - 1, col));
+    method(key(col, size - row - 1));
+  }
+  // (r, c) -> (s-r-1, c)
+  if (symmetry === "ort1" || symmetry === "ort2" || symmetry === "full") {
+    method(key(size - row - 1, col));
+  }
+  // (r, c) -> (s-r-1, s-c-1)
+  if (
+    symmetry === "rot2" ||
+    symmetry === "rot4" ||
+    symmetry === "ort2" ||
+    symmetry === "dia2" ||
+    symmetry === "full"
+  ) {
+    method(key(size - row - 1, size - col - 1));
+  }
+  // (r, c) -> (s-c-1, s-r-1)
+  if (symmetry === "dia2" || symmetry === "full") {
+    method(key(size - col - 1, size - row - 1));
+  }
+  // (r, c) -> (c, s-r-1), (r, c) -> (s-c-1, r)
+  if (symmetry === "rot4" || symmetry === "full") {
+    method(key(col, size - row - 1));
+    method(key(size - col - 1, row));
+  }
+  // (r, c) -> (r, s-c-1)
+  if (symmetry === "ort2" || symmetry === "full") {
+    method(key(row, size - col - 1));
+  }
+  updateDisplay();
+}
+
+function toggleCell(row, col) {
+  const cellKey = key(row, col);
+  if (activeCells.has(cellKey)) {
+    updateCell(row, col, (k) => activeCells.delete(k));
+  } else {
+    updateCell(row, col, (k) => activeCells.add(k));
+  }
+  updateDisplay();
+}
+
+function makeGridSymmetric() {
+  const copy = new Set(activeCells);
+  for (let cellKey of copy) {
+    const [row, col] = parseKey(cellKey);
+    updateCell(row, col, (k) => activeCells.add(k));
+  }
+  updateDisplay();
+}
 
 clearBtn.addEventListener("click", clearGrid);
 solutionBtn.addEventListener("click", showOptimalSolution);
