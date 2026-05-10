@@ -196,7 +196,6 @@ function showOptimalSolution() {
   const symmetryGroup = solution.symmetryGroup;
   symmetry = symmetryGroup == "rct4" ? "rot4" : symmetryGroup;
   symmetrySelect.value = symmetry;
-  console.log(`symmetry set to ${symmetry}`);
 
   setActiveCells(solution.cells || []);
 }
