@@ -7,7 +7,6 @@ const activeCountEl = document.getElementById("activeCount");
 const lineWarning = document.getElementById("lineWarning");
 const clearBtn = document.getElementById("clearBtn");
 const solutionBtn = document.getElementById("solutionBtn");
-const solutionText = document.getElementById("solutionText");
 const targetCount = document.getElementById("targetCount");
 const symmetrySelect = document.getElementById("symmetry");
 
@@ -124,8 +123,8 @@ function renderGrid() {
       const cellKey = key(row, col);
       button.type = "button";
       button.className = "cell";
-      button.dataset.row = row;
-      button.dataset.col = col;
+      button.dataset.row = String(row);
+      button.dataset.col = String(col);
       button.setAttribute("role", "gridcell");
       button.setAttribute(
         "aria-label",
@@ -158,7 +157,7 @@ function updateDisplay() {
     );
   }
 
-  activeCountEl.textContent = activeCells.size;
+  activeCountEl.textContent = String(activeCells.size);
   lineWarning.classList.toggle("visible", badCells.size > 0);
 }
 
@@ -182,7 +181,7 @@ function setActiveCells(cells) {
 function clearGrid() {
   activeCells.clear();
   symmetrySelect.value = "iden";
-  symmetry = iden;
+  symmetry = "iden";
   updateDisplay();
 }
 
@@ -194,7 +193,7 @@ function showOptimalSolution() {
   const solution = optimalSolutions[size];
   if (!solution) return;
   const symmetryGroup = solution.symmetryGroup;
-  symmetry = symmetryGroup == "rct4" ? "rot4" : symmetryGroup;
+  symmetry = symmetryGroup === "rct4" ? "rot4" : symmetryGroup;
   symmetrySelect.value = symmetry;
 
   setActiveCells(solution.cells || []);
