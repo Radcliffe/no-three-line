@@ -26,7 +26,7 @@ function parseKey(cellKey) {
 function gcd(a, b) {
   a = Math.abs(a);
   b = Math.abs(b);
-  while (b !== 0) {
+  while (b > 0) {
     const temp = b;
     b = a % b;
     a = temp;
@@ -195,7 +195,6 @@ function showOptimalSolution() {
   const symmetryGroup = solution.symmetryGroup;
   symmetry = symmetryGroup === "rct4" ? "rot4" : symmetryGroup;
   symmetrySelect.value = symmetry;
-
   setActiveCells(solution.cells || []);
 }
 
@@ -236,9 +235,8 @@ function updateCell(row, col, method) {
   if (symmetry === "dia1" || symmetry === "dia2" || symmetry === "full") {
     method(key(col, row));
   }
-  // (r, c) -> (s-r-1, c), (r, c) -> (c, s-r-1)
-  if (symmetry === "dia1" || symmetry === "dia2" || symmetry === "full") {
-    method(key(size - row - 1, col));
+  // (r, c) -> (c, s-r-1)
+  if (symmetry === "rot4" || symmetry === "full") {
     method(key(col, size - row - 1));
   }
   // (r, c) -> (s-r-1, c)
