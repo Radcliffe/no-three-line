@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Iterable
 
 GRID_ROW_RE = re.compile(r"^\s*[.oO](?:\s+[.oO])*\s*$")
-SYMMETRY_RE = re.compile(r"Sym\.-Gruppe\s+([^\s]+)", re.IGNORECASE)
+SYMMETRY_RE = re.compile(r"(?:Sym\.-Gruppe|symmetry)\s+([^\s]+)", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -81,7 +81,9 @@ def parse_solutions(text: str) -> list[Solution]:
 
         column_counts = {len(row) for row in grid}
         if len(column_counts) != 1:
-            raise ValueError(f"Found a malformed grid with uneven row lengths near line {i + 1}.")
+            raise ValueError(
+                f"Found a malformed grid with uneven row lengths near line {i + 1}."
+            )
 
         column_count = column_counts.pop()
         if row_count != column_count:
@@ -110,10 +112,12 @@ def parse_solutions(text: str) -> list[Solution]:
 
 def js_string(value: str) -> str:
     """Return a safely quoted JavaScript string literal."""
-    return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
+    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def format_solution_object(solutions: Iterable[Solution], const_name: str = "optimalSolutions") -> str:
+def format_solution_object(
+    solutions: Iterable[Solution], const_name: str = "optimalSolutions"
+) -> str:
     """Format solutions as a JavaScript const object."""
     by_size: dict[int, Solution] = {}
     duplicates: list[int] = []
@@ -150,7 +154,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Convert pasted no-three-in-line solution text into a JavaScript optimalSolutions object."
     )
-    parser.add_argument("input", type=Path, help="Input text file copied from the solution website.")
+    parser.add_argument(
+        "input", type=Path, help="Input text file copied from the solution website."
+    )
     parser.add_argument(
         "-o",
         "--output",
@@ -168,7 +174,9 @@ def main() -> int:
     solutions = parse_solutions(text)
 
     if not solutions:
-        raise SystemExit("No solution grids were found. Expected rows containing only '.' and 'o' tokens.")
+        raise SystemExit(
+            "No solution grids were found. Expected rows containing only '.' and 'o' tokens."
+        )
 
     output = format_solution_object(solutions, args.const_name)
 
