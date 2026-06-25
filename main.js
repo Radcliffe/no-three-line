@@ -1,5 +1,5 @@
 const MIN_SIZE = 3;
-const MAX_SIZE = 68;
+const MAX_SIZE = 72;
 
 const gridSizeSelect = document.getElementById("gridSize");
 const grid = document.getElementById("grid");
