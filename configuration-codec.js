@@ -44,76 +44,206 @@
     return `${row},${column}`;
   }
 
-  function findBlockedCells(cells, size) {
-    if (!Number.isInteger(size) || size < 1 || size > ALPHABET.length) {
-      throw new Error(`Grid size must be between 1 and ${ALPHABET.length}.`);
+  function lineThrough(row, column, otherRow, otherColumn, size) {
+    let stepRow = otherRow - row;
+    let stepColumn = otherColumn - column;
+    const divisor = gcd(stepRow, stepColumn);
+    stepRow /= divisor;
+    stepColumn /= divisor;
+
+    if (stepRow < 0 || (stepRow === 0 && stepColumn < 0)) {
+      stepRow *= -1;
+      stepColumn *= -1;
     }
 
-    const selectedKeys = new Set();
-    const selectedCells = [];
-    for (const [row, column] of cells) {
+    let startRow = row;
+    let startColumn = column;
+    while (
+      startRow - stepRow >= 0 &&
+      startRow - stepRow < size &&
+      startColumn - stepColumn >= 0 &&
+      startColumn - stepColumn < size
+    ) {
+      startRow -= stepRow;
+      startColumn -= stepColumn;
+    }
+
+    return {
+      key: `${startRow},${startColumn}|${stepRow},${stepColumn}`,
+      startRow,
+      startColumn,
+      stepRow,
+      stepColumn,
+    };
+  }
+
+  class LineIndex {
+    constructor(size) {
+      if (!Number.isInteger(size) || size < 1 || size > ALPHABET.length) {
+        throw new Error(`Grid size must be between 1 and ${ALPHABET.length}.`);
+      }
+      this.size = size;
+      this.clear();
+    }
+
+    clear() {
+      this.selectedCells = new Map();
+      this.lines = new Map();
+      this.pointLines = new Map();
+      this.blockedCounts = new Map();
+      this.badCounts = new Map();
+      this.blockedCells = new Set();
+      this.badCells = new Set();
+    }
+
+    validateCell(row, column) {
       if (
         !Number.isInteger(row) ||
         !Number.isInteger(column) ||
         row < 0 ||
-        row >= size ||
+        row >= this.size ||
         column < 0 ||
-        column >= size
+        column >= this.size
       ) {
         throw new Error("The configuration contains a cell outside the grid.");
       }
-      const selectedKey = cellKey(row, column);
-      if (!selectedKeys.has(selectedKey)) {
-        selectedKeys.add(selectedKey);
-        selectedCells.push([row, column]);
+    }
+
+    changeBadCount(key, change) {
+      const count = (this.badCounts.get(key) || 0) + change;
+      if (count > 0) {
+        this.badCounts.set(key, count);
+        this.badCells.add(key);
+      } else {
+        this.badCounts.delete(key);
+        this.badCells.delete(key);
       }
     }
 
-    const lines = new Map();
-    for (let first = 0; first < selectedCells.length; first++) {
-      for (let second = first + 1; second < selectedCells.length; second++) {
-        let stepRow = selectedCells[second][0] - selectedCells[first][0];
-        let stepColumn = selectedCells[second][1] - selectedCells[first][1];
-        const divisor = gcd(stepRow, stepColumn);
-        stepRow /= divisor;
-        stepColumn /= divisor;
-
-        if (stepRow < 0 || (stepRow === 0 && stepColumn < 0)) {
-          stepRow *= -1;
-          stepColumn *= -1;
-        }
-
-        let startRow = selectedCells[first][0];
-        let startColumn = selectedCells[first][1];
-        while (
-          startRow - stepRow >= 0 &&
-          startRow - stepRow < size &&
-          startColumn - stepColumn >= 0 &&
-          startColumn - stepColumn < size
-        ) {
-          startRow -= stepRow;
-          startColumn -= stepColumn;
-        }
-
-        const lineKey = `${startRow},${startColumn}|${stepRow},${stepColumn}`;
-        lines.set(lineKey, { startRow, startColumn, stepRow, stepColumn });
-      }
-    }
-
-    const blockedCells = new Set();
-    for (const line of lines.values()) {
+    changeBlockedLine(line, change) {
       let row = line.startRow;
       let column = line.startColumn;
-      while (row >= 0 && row < size && column >= 0 && column < size) {
-        const candidateKey = cellKey(row, column);
-        if (!selectedKeys.has(candidateKey)) {
-          blockedCells.add(candidateKey);
+      while (
+        row >= 0 &&
+        row < this.size &&
+        column >= 0 &&
+        column < this.size
+      ) {
+        const key = cellKey(row, column);
+        const count = (this.blockedCounts.get(key) || 0) + change;
+        if (count > 0) {
+          this.blockedCounts.set(key, count);
+          if (!this.selectedCells.has(key)) {
+            this.blockedCells.add(key);
+          }
+        } else {
+          this.blockedCounts.delete(key);
+          this.blockedCells.delete(key);
         }
         row += line.stepRow;
         column += line.stepColumn;
       }
     }
-    return blockedCells;
+
+    add(row, column) {
+      this.validateCell(row, column);
+      const key = cellKey(row, column);
+      if (this.selectedCells.has(key)) return false;
+
+      const existingCells = Array.from(this.selectedCells.entries());
+      this.selectedCells.set(key, [row, column]);
+      this.pointLines.set(key, new Set());
+      this.blockedCells.delete(key);
+
+      const affectedLines = new Map();
+      for (const [otherKey, [otherRow, otherColumn]] of existingCells) {
+        const line = lineThrough(row, column, otherRow, otherColumn, this.size);
+        if (!affectedLines.has(line.key)) {
+          affectedLines.set(line.key, { line, otherKey });
+        }
+      }
+
+      for (const { line, otherKey } of affectedLines.values()) {
+        let record = this.lines.get(line.key);
+        if (!record) {
+          record = { ...line, points: new Set([otherKey, key]) };
+          this.lines.set(line.key, record);
+          this.pointLines.get(otherKey).add(line.key);
+          this.pointLines.get(key).add(line.key);
+          this.changeBlockedLine(record, 1);
+          continue;
+        }
+
+        const previousCount = record.points.size;
+        record.points.add(key);
+        this.pointLines.get(key).add(line.key);
+        if (previousCount === 2) {
+          for (const pointKey of record.points) {
+            this.changeBadCount(pointKey, 1);
+          }
+        } else {
+          this.changeBadCount(key, 1);
+        }
+      }
+      return true;
+    }
+
+    remove(row, column) {
+      this.validateCell(row, column);
+      const key = cellKey(row, column);
+      if (!this.selectedCells.has(key)) return false;
+
+      const incidentLines = Array.from(this.pointLines.get(key));
+      for (const lineKey of incidentLines) {
+        const record = this.lines.get(lineKey);
+        const previousCount = record.points.size;
+
+        if (previousCount === 3) {
+          for (const pointKey of record.points) {
+            this.changeBadCount(pointKey, -1);
+          }
+        } else if (previousCount > 3) {
+          this.changeBadCount(key, -1);
+        }
+
+        record.points.delete(key);
+        if (previousCount === 2) {
+          this.changeBlockedLine(record, -1);
+          for (const remainingKey of record.points) {
+            this.pointLines.get(remainingKey).delete(lineKey);
+          }
+          this.lines.delete(lineKey);
+        }
+      }
+
+      this.pointLines.delete(key);
+      this.selectedCells.delete(key);
+      this.badCounts.delete(key);
+      this.badCells.delete(key);
+      if (this.blockedCounts.has(key)) {
+        this.blockedCells.add(key);
+      }
+      return true;
+    }
+
+    getBlockedCells() {
+      return this.blockedCells;
+    }
+
+    getViolationCells() {
+      return this.badCells;
+    }
+  }
+
+  function findBlockedCells(cells, size) {
+    if (!Number.isInteger(size) || size < 1 || size > ALPHABET.length) {
+      throw new Error(`Grid size must be between 1 and ${ALPHABET.length}.`);
+    }
+    const index = new LineIndex(size);
+    for (const [row, column] of cells) {
+      index.add(row, column);
+    }
+    return new Set(index.getBlockedCells());
   }
 
   function readCode(value) {
@@ -197,6 +327,7 @@
   root.NoThreeLineCodec = Object.freeze({
     ALPHABET,
     DEFAULT_OPTIONS,
+    LineIndex,
     SYMMETRY_CHARACTER,
     SYMMETRY_GROUP,
     decodeConfiguration,

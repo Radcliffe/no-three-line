@@ -17,6 +17,7 @@ const disableBlockedCellsInput = document.getElementById("disableBlockedCells");
 let size = 3;
 let activeCells = new Set();
 let cellsByKey = new Map();
+let lineIndex = new NoThreeLineCodec.LineIndex(size);
 let symmetry = "iden";
 let disableBlockedCells =
   NoThreeLineCodec.DEFAULT_OPTIONS.disableBlockedCells;
@@ -31,77 +32,6 @@ function parseKey(cellKey) {
   return cellKey.split(",").map(Number);
 }
 
-function gcd(a, b) {
-  a = Math.abs(a);
-  b = Math.abs(b);
-  while (b > 0) {
-    const temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-}
-
-function canonicalLine(row, col, dRow, dCol) {
-  const divisor = gcd(dRow, dCol);
-  let stepRow = dRow / divisor;
-  let stepCol = dCol / divisor;
-
-  if (stepRow < 0 || (stepRow === 0 && stepCol < 0)) {
-    stepRow *= -1;
-    stepCol *= -1;
-  }
-
-  let maxBack = Infinity;
-
-  if (stepRow > 0) {
-    maxBack = Math.min(maxBack, Math.floor(row / stepRow));
-  } else if (stepRow < 0) {
-    maxBack = Math.min(maxBack, Math.floor((size - 1 - row) / -stepRow));
-  }
-
-  if (stepCol > 0) {
-    maxBack = Math.min(maxBack, Math.floor(col / stepCol));
-  } else if (stepCol < 0) {
-    maxBack = Math.min(maxBack, Math.floor((size - 1 - col) / -stepCol));
-  }
-
-  const startRow = row - maxBack * stepRow;
-  const startCol = col - maxBack * stepCol;
-
-  return `${startRow},${startCol}|${stepRow},${stepCol}`;
-}
-
-function findLineViolations() {
-  const active = Array.from(activeCells).map(parseKey);
-  const lines = new Map();
-  const badCells = new Set();
-
-  for (let i = 0; i < active.length; i++) {
-    for (let j = i + 1; j < active.length; j++) {
-      const [r1, c1] = active[i];
-      const [r2, c2] = active[j];
-      const lineKey = canonicalLine(r1, c1, r2 - r1, c2 - c1);
-
-      if (!lines.has(lineKey)) {
-        lines.set(lineKey, new Set());
-      }
-      lines.get(lineKey).add(key(r1, c1));
-      lines.get(lineKey).add(key(r2, c2));
-    }
-  }
-
-  for (const lineCells of lines.values()) {
-    if (lineCells.size >= 3) {
-      for (const cellKey of lineCells) {
-        badCells.add(cellKey);
-      }
-    }
-  }
-
-  return badCells;
-}
-
 function cellSizeForGrid(n) {
   const availableWidth = Math.min(window.innerWidth - 80, 1060);
   const gap = n <= 18 ? 3 : n <= 40 ? 2 : 1;
@@ -111,6 +41,7 @@ function cellSizeForGrid(n) {
 
 function renderGrid() {
   activeCells.clear();
+  lineIndex = new NoThreeLineCodec.LineIndex(size);
   cellsByKey.clear();
   grid.innerHTML = "";
   grid.style.setProperty("--size", size);
@@ -150,9 +81,9 @@ function renderGrid() {
 }
 
 function updateDisplay() {
-  const badCells = findLineViolations();
+  const badCells = lineIndex.getViolationCells();
   const blockedCells = disableBlockedCells
-    ? NoThreeLineCodec.findBlockedCells(activeCellCoordinates(), size)
+    ? lineIndex.getBlockedCells()
     : new Set();
 
   for (const [cellKey, cell] of cellsByKey.entries()) {
@@ -199,6 +130,7 @@ function updateConfigurationCode() {
 
 function setActiveCells(cells) {
   activeCells.clear();
+  lineIndex.clear();
   for (const [row, col] of cells) {
     if (
       Number.isInteger(row) &&
@@ -208,7 +140,7 @@ function setActiveCells(cells) {
       col >= 0 &&
       col < size
     ) {
-      activeCells.add(key(row, col));
+      addActiveCell(key(row, col));
     }
   }
   updateDisplay();
@@ -216,6 +148,7 @@ function setActiveCells(cells) {
 
 function clearGrid() {
   activeCells.clear();
+  lineIndex.clear();
   symmetrySelect.value = "iden";
   symmetry = "iden";
   updateDisplay();
@@ -330,12 +263,26 @@ function updateCell(row, col, method) {
   }
 }
 
+function addActiveCell(cellKey) {
+  if (activeCells.has(cellKey)) return;
+  const [row, col] = parseKey(cellKey);
+  lineIndex.add(row, col);
+  activeCells.add(cellKey);
+}
+
+function deleteActiveCell(cellKey) {
+  if (!activeCells.has(cellKey)) return;
+  const [row, col] = parseKey(cellKey);
+  lineIndex.remove(row, col);
+  activeCells.delete(cellKey);
+}
+
 function toggleCell(row, col) {
   const cellKey = key(row, col);
   if (activeCells.has(cellKey)) {
-    updateCell(row, col, (k) => activeCells.delete(k));
+    updateCell(row, col, deleteActiveCell);
   } else {
-    updateCell(row, col, (k) => activeCells.add(k));
+    updateCell(row, col, addActiveCell);
   }
 }
 
@@ -343,7 +290,7 @@ function makeGridSymmetric() {
   const copy = new Set(activeCells);
   for (let cellKey of copy) {
     const [row, col] = parseKey(cellKey);
-    updateCell(row, col, (k) => activeCells.add(k));
+    updateCell(row, col, addActiveCell);
   }
   updateDisplay();
 }
