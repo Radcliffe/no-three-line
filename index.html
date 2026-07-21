@@ -45,6 +45,24 @@
                     Prevent three-in-line moves
                 </label>
 
+                <button
+                    id="undoBtn"
+                    type="button"
+                    title="Undo (Ctrl/Command+Z)"
+                    aria-keyshortcuts="Control+Z Meta+Z"
+                    disabled
+                >
+                    Undo
+                </button>
+                <button
+                    id="redoBtn"
+                    type="button"
+                    title="Redo (Ctrl/Command+Shift+Z)"
+                    aria-keyshortcuts="Control+Shift+Z Meta+Shift+Z"
+                    disabled
+                >
+                    Redo
+                </button>
                 <button id="clearBtn" type="button">Clear</button>
                 <button id="solutionBtn" class="primary" type="button" disabled>
                     Show optimal solution
@@ -71,7 +89,12 @@
                         placeholder="A code is available when every row has two active cells"
                     ></textarea>
                 </label>
-                <button id="loadCodeBtn" type="button">Load code</button>
+                <div class="code-actions">
+                    <button id="loadCodeBtn" type="button">Load code</button>
+                    <button id="copyLinkBtn" type="button" disabled>
+                        Copy link
+                    </button>
+                </div>
                 <p id="codeHelp">
                     Paste a code to load it. The grid size is inferred from the code.
                 </p>

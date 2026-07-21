@@ -11,6 +11,8 @@ The app supports grids from 3 × 3 through 90 × 90 and includes known configura
 - Checked-by-default prevention of moves that would complete such a line.
 - Identity, rotational, diagonal, orthogonal, and full symmetry modes.
 - Loading and displaying compact configuration codes.
+- Shareable URLs that stay synchronized with complete configurations.
+- Copy-link, undo, and redo controls, including standard keyboard shortcuts.
 - Bundled known configurations and a converter for refreshing them from copied source data.
 - No framework, build system, or runtime dependencies.
 

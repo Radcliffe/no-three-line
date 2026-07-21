@@ -13,6 +13,11 @@ const configurationCode = document.getElementById("configurationCode");
 const loadCodeBtn = document.getElementById("loadCodeBtn");
 const codeStatus = document.getElementById("codeStatus");
 const disableBlockedCellsInput = document.getElementById("disableBlockedCells");
+const undoBtn = document.getElementById("undoBtn");
+const redoBtn = document.getElementById("redoBtn");
+const copyLinkBtn = document.getElementById("copyLinkBtn");
+
+const HISTORY_LIMIT = 100;
 
 let size = 3;
 let activeCells = new Set();
@@ -21,6 +26,9 @@ let lineIndex = new NoThreeLineCodec.LineIndex(size);
 let symmetry = "iden";
 let disableBlockedCells =
   NoThreeLineCodec.DEFAULT_OPTIONS.disableBlockedCells;
+let undoStack = [];
+let redoStack = [];
+let urlSyncEnabled = false;
 
 disableBlockedCellsInput.checked = disableBlockedCells;
 
@@ -39,7 +47,7 @@ function cellSizeForGrid(n) {
   return Math.max(7, Math.min(42, raw));
 }
 
-function renderGrid() {
+function renderGrid(initialCells = []) {
   activeCells.clear();
   lineIndex = new NoThreeLineCodec.LineIndex(size);
   cellsByKey.clear();
@@ -76,6 +84,18 @@ function renderGrid() {
   }
 
   grid.appendChild(fragment);
+  for (const [row, col] of initialCells) {
+    if (
+      Number.isInteger(row) &&
+      Number.isInteger(col) &&
+      row >= 0 &&
+      row < size &&
+      col >= 0 &&
+      col < size
+    ) {
+      addActiveCell(key(row, col));
+    }
+  }
   updateSolutionButton();
   updateDisplay();
 }
@@ -115,17 +135,80 @@ function activeCellCoordinates() {
 }
 
 function updateConfigurationCode() {
+  let code = "";
   try {
-    configurationCode.value = NoThreeLineCodec.encodeConfiguration(
+    code = NoThreeLineCodec.encodeConfiguration(
       activeCellCoordinates(),
       size,
       symmetry,
     );
-  } catch {
-    configurationCode.value = "";
-  }
+  } catch {}
+  configurationCode.value = code;
+  copyLinkBtn.disabled = !code;
+  if (urlSyncEnabled) synchronizeUrl(code);
   codeStatus.textContent = "";
   codeStatus.classList.remove("error");
+}
+
+function synchronizeUrl(code) {
+  const url = new URL(window.location.href);
+  if (code) url.searchParams.set("code", code);
+  else url.searchParams.delete("code");
+  if (url.href !== window.location.href) {
+    window.history.replaceState(null, "", url);
+  }
+}
+
+function snapshotState() {
+  return {
+    size,
+    symmetry,
+    cells: activeCellCoordinates().sort(
+      ([rowA, colA], [rowB, colB]) => rowA - rowB || colA - colB,
+    ),
+  };
+}
+
+function statesEqual(first, second) {
+  return JSON.stringify(first) === JSON.stringify(second);
+}
+
+function updateHistoryButtons() {
+  undoBtn.disabled = undoStack.length === 0;
+  redoBtn.disabled = redoStack.length === 0;
+}
+
+function commitHistory(previousState) {
+  if (statesEqual(previousState, snapshotState())) return;
+  undoStack.push(previousState);
+  if (undoStack.length > HISTORY_LIMIT) undoStack.shift();
+  redoStack = [];
+  updateHistoryButtons();
+}
+
+function restoreState(state) {
+  const sizeChanged = size !== state.size;
+  size = state.size;
+  symmetry = state.symmetry;
+  gridSizeSelect.value = String(size);
+  targetCount.textContent = String(size * 2);
+  symmetrySelect.value = symmetry;
+  if (sizeChanged) renderGrid(state.cells);
+  else setActiveCells(state.cells);
+}
+
+function undo() {
+  if (undoStack.length === 0) return;
+  redoStack.push(snapshotState());
+  restoreState(undoStack.pop());
+  updateHistoryButtons();
+}
+
+function redo() {
+  if (redoStack.length === 0) return;
+  undoStack.push(snapshotState());
+  restoreState(redoStack.pop());
+  updateHistoryButtons();
 }
 
 function setActiveCells(cells) {
@@ -147,11 +230,13 @@ function setActiveCells(cells) {
 }
 
 function clearGrid() {
+  const previousState = snapshotState();
   activeCells.clear();
   lineIndex.clear();
   symmetrySelect.value = "iden";
   symmetry = "iden";
   updateDisplay();
+  commitHistory(previousState);
 }
 
 function updateSolutionButton() {
@@ -161,13 +246,16 @@ function updateSolutionButton() {
 function showOptimalSolution() {
   const code = optimalSolutions[size];
   if (!code) return;
+  const previousState = snapshotState();
   const solution = NoThreeLineCodec.decodeConfiguration(code, size);
   symmetry = solution.symmetryGroup;
   symmetrySelect.value = symmetry;
   setActiveCells(solution.cells);
+  commitHistory(previousState);
 }
 
-function loadConfigurationCode() {
+function loadConfigurationCode(recordHistory = true) {
+  const previousState = recordHistory ? snapshotState() : null;
   try {
     const solution = NoThreeLineCodec.decodeConfiguration(configurationCode.value);
     if (solution.size < MIN_SIZE || solution.size > MAX_SIZE) {
@@ -178,9 +266,9 @@ function loadConfigurationCode() {
     targetCount.textContent = String(size * 2);
     symmetry = solution.symmetryGroup;
     symmetrySelect.value = symmetry;
-    renderGrid();
-    setActiveCells(solution.cells);
+    renderGrid(solution.cells);
     codeStatus.textContent = `Loaded ${size} × ${size} configuration.`;
+    if (recordHistory) commitHistory(previousState);
   } catch (error) {
     codeStatus.textContent = error.message;
     codeStatus.classList.add("error");
@@ -200,20 +288,28 @@ function populateSizeSelect() {
 grid.addEventListener("click", (event) => {
   const cell = event.target.closest(".cell");
   if (!cell) return;
-  if (toggleCell(cell.dataset.row, cell.dataset.col)) updateDisplay();
+  const previousState = snapshotState();
+  if (toggleCell(cell.dataset.row, cell.dataset.col)) {
+    updateDisplay();
+    commitHistory(previousState);
+  }
 });
 
 gridSizeSelect.addEventListener("change", () => {
+  const previousState = snapshotState();
   size = Number(gridSizeSelect.value);
   targetCount.textContent = String(size * 2);
   symmetry = "iden";
   symmetrySelect.value = symmetry;
   renderGrid();
+  commitHistory(previousState);
 });
 
 symmetrySelect.addEventListener("change", () => {
+  const previousState = snapshotState();
   symmetry = symmetrySelect.value;
   makeGridSymmetric();
+  commitHistory(previousState);
 });
 
 disableBlockedCellsInput.addEventListener("change", () => {
@@ -324,19 +420,66 @@ function makeGridSymmetric() {
   updateDisplay();
 }
 
+async function copyConfigurationLink() {
+  if (copyLinkBtn.disabled) return;
+  const link = window.location.href;
+  try {
+    await navigator.clipboard.writeText(link);
+    codeStatus.textContent = "Link copied.";
+    codeStatus.classList.remove("error");
+  } catch {
+    const copyField = document.createElement("textarea");
+    copyField.value = link;
+    copyField.setAttribute("readonly", "");
+    copyField.style.position = "fixed";
+    copyField.style.opacity = "0";
+    document.body.appendChild(copyField);
+    copyField.select();
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } catch {}
+    copyField.remove();
+    codeStatus.textContent = copied ? "Link copied." : "Could not copy the link.";
+    codeStatus.classList.toggle("error", !copied);
+  }
+}
+
 clearBtn.addEventListener("click", clearGrid);
 solutionBtn.addEventListener("click", showOptimalSolution);
-loadCodeBtn.addEventListener("click", loadConfigurationCode);
+loadCodeBtn.addEventListener("click", () => loadConfigurationCode());
+copyLinkBtn.addEventListener("click", copyConfigurationLink);
+undoBtn.addEventListener("click", undo);
+redoBtn.addEventListener("click", redo);
+
+window.addEventListener("keydown", (event) => {
+  if (!(event.ctrlKey || event.metaKey) || event.altKey) return;
+  if (["INPUT", "TEXTAREA", "SELECT"].includes(event.target?.tagName)) return;
+  const pressedKey = event.key.toLowerCase();
+  if (pressedKey === "z") {
+    event.preventDefault();
+    if (event.shiftKey) redo();
+    else undo();
+  } else if (pressedKey === "y") {
+    event.preventDefault();
+    redo();
+  }
+});
 
 window.addEventListener("resize", () => {
   grid.style.setProperty("--cell-size", `${cellSizeForGrid(size)}px`);
 });
 
+const queryCode = new URLSearchParams(window.location.search).get("code");
 populateSizeSelect();
 renderGrid();
 
-const queryCode = new URLSearchParams(window.location.search).get("code");
 if (queryCode !== null) {
   configurationCode.value = queryCode;
-  loadConfigurationCode();
+  loadConfigurationCode(false);
 }
+undoStack = [];
+redoStack = [];
+updateHistoryButtons();
+urlSyncEnabled = true;
+synchronizeUrl(configurationCode.value);
