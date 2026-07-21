@@ -122,6 +122,22 @@ label {
     font-size: 0.92rem;
 }
 
+.toggle-control {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 8px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+.toggle-control input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--active);
+}
+
 select,
 button {
     min-height: 40px;
@@ -257,6 +273,13 @@ button:disabled {
 
 .cell.line-hit:hover {
     background: #b91c1c;
+}
+
+.cell.blocked,
+.cell.blocked:hover {
+    background: #d1d5db;
+    cursor: not-allowed;
+    box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.12);
 }
 
 .notes {

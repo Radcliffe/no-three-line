@@ -25,6 +25,97 @@
     ),
   );
 
+  const DEFAULT_OPTIONS = Object.freeze({
+    disableBlockedCells: true,
+  });
+
+  function gcd(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while (b > 0) {
+      const remainder = a % b;
+      a = b;
+      b = remainder;
+    }
+    return a;
+  }
+
+  function cellKey(row, column) {
+    return `${row},${column}`;
+  }
+
+  function findBlockedCells(cells, size) {
+    if (!Number.isInteger(size) || size < 1 || size > ALPHABET.length) {
+      throw new Error(`Grid size must be between 1 and ${ALPHABET.length}.`);
+    }
+
+    const selectedKeys = new Set();
+    const selectedCells = [];
+    for (const [row, column] of cells) {
+      if (
+        !Number.isInteger(row) ||
+        !Number.isInteger(column) ||
+        row < 0 ||
+        row >= size ||
+        column < 0 ||
+        column >= size
+      ) {
+        throw new Error("The configuration contains a cell outside the grid.");
+      }
+      const selectedKey = cellKey(row, column);
+      if (!selectedKeys.has(selectedKey)) {
+        selectedKeys.add(selectedKey);
+        selectedCells.push([row, column]);
+      }
+    }
+
+    const lines = new Map();
+    for (let first = 0; first < selectedCells.length; first++) {
+      for (let second = first + 1; second < selectedCells.length; second++) {
+        let stepRow = selectedCells[second][0] - selectedCells[first][0];
+        let stepColumn = selectedCells[second][1] - selectedCells[first][1];
+        const divisor = gcd(stepRow, stepColumn);
+        stepRow /= divisor;
+        stepColumn /= divisor;
+
+        if (stepRow < 0 || (stepRow === 0 && stepColumn < 0)) {
+          stepRow *= -1;
+          stepColumn *= -1;
+        }
+
+        let startRow = selectedCells[first][0];
+        let startColumn = selectedCells[first][1];
+        while (
+          startRow - stepRow >= 0 &&
+          startRow - stepRow < size &&
+          startColumn - stepColumn >= 0 &&
+          startColumn - stepColumn < size
+        ) {
+          startRow -= stepRow;
+          startColumn -= stepColumn;
+        }
+
+        const lineKey = `${startRow},${startColumn}|${stepRow},${stepColumn}`;
+        lines.set(lineKey, { startRow, startColumn, stepRow, stepColumn });
+      }
+    }
+
+    const blockedCells = new Set();
+    for (const line of lines.values()) {
+      let row = line.startRow;
+      let column = line.startColumn;
+      while (row >= 0 && row < size && column >= 0 && column < size) {
+        const candidateKey = cellKey(row, column);
+        if (!selectedKeys.has(candidateKey)) {
+          blockedCells.add(candidateKey);
+        }
+        row += line.stepRow;
+        column += line.stepColumn;
+      }
+    }
+    return blockedCells;
+  }
+
   function readCode(value) {
     const match = String(value).match(/^(\S+)(?:[\t\n\r ]|$)/);
     if (!match) {
@@ -105,9 +196,11 @@
 
   root.NoThreeLineCodec = Object.freeze({
     ALPHABET,
+    DEFAULT_OPTIONS,
     SYMMETRY_CHARACTER,
     SYMMETRY_GROUP,
     decodeConfiguration,
     encodeConfiguration,
+    findBlockedCells,
   });
 })(globalThis);

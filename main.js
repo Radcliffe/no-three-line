@@ -12,11 +12,16 @@ const symmetrySelect = document.getElementById("symmetry");
 const configurationCode = document.getElementById("configurationCode");
 const loadCodeBtn = document.getElementById("loadCodeBtn");
 const codeStatus = document.getElementById("codeStatus");
+const disableBlockedCellsInput = document.getElementById("disableBlockedCells");
 
 let size = 3;
 let activeCells = new Set();
 let cellsByKey = new Map();
 let symmetry = "iden";
+let disableBlockedCells =
+  NoThreeLineCodec.DEFAULT_OPTIONS.disableBlockedCells;
+
+disableBlockedCellsInput.checked = disableBlockedCells;
 
 function key(row, col) {
   return `${row},${col}`;
@@ -146,17 +151,26 @@ function renderGrid() {
 
 function updateDisplay() {
   const badCells = findLineViolations();
+  const blockedCells = disableBlockedCells
+    ? NoThreeLineCodec.findBlockedCells(activeCellCoordinates(), size)
+    : new Set();
 
   for (const [cellKey, cell] of cellsByKey.entries()) {
     const isActive = activeCells.has(cellKey);
     const isBad = badCells.has(cellKey);
+    const isBlocked = !isActive && blockedCells.has(cellKey);
     const [row, col] = parseKey(cellKey);
 
     cell.classList.toggle("active", isActive);
     cell.classList.toggle("line-hit", isBad);
+    cell.classList.toggle("blocked", isBlocked);
+    cell.disabled = isBlocked;
+    cell.title = isBlocked
+      ? `(${row}, ${col}) — selecting this cell would make three in a line`
+      : `(${row}, ${col})`;
     cell.setAttribute(
       "aria-label",
-      `Row ${row + 1}, column ${col + 1}, ${isActive ? "active" : "inactive"}${isBad ? ", on a line with three or more active cells" : ""}`,
+      `Row ${row + 1}, column ${col + 1}, ${isActive ? "active" : "inactive"}${isBad ? ", on a line with three or more active cells" : ""}${isBlocked ? ", unavailable because it would make three in a line" : ""}`,
     );
   }
 
@@ -270,6 +284,11 @@ symmetrySelect.addEventListener("change", () => {
   makeGridSymmetric();
 });
 
+disableBlockedCellsInput.addEventListener("change", () => {
+  disableBlockedCells = disableBlockedCellsInput.checked;
+  updateDisplay();
+});
+
 function updateCell(row, col, method) {
   const cellKey = key(row, col);
   method(cellKey);
@@ -319,7 +338,6 @@ function toggleCell(row, col) {
   } else {
     updateCell(row, col, (k) => activeCells.add(k));
   }
-  updateDisplay();
 }
 
 function makeGridSymmetric() {
