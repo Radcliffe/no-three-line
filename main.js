@@ -328,7 +328,6 @@ function updateCell(row, col, method) {
   if (symmetry === "ort2" || symmetry === "full") {
     method(key(row, size - col - 1));
   }
-  updateDisplay();
 }
 
 function toggleCell(row, col) {
