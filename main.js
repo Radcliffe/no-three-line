@@ -22,6 +22,10 @@ const solutionPanel = document.getElementById("solutionPanel");
 const solutionText = document.getElementById("solutionText");
 
 const HISTORY_LIMIT = 100;
+const OPTIMAL_SOLUTION_ATTRIBUTIONS =
+  typeof optimalSolutionAttributions === "undefined"
+    ? Object.freeze({})
+    : optimalSolutionAttributions;
 const SYMMETRY_NAMES = Object.freeze({
   iden: "identity",
   rot2: "180° rotational",
@@ -428,7 +432,7 @@ function updateSolutionButton() {
   const solution = NoThreeLineCodec.decodeConfiguration(code, size);
   const symmetryName =
     SYMMETRY_NAMES[solution.symmetryGroup] ?? solution.symmetryGroup;
-  const attribution = optimalSolutionAttributions?.[size];
+  const attribution = OPTIMAL_SOLUTION_ATTRIBUTIONS[size];
   const details = [
     `${size} × ${size}: ${solution.cells.length} points, with two in every row and ${symmetryName} symmetry.`,
   ];

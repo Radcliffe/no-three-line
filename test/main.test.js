@@ -368,9 +368,29 @@ test("every bundled solution has a dated attribution summary", () => {
       `this.solutions = optimalSolutions; this.attributions = optimalSolutionAttributions;`,
     context,
   );
+  const documentedDates = new Map(
+    fs.readFileSync(path.join(projectRoot, "ATTRIBUTION.md"), "utf8")
+      .split("\n")
+      .filter((line) => /^\| \d+ \|/.test(line))
+      .map((line) => {
+        const columns = line.split("|").map((column) => column.trim());
+        return [columns[1], columns[4]];
+      }),
+  );
   for (const size of Object.keys(context.solutions)) {
-    assert.equal(typeof context.attributions[size]?.date, "string", `size ${size}`);
+    assert.equal(
+      context.attributions[size]?.date,
+      documentedDates.get(size),
+      `size ${size}`,
+    );
   }
+});
+
+test("the app displays its copyright and repository link", () => {
+  const html = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
+  assert.match(html, /Copyright © 2026 David Radcliffe/);
+  assert.match(html, /https:\/\/github\.com\/Radcliffe\/no-three-line\//);
+  assert.match(html, />Radcliffe\/no-three-line</);
 });
 
 test("hovering a blocked cell highlights and explains its responsible line", () => {

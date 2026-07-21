@@ -372,3 +372,18 @@ button:disabled {
 .solution-panel a {
     color: var(--active);
 }
+
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: var(--active);
+}

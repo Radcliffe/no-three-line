@@ -123,11 +123,15 @@ The converter validates that every parsed solution is square, uses a recognized 
 | `convert_optimal_solutions.py` | Source-record parser and compact-code generator |
 | `convert.sh` | Convenience regeneration command |
 | `ATTRIBUTION.md` | Discovery credits, dates, sources, and uncertainty notes |
+| `NOTICE` | Copyright and repository notice |
 
 ## Attribution and license
 
 Known configurations and their attempted historical attributions are documented in [ATTRIBUTION.md](ATTRIBUTION.md). Several older discovery credits are necessarily approximate because the surviving source records identify publications or enumeration dates rather than exact first discoveries.
 
 AI tools including OpenAI GPT-5.5 and GPT-5.6 were used to develop this project.
+
+Copyright © 2026 David Radcliffe. The project source is available at
+[Radcliffe/no-three-line](https://github.com/Radcliffe/no-three-line/).
 
 The project code is licensed under the [Apache License 2.0](LICENSE).
