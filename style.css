@@ -360,3 +360,15 @@ button:disabled {
     color: var(--muted);
     line-height: 1.45;
 }
+
+.solution-panel .solution-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.solution-panel a {
+    color: var(--active);
+}

@@ -118,6 +118,7 @@ The converter validates that every parsed solution is square, uses a recognized 
 | `main.js` | UI state, interaction, symmetry handling, and rendering |
 | `configuration-codec.js` | Compact-code codec and incremental line index |
 | `optimal-solutions.generated.js` | Compact bundled configurations consumed by the app |
+| `optimal-solution-attributions.js` | Discoverer and date summaries shown in the app |
 | `optimal-solutions.txt` | Source records used to generate the bundle |
 | `convert_optimal_solutions.py` | Source-record parser and compact-code generator |
 | `convert.sh` | Convenience regeneration command |

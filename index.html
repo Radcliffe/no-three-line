@@ -13,8 +13,8 @@
                 <p class="intro">
                     Select a grid size, then click cells to activate or
                     deactivate them. Whenever three or more active cells lie on
-                    one straight line, every active cell on that line is
-                    highlighted in red. Can you find
+                    one straight line, the optional violation display
+                    highlights every active cell on that line in red. Can you find
                     <span id="targetCount">6</span> cells with no three in a
                     line?
                 </p>
@@ -43,6 +43,10 @@
                 <label class="toggle-control" for="disableBlockedCells">
                     <input id="disableBlockedCells" type="checkbox" checked />
                     Prevent three-in-line moves
+                </label>
+                <label class="toggle-control" for="showLineViolations">
+                    <input id="showLineViolations" type="checkbox" checked />
+                    Show line violations
                 </label>
 
                 <button
@@ -121,8 +125,16 @@
                 class="solution-panel"
                 aria-live="polite"
             >
-                <h2>Optimal solution</h2>
+                <h2>Optimal solution information</h2>
                 <p id="solutionText"></p>
+                <p class="solution-links">
+                    <a href="ATTRIBUTION.md">Historical attribution and dates</a>
+                    <span aria-hidden="true">·</span>
+                    <a
+                        href="https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html"
+                        >Source collection</a
+                    >
+                </p>
             </section>
 
             <p class="notes">
@@ -136,8 +148,9 @@
             </p>
         </main>
 
-        <script src="configuration-codec.js?v=20260721-2"></script>
+        <script src="configuration-codec.js?v=20260721-3"></script>
         <script src="optimal-solutions.generated.js"></script>
-        <script src="main.js?v=20260721-2"></script>
+        <script src="optimal-solution-attributions.js?v=20260721-1"></script>
+        <script src="main.js?v=20260721-5"></script>
     </body>
 </html>

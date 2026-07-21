@@ -13,14 +13,26 @@ const configurationCode = document.getElementById("configurationCode");
 const loadCodeBtn = document.getElementById("loadCodeBtn");
 const codeStatus = document.getElementById("codeStatus");
 const disableBlockedCellsInput = document.getElementById("disableBlockedCells");
+const showLineViolationsInput = document.getElementById("showLineViolations");
 const undoBtn = document.getElementById("undoBtn");
 const redoBtn = document.getElementById("redoBtn");
 const copyLinkBtn = document.getElementById("copyLinkBtn");
 const lineExplanation = document.getElementById("lineExplanation");
+const solutionPanel = document.getElementById("solutionPanel");
+const solutionText = document.getElementById("solutionText");
 
 const HISTORY_LIMIT = 100;
-const LINE_EXPLANATION_HELP =
-  "Hover over a gray or red cell to see the responsible line.";
+const SYMMETRY_NAMES = Object.freeze({
+  iden: "identity",
+  rot2: "180° rotational",
+  dia1: "diagonal-reflection",
+  ort1: "vertical-reflection",
+  rot4: "90° rotational",
+  rct4: "quarter-turn-derived (rct4)",
+  dia2: "two-diagonal",
+  ort2: "horizontal-and-vertical reflection",
+  full: "full dihedral",
+});
 
 let size = 3;
 let activeCells = new Set();
@@ -29,13 +41,19 @@ let lineIndex = new NoThreeLineCodec.LineIndex(size);
 let symmetry = "iden";
 let disableBlockedCells =
   NoThreeLineCodec.DEFAULT_OPTIONS.disableBlockedCells;
+let showLineViolations = true;
 let undoStack = [];
 let redoStack = [];
 let urlSyncEnabled = false;
 let cellLineExplanations = new Map();
 let explainedCellKeys = new Set();
+let displayedActiveCells = new Set();
+let displayedBadCells = new Set();
+let displayedBlockedCells = new Set();
+let displayedOrbitCells = new Set();
 
 disableBlockedCellsInput.checked = disableBlockedCells;
+showLineViolationsInput.checked = showLineViolations;
 
 function key(row, col) {
   return `${row},${col}`;
@@ -53,8 +71,13 @@ function cellSizeForGrid(n) {
 }
 
 function renderGrid(initialCells = []) {
+  clearLineExplanation();
   activeCells.clear();
   lineIndex = new NoThreeLineCodec.LineIndex(size);
+  displayedActiveCells.clear();
+  displayedBadCells.clear();
+  displayedBlockedCells.clear();
+  displayedOrbitCells.clear();
   cellsByKey.clear();
   grid.innerHTML = "";
   grid.style.setProperty("--size", size);
@@ -119,9 +142,21 @@ function updateDisplay() {
     }
   }
 
-  for (const [cellKey, cell] of cellsByKey.entries()) {
+  const nextActiveCells = new Set(activeCells);
+  const nextBadCells = showLineViolations ? new Set(badCells) : new Set();
+  const nextBlockedCells = new Set(blockedCells);
+  const nextOrbitCells = new Set(blockedState.orbitCells);
+  const dirtyCells = new Set();
+  addSetDifferences(dirtyCells, displayedActiveCells, nextActiveCells);
+  addSetDifferences(dirtyCells, displayedBadCells, nextBadCells);
+  addSetDifferences(dirtyCells, displayedBlockedCells, nextBlockedCells);
+  addSetDifferences(dirtyCells, displayedOrbitCells, nextOrbitCells);
+
+  for (const cellKey of dirtyCells) {
+    const cell = cellsByKey.get(cellKey);
+    if (!cell) continue;
     const isActive = activeCells.has(cellKey);
-    const isBad = badCells.has(cellKey);
+    const isBad = nextBadCells.has(cellKey);
     const isBlocked = !isActive && blockedCells.has(cellKey);
     const isOrbitBlocked = blockedState.orbitCells.has(cellKey);
     const [row, col] = parseKey(cellKey);
@@ -139,9 +174,26 @@ function updateDisplay() {
     );
   }
 
+  displayedActiveCells = nextActiveCells;
+  displayedBadCells = nextBadCells;
+  displayedBlockedCells = nextBlockedCells;
+  displayedOrbitCells = nextOrbitCells;
+
   activeCountEl.textContent = String(activeCells.size);
-  lineWarning.classList.toggle("visible", badCells.size > 0);
+  lineWarning.classList.toggle(
+    "visible",
+    showLineViolations && badCells.size > 0,
+  );
   updateConfigurationCode();
+}
+
+function addSetDifferences(target, first, second) {
+  for (const value of first) {
+    if (!second.has(value)) target.add(value);
+  }
+  for (const value of second) {
+    if (!first.has(value)) target.add(value);
+  }
 }
 
 function addLineExplanations(cellKey, lines) {
@@ -201,13 +253,20 @@ function clearLineExplanation() {
     );
   }
   explainedCellKeys.clear();
-  lineExplanation.textContent = LINE_EXPLANATION_HELP;
+  lineExplanation.textContent = lineExplanationHelp();
   lineExplanation.classList.remove("visible");
+}
+
+function lineExplanationHelp() {
+  return showLineViolations
+    ? "Hover over a gray or red cell to see the responsible line."
+    : "Hover over a gray cell to see why that move is unavailable.";
 }
 
 function showLineExplanation(cell) {
   clearLineExplanation();
   const cellKey = key(cell.dataset.row, cell.dataset.col);
+  if (!showLineViolations && activeCells.has(cellKey)) return;
   const explanationMap = cellLineExplanations.get(cellKey);
   if (!explanationMap || explanationMap.size === 0) return;
 
@@ -357,7 +416,27 @@ function clearGrid() {
 }
 
 function updateSolutionButton() {
-  solutionBtn.disabled = !optimalSolutions?.[size];
+  const code = optimalSolutions?.[size];
+  solutionBtn.disabled = !code;
+  solutionPanel.classList.add("visible");
+  if (!code) {
+    solutionText.textContent =
+      `No bundled ${size * 2}-point optimal solution is available for the ${size} × ${size} grid.`;
+    return;
+  }
+
+  const solution = NoThreeLineCodec.decodeConfiguration(code, size);
+  const symmetryName =
+    SYMMETRY_NAMES[solution.symmetryGroup] ?? solution.symmetryGroup;
+  const attribution = optimalSolutionAttributions?.[size];
+  const details = [
+    `${size} × ${size}: ${solution.cells.length} points, with two in every row and ${symmetryName} symmetry.`,
+  ];
+  if (attribution?.discoverer) {
+    details.push(`Discoverer: ${attribution.discoverer}.`);
+  }
+  if (attribution?.date) details.push(`Date: ${attribution.date}.`);
+  solutionText.textContent = details.join(" ");
 }
 
 function showOptimalSolution() {
@@ -371,19 +450,31 @@ function showOptimalSolution() {
   commitHistory(previousState);
 }
 
+function decodeSupportedConfiguration(value) {
+  const solution = NoThreeLineCodec.decodeConfiguration(value);
+  if (solution.size < MIN_SIZE || solution.size > MAX_SIZE) {
+    throw new Error(`The app supports grid sizes from ${MIN_SIZE} to ${MAX_SIZE}.`);
+  }
+  return solution;
+}
+
+function applyConfiguration(solution) {
+  const needsNewGrid =
+    size !== solution.size || cellsByKey.size !== solution.size * solution.size;
+  size = solution.size;
+  gridSizeSelect.value = String(size);
+  targetCount.textContent = String(size * 2);
+  symmetry = solution.symmetryGroup;
+  symmetrySelect.value = symmetry;
+  if (needsNewGrid) renderGrid(solution.cells);
+  else setActiveCells(solution.cells);
+}
+
 function loadConfigurationCode(recordHistory = true) {
   const previousState = recordHistory ? snapshotState() : null;
   try {
-    const solution = NoThreeLineCodec.decodeConfiguration(configurationCode.value);
-    if (solution.size < MIN_SIZE || solution.size > MAX_SIZE) {
-      throw new Error(`The app supports grid sizes from ${MIN_SIZE} to ${MAX_SIZE}.`);
-    }
-    size = solution.size;
-    gridSizeSelect.value = String(size);
-    targetCount.textContent = String(size * 2);
-    symmetry = solution.symmetryGroup;
-    symmetrySelect.value = symmetry;
-    renderGrid(solution.cells);
+    const solution = decodeSupportedConfiguration(configurationCode.value);
+    applyConfiguration(solution);
     codeStatus.textContent = `Loaded ${size} × ${size} configuration.`;
     if (recordHistory) commitHistory(previousState);
   } catch (error) {
@@ -448,6 +539,11 @@ symmetrySelect.addEventListener("change", () => {
 
 disableBlockedCellsInput.addEventListener("change", () => {
   disableBlockedCells = disableBlockedCellsInput.checked;
+  updateDisplay();
+});
+
+showLineViolationsInput.addEventListener("change", () => {
+  showLineViolations = showLineViolationsInput.checked;
   updateDisplay();
 });
 
@@ -596,12 +692,27 @@ window.addEventListener("resize", () => {
 });
 
 const queryCode = new URLSearchParams(window.location.search).get("code");
-populateSizeSelect();
-renderGrid();
-
+let initialSolution = null;
+let initialError = null;
 if (queryCode !== null) {
-  configurationCode.value = queryCode;
-  loadConfigurationCode(false);
+  try {
+    initialSolution = decodeSupportedConfiguration(queryCode);
+  } catch (error) {
+    initialError = error;
+  }
+}
+
+populateSizeSelect();
+if (initialSolution) {
+  applyConfiguration(initialSolution);
+  codeStatus.textContent = `Loaded ${size} × ${size} configuration.`;
+} else {
+  renderGrid();
+  if (initialError) {
+    configurationCode.value = queryCode;
+    codeStatus.textContent = initialError.message;
+    codeStatus.classList.add("error");
+  }
 }
 undoStack = [];
 redoStack = [];

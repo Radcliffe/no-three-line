@@ -51,6 +51,7 @@ class FakeElement {
     this.checked = false;
     this.disabled = false;
     this.selected = false;
+    this.setAttributeCount = 0;
   }
 
   set className(value) {
@@ -73,6 +74,7 @@ class FakeElement {
   }
 
   setAttribute(name, value) {
+    this.setAttributeCount++;
     this.attributes.set(name, String(value));
   }
 
@@ -95,24 +97,32 @@ class FakeElement {
   remove() {}
 }
 
-function startApp(search, { clipboardFails = false } = {}) {
+function startApp(
+  search,
+  { clipboardFails = false, solutions = {}, attributions = {} } = {},
+) {
   const ids = [
     "gridSize", "grid", "activeCount", "lineWarning", "clearBtn",
     "solutionBtn", "targetCount", "symmetry", "configurationCode",
-    "loadCodeBtn", "codeStatus", "disableBlockedCells",
+    "loadCodeBtn", "codeStatus", "disableBlockedCells", "showLineViolations",
     "undoBtn", "redoBtn", "copyLinkBtn",
-    "lineExplanation",
+    "lineExplanation", "solutionPanel", "solutionText",
   ];
   const elements = Object.fromEntries(ids.map((id) => [id, new FakeElement()]));
   elements.symmetry.value = "iden";
   elements.disableBlockedCells.checked = true;
+  elements.showLineViolations.checked = true;
   const clipboardWrites = [];
   const body = new FakeElement("body");
+  let createdButtons = 0;
 
   const document = {
     body,
     getElementById: (id) => elements[id],
-    createElement: (tagName) => new FakeElement(tagName),
+    createElement: (tagName) => {
+      if (tagName === "button") createdButtons++;
+      return new FakeElement(tagName);
+    },
     createDocumentFragment: () => new FakeElement("#fragment"),
     execCommand(command) {
       if (command !== "copy") return false;
@@ -153,7 +163,8 @@ function startApp(search, { clipboardFails = false } = {}) {
     document,
     globalThis: undefined,
     navigator,
-    optimalSolutions: {},
+    optimalSolutionAttributions: attributions,
+    optimalSolutions: solutions,
     window,
   });
   context.globalThis = context;
@@ -161,6 +172,7 @@ function startApp(search, { clipboardFails = false } = {}) {
   vm.runInContext(mainSource, context);
   elements.__window = window;
   elements.__clipboardWrites = clipboardWrites;
+  elements.__createdButtons = () => createdButtons;
   return elements;
 }
 
@@ -175,10 +187,36 @@ test("code query parameter loads its grid, symmetry, and cells", () => {
   assert.equal(elements.undoBtn.disabled, true);
   assert.equal(elements.redoBtn.disabled, true);
   assert.equal(elements.copyLinkBtn.disabled, false);
+  assert.equal(elements.__createdButtons(), 64);
   assert.equal(
     elements.grid.children.filter((cell) => cell.classList.contains("active")).length,
     16,
   );
+});
+
+test("loading a same-size configuration reuses the existing grid", () => {
+  const elements = startApp("?code=o3545011706672324");
+  const firstCell = elements.grid.children[0];
+  elements.configurationCode.value = "o2423670617014535";
+  elements.loadCodeBtn.dispatch("click");
+  assert.equal(elements.grid.children[0], firstCell);
+  assert.equal(elements.activeCount.textContent, "16");
+  assert.equal(elements.configurationCode.value, "o2423670617014535");
+});
+
+test("a large-grid edit only patches cells whose display state changed", () => {
+  const elements = startApp("");
+  elements.gridSize.value = "90";
+  elements.gridSize.dispatch("change");
+  assert.equal(elements.grid.children.length, 8100);
+  for (const cell of elements.grid.children) cell.setAttributeCount = 0;
+
+  elements.grid.dispatch("click", { target: elements.grid.children[0] });
+  const updatedCells = elements.grid.children.filter(
+    (cell) => cell.setAttributeCount > 0,
+  );
+  assert.equal(updatedCells.length, 1);
+  assert.equal(updatedCells[0], elements.grid.children[0]);
 });
 
 test("URL-encoded symmetry punctuation is decoded before loading", () => {
@@ -253,6 +291,86 @@ test("changing symmetry refreshes orbit-aware illegal cells", () => {
   );
   assert.equal(oppositeCorner.classList.contains("orbit-explained"), true);
   assert.match(elements.lineExplanation.textContent, /outlined symmetry orbit/);
+});
+
+test("line violation highlights can be hidden and are enabled by default", () => {
+  const elements = startApp("");
+  const cellAt = (row, col) => elements.grid.children.find(
+    (cell) => cell.dataset.row === String(row) && cell.dataset.col === String(col),
+  );
+  elements.disableBlockedCells.checked = false;
+  elements.disableBlockedCells.dispatch("change");
+  elements.grid.dispatch("click", { target: cellAt(0, 0) });
+  elements.grid.dispatch("click", { target: cellAt(0, 1) });
+  elements.grid.dispatch("click", { target: cellAt(0, 2) });
+
+  assert.equal(elements.showLineViolations.checked, true);
+  assert.equal(cellAt(0, 0).classList.contains("line-hit"), true);
+  assert.equal(elements.lineWarning.classList.contains("visible"), true);
+
+  elements.showLineViolations.checked = false;
+  elements.showLineViolations.dispatch("change");
+  assert.equal(cellAt(0, 0).classList.contains("line-hit"), false);
+  assert.equal(elements.lineWarning.classList.contains("visible"), false);
+  elements.grid.dispatch("pointerover", { target: cellAt(0, 0) });
+  assert.equal(elements.lineExplanation.classList.contains("visible"), false);
+
+  elements.showLineViolations.checked = true;
+  elements.showLineViolations.dispatch("change");
+  assert.equal(cellAt(0, 0).classList.contains("line-hit"), true);
+  assert.equal(elements.lineWarning.classList.contains("visible"), true);
+});
+
+test("optimal solution information includes known discoverer and date", () => {
+  const code = "o2423670617014535";
+  const elements = startApp(`?code=${code}`, {
+    solutions: { 8: code },
+    attributions: {
+      8: { discoverer: "H. E. Dudeney", date: "November 7, 1906" },
+    },
+  });
+  assert.equal(elements.solutionBtn.disabled, false);
+  assert.equal(elements.solutionPanel.classList.contains("visible"), true);
+  assert.match(elements.solutionText.textContent, /8 × 8: 16 points/);
+  assert.match(elements.solutionText.textContent, /90° rotational symmetry/);
+  assert.match(elements.solutionText.textContent, /Discoverer: H\. E\. Dudeney/);
+  assert.match(elements.solutionText.textContent, /Date: November 7, 1906/);
+  assert.doesNotMatch(elements.solutionText.textContent, /maximum possible/);
+
+  elements.gridSize.value = "71";
+  elements.gridSize.dispatch("change");
+  assert.equal(elements.solutionBtn.disabled, true);
+  assert.match(elements.solutionText.textContent, /No bundled 142-point optimal solution/);
+});
+
+test("optimal solution information omits an unavailable discoverer", () => {
+  const code = "x010212";
+  const elements = startApp(`?code=${code}`, {
+    solutions: { 3: code },
+    attributions: { 3: { date: "By 1975" } },
+  });
+  assert.doesNotMatch(elements.solutionText.textContent, /Discoverer:/);
+  assert.match(elements.solutionText.textContent, /Date: By 1975/);
+});
+
+test("every bundled solution has a dated attribution summary", () => {
+  const context = vm.createContext({});
+  const solutionSource = fs.readFileSync(
+    path.join(projectRoot, "optimal-solutions.generated.js"),
+    "utf8",
+  );
+  const attributionSource = fs.readFileSync(
+    path.join(projectRoot, "optimal-solution-attributions.js"),
+    "utf8",
+  );
+  vm.runInContext(
+    `${solutionSource}\n${attributionSource}\n` +
+      `this.solutions = optimalSolutions; this.attributions = optimalSolutionAttributions;`,
+    context,
+  );
+  for (const size of Object.keys(context.solutions)) {
+    assert.equal(typeof context.attributions[size]?.date, "string", `size ${size}`);
+  }
 });
 
 test("hovering a blocked cell highlights and explains its responsible line", () => {
