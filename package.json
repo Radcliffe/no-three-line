@@ -1,0 +1,7 @@
+{
+  "name": "no-three-line-explorer",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}

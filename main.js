@@ -200,8 +200,7 @@ function populateSizeSelect() {
 grid.addEventListener("click", (event) => {
   const cell = event.target.closest(".cell");
   if (!cell) return;
-  toggleCell(cell.dataset.row, cell.dataset.col);
-  updateDisplay();
+  if (toggleCell(cell.dataset.row, cell.dataset.col)) updateDisplay();
 });
 
 gridSizeSelect.addEventListener("change", () => {
@@ -222,20 +221,23 @@ disableBlockedCellsInput.addEventListener("change", () => {
   updateDisplay();
 });
 
-function updateCell(row, col, method) {
-  const cellKey = key(row, col);
-  method(cellKey);
+function symmetricCellKeys(row, col) {
+  row = Number(row);
+  col = Number(col);
+  const cellKeys = new Set([key(row, col)]);
+  const include = (nextRow, nextCol) => cellKeys.add(key(nextRow, nextCol));
+
   // (r, c) -> (c, r)
   if (symmetry === "dia1" || symmetry === "dia2" || symmetry === "full") {
-    method(key(col, row));
+    include(col, row);
   }
   // (r, c) -> (c, s-r-1)
   if (symmetry === "rot4" || symmetry === "rct4" || symmetry === "full") {
-    method(key(col, size - row - 1));
+    include(col, size - row - 1);
   }
   // (r, c) -> (s-r-1, c)
   if (symmetry === "ort1" || symmetry === "ort2" || symmetry === "full") {
-    method(key(size - row - 1, col));
+    include(size - row - 1, col);
   }
   // (r, c) -> (s-r-1, s-c-1)
   if (
@@ -246,21 +248,27 @@ function updateCell(row, col, method) {
     symmetry === "dia2" ||
     symmetry === "full"
   ) {
-    method(key(size - row - 1, size - col - 1));
+    include(size - row - 1, size - col - 1);
   }
   // (r, c) -> (s-c-1, s-r-1)
   if (symmetry === "dia2" || symmetry === "full") {
-    method(key(size - col - 1, size - row - 1));
+    include(size - col - 1, size - row - 1);
   }
   // (r, c) -> (c, s-r-1), (r, c) -> (s-c-1, r)
   if (symmetry === "rot4" || symmetry === "rct4" || symmetry === "full") {
-    method(key(col, size - row - 1));
-    method(key(size - col - 1, row));
+    include(col, size - row - 1);
+    include(size - col - 1, row);
   }
   // (r, c) -> (r, s-c-1)
   if (symmetry === "ort2" || symmetry === "full") {
-    method(key(row, size - col - 1));
+    include(row, size - col - 1);
   }
+
+  return cellKeys;
+}
+
+function updateCell(row, col, method) {
+  for (const cellKey of symmetricCellKeys(row, col)) method(cellKey);
 }
 
 function addActiveCell(cellKey) {
@@ -281,8 +289,29 @@ function toggleCell(row, col) {
   const cellKey = key(row, col);
   if (activeCells.has(cellKey)) {
     updateCell(row, col, deleteActiveCell);
+    return true;
   } else {
-    updateCell(row, col, addActiveCell);
+    const orbit = symmetricCellKeys(row, col);
+    if (disableBlockedCells) {
+      const existingViolations = new Set(lineIndex.getViolationCells());
+      const addedCells = [];
+      for (const orbitKey of orbit) {
+        if (!activeCells.has(orbitKey)) {
+          addActiveCell(orbitKey);
+          addedCells.push(orbitKey);
+        }
+      }
+      const createsViolation = Array.from(
+        lineIndex.getViolationCells(),
+        (violationKey) => !existingViolations.has(violationKey),
+      ).some(Boolean);
+      for (let index = addedCells.length - 1; index >= 0; index--) {
+        deleteActiveCell(addedCells[index]);
+      }
+      if (createsViolation) return false;
+    }
+    for (const orbitKey of orbit) addActiveCell(orbitKey);
+    return true;
   }
 }
 

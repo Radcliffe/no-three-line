@@ -26,6 +26,16 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 Opening `index.html` directly may also work, but a local server gives behavior closer to normal web hosting.
 
+## Tests
+
+Run the dependency-free test suite with:
+
+```sh
+npm test
+```
+
+The suite checks compact-code validation and round trips, randomized incremental line-index updates against a brute-force reference, every bundled optimal solution, and reproducibility of the generated solution bundle.
+
 ## Compact configuration encoding
 
 A code starts with one symmetry-class character:
