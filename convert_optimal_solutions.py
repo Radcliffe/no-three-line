@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert copied no-three-in-line solution text into a JavaScript object.
+"""Convert copied no-three-in-line solution text into compact configuration codes.
 
 Input blocks may look like this:
 
@@ -10,13 +10,11 @@ Input blocks may look like this:
      . o . . . . o . .
      ...
 
-The output is suitable for the web app's `optimalSolutions` object:
+The output uses the compact configuration encoding introduced in 1996 and
+extended to 90 column characters in 2026:
 
     const optimalSolutions = {
-      9: {
-        cells: [[0, 3], [0, 4], ...],
-        symmetryGroup: "rct4",
-      },
+      5: ".1224041303",
     };
 """
 
@@ -31,6 +29,19 @@ from typing import Iterable
 
 GRID_ROW_RE = re.compile(r"^\s*[.oO](?:\s+[.oO])*\s*$")
 SYMMETRY_RE = re.compile(r"(?:Sym\.-Gruppe|symmetry)\s+([^\s]+)", re.IGNORECASE)
+
+ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$%&@?!()[]<>{}=*+|-/~^_:;,."
+SYMMETRY_CHARACTER = {
+    "iden": ".",
+    "rot2": ":",
+    "dia1": "/",
+    "ort1": "-",
+    "rot4": "o",
+    "rct4": "c",
+    "dia2": "x",
+    "ort2": "+",
+    "full": "*",
+}
 
 
 @dataclass(frozen=True)
@@ -115,6 +126,34 @@ def js_string(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
+def encode_configuration(solution: Solution) -> str:
+    """Encode a 2n-point solution, validating the compact format invariants."""
+    if solution.size > len(ALPHABET):
+        raise ValueError(
+            f"Grid size {solution.size} exceeds the {len(ALPHABET)}-character alphabet."
+        )
+    try:
+        prefix = SYMMETRY_CHARACTER[solution.symmetry_group]
+    except KeyError as error:
+        raise ValueError(
+            f"Unknown symmetry group {solution.symmetry_group!r} for size {solution.size}."
+        ) from error
+
+    columns_by_row: list[list[int]] = [[] for _ in range(solution.size)]
+    for row, column in solution.cells:
+        columns_by_row[row].append(column)
+
+    payload: list[str] = []
+    for row, columns in enumerate(columns_by_row):
+        columns.sort()
+        if len(columns) != 2 or columns[0] == columns[1]:
+            raise ValueError(
+                f"Size {solution.size}, row {row + 1} must contain exactly two selected positions."
+            )
+        payload.extend(ALPHABET[column] for column in columns)
+    return prefix + "".join(payload)
+
+
 def format_solution_object(
     solutions: Iterable[Solution], const_name: str = "optimalSolutions"
 ) -> str:
@@ -138,13 +177,7 @@ def format_solution_object(
 
     for size in sorted(by_size):
         solution = by_size[size]
-        lines.append(f"  {size}: {{")
-        lines.append("    cells: [")
-        for row, col in solution.cells:
-            lines.append(f"      [{row}, {col}],")
-        lines.append("    ],")
-        lines.append(f"    symmetryGroup: {js_string(solution.symmetry_group)},")
-        lines.append("  },")
+        lines.append(f"  {size}: {js_string(encode_configuration(solution))},")
 
     lines.append("};")
     return "\n".join(lines) + "\n"
@@ -152,7 +185,7 @@ def format_solution_object(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Convert pasted no-three-in-line solution text into a JavaScript optimalSolutions object."
+        description="Convert pasted no-three-in-line solution text into compact configuration codes for JavaScript."
     )
     parser.add_argument(
         "input", type=Path, help="Input text file copied from the solution website."

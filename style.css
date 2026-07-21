@@ -63,6 +63,58 @@ h1 {
     backdrop-filter: blur(12px);
 }
 
+.code-controls {
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr) auto;
+    align-items: end;
+    gap: 8px 14px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(209, 213, 219, 0.8);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.code-controls textarea {
+    width: 100%;
+    min-height: 54px;
+    resize: vertical;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    background: white;
+    font: 0.9rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-wrap: anywhere;
+}
+
+#codeHelp,
+#codeStatus {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+#codeStatus {
+    min-height: 1em;
+    text-align: right;
+}
+
+#codeStatus.error {
+    color: var(--bad);
+}
+
+@media (max-width: 640px) {
+    .code-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #codeStatus {
+        text-align: left;
+    }
+}
+
 label {
     display: grid;
     gap: 6px;

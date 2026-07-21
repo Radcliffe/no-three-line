@@ -34,6 +34,7 @@
                         <option value="dia1">Diagonal reflection</option>
                         <option value="ort1">Vertical reflection</option>
                         <option value="rot4">90° rotation</option>
+                        <option value="rct4">90° rotation (rct4)</option>
                         <option value="dia2">Bidiagonal</option>
                         <option value="ort2">Horizontal and vertical</option>
                         <option value="full">Full symmetry</option>
@@ -53,6 +54,24 @@
                         >Three or more active cells share a line.</span
                     >
                 </div>
+            </section>
+
+            <section class="code-controls" aria-label="Configuration code">
+                <label for="configurationCode">
+                    Compact configuration code
+                    <textarea
+                        id="configurationCode"
+                        rows="2"
+                        spellcheck="false"
+                        aria-describedby="codeHelp codeStatus"
+                        placeholder="A code is available when every row has two active cells"
+                    ></textarea>
+                </label>
+                <button id="loadCodeBtn" type="button">Load code</button>
+                <p id="codeHelp">
+                    Paste a code to load it. The grid size is inferred from the code.
+                </p>
+                <p id="codeStatus" role="status" aria-live="polite"></p>
             </section>
 
             <section class="grid-shell" aria-label="Grid container">
@@ -84,6 +103,7 @@
             </p>
         </main>
 
+        <script src="configuration-codec.js"></script>
         <script src="optimal-solutions.generated.js"></script>
         <script src="main.js"></script>
     </body>

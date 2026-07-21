@@ -1,5 +1,5 @@
 const MIN_SIZE = 3;
-const MAX_SIZE = 72;
+const MAX_SIZE = NoThreeLineCodec.ALPHABET.length;
 
 const gridSizeSelect = document.getElementById("gridSize");
 const grid = document.getElementById("grid");
@@ -9,6 +9,9 @@ const clearBtn = document.getElementById("clearBtn");
 const solutionBtn = document.getElementById("solutionBtn");
 const targetCount = document.getElementById("targetCount");
 const symmetrySelect = document.getElementById("symmetry");
+const configurationCode = document.getElementById("configurationCode");
+const loadCodeBtn = document.getElementById("loadCodeBtn");
+const codeStatus = document.getElementById("codeStatus");
 
 let size = 3;
 let activeCells = new Set();
@@ -159,6 +162,25 @@ function updateDisplay() {
 
   activeCountEl.textContent = String(activeCells.size);
   lineWarning.classList.toggle("visible", badCells.size > 0);
+  updateConfigurationCode();
+}
+
+function activeCellCoordinates() {
+  return Array.from(activeCells, parseKey);
+}
+
+function updateConfigurationCode() {
+  try {
+    configurationCode.value = NoThreeLineCodec.encodeConfiguration(
+      activeCellCoordinates(),
+      size,
+      symmetry,
+    );
+  } catch {
+    configurationCode.value = "";
+  }
+  codeStatus.textContent = "";
+  codeStatus.classList.remove("error");
 }
 
 function setActiveCells(cells) {
@@ -190,12 +212,32 @@ function updateSolutionButton() {
 }
 
 function showOptimalSolution() {
-  const solution = optimalSolutions[size];
-  if (!solution) return;
-  const symmetryGroup = solution.symmetryGroup;
-  symmetry = symmetryGroup === "rct4" ? "rot4" : symmetryGroup;
+  const code = optimalSolutions[size];
+  if (!code) return;
+  const solution = NoThreeLineCodec.decodeConfiguration(code, size);
+  symmetry = solution.symmetryGroup;
   symmetrySelect.value = symmetry;
-  setActiveCells(solution.cells || []);
+  setActiveCells(solution.cells);
+}
+
+function loadConfigurationCode() {
+  try {
+    const solution = NoThreeLineCodec.decodeConfiguration(configurationCode.value);
+    if (solution.size < MIN_SIZE || solution.size > MAX_SIZE) {
+      throw new Error(`The app supports grid sizes from ${MIN_SIZE} to ${MAX_SIZE}.`);
+    }
+    size = solution.size;
+    gridSizeSelect.value = String(size);
+    targetCount.textContent = String(size * 2);
+    symmetry = solution.symmetryGroup;
+    symmetrySelect.value = symmetry;
+    renderGrid();
+    setActiveCells(solution.cells);
+    codeStatus.textContent = `Loaded ${size} × ${size} configuration.`;
+  } catch (error) {
+    codeStatus.textContent = error.message;
+    codeStatus.classList.add("error");
+  }
 }
 
 function populateSizeSelect() {
@@ -236,7 +278,7 @@ function updateCell(row, col, method) {
     method(key(col, row));
   }
   // (r, c) -> (c, s-r-1)
-  if (symmetry === "rot4" || symmetry === "full") {
+  if (symmetry === "rot4" || symmetry === "rct4" || symmetry === "full") {
     method(key(col, size - row - 1));
   }
   // (r, c) -> (s-r-1, c)
@@ -247,6 +289,7 @@ function updateCell(row, col, method) {
   if (
     symmetry === "rot2" ||
     symmetry === "rot4" ||
+    symmetry === "rct4" ||
     symmetry === "ort2" ||
     symmetry === "dia2" ||
     symmetry === "full"
@@ -258,7 +301,7 @@ function updateCell(row, col, method) {
     method(key(size - col - 1, size - row - 1));
   }
   // (r, c) -> (c, s-r-1), (r, c) -> (s-c-1, r)
-  if (symmetry === "rot4" || symmetry === "full") {
+  if (symmetry === "rot4" || symmetry === "rct4" || symmetry === "full") {
     method(key(col, size - row - 1));
     method(key(size - col - 1, row));
   }
@@ -290,6 +333,7 @@ function makeGridSymmetric() {
 
 clearBtn.addEventListener("click", clearGrid);
 solutionBtn.addEventListener("click", showOptimalSolution);
+loadCodeBtn.addEventListener("click", loadConfigurationCode);
 
 window.addEventListener("resize", () => {
   grid.style.setProperty("--cell-size", `${cellSizeForGrid(size)}px`);
