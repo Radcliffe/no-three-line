@@ -68,6 +68,16 @@ o . . o .
 
 The format and symmetry notation follow [Achim Flammenkamp's no-three-in-line database](https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html).
 
+### Load a configuration from the URL
+
+Add a `code` query parameter to open the app with a configuration already loaded:
+
+```text
+http://localhost:8000/?code=o3545011706672324
+```
+
+Codes containing URL punctuation such as `#`, `&`, or `+` must be URL-encoded. When constructing a link in JavaScript, use `encodeURIComponent(code)`.
+
 ## Refresh the bundled configurations
 
 `optimal-solutions.txt` contains copied source records. Regenerate the compact JavaScript data with:

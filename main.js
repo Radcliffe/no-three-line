@@ -305,3 +305,9 @@ window.addEventListener("resize", () => {
 
 populateSizeSelect();
 renderGrid();
+
+const queryCode = new URLSearchParams(window.location.search).get("code");
+if (queryCode !== null) {
+  configurationCode.value = queryCode;
+  loadConfigurationCode();
+}
