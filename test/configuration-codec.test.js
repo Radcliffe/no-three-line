@@ -139,6 +139,8 @@ test("blocked and violating cells update when points are added and removed", () 
 
   assert.deepEqual(sorted(index.getBlockedCells()), ["1,1", "3,3", "4,4"]);
   assert.deepEqual(sorted(index.getViolationCells()), []);
+  assert.equal(index.getBlockingLines(1, 1).length, 1);
+  assert.deepEqual(index.getBlockingLines(1, 1)[0].points, [[0, 0], [2, 2]]);
 
   index.add(4, 4);
   assert.deepEqual(sorted(index.getViolationCells()), ["0,0", "2,2", "4,4"]);
@@ -147,6 +149,59 @@ test("blocked and violating cells update when points are added and removed", () 
   index.remove(2, 2);
   assert.deepEqual(sorted(index.getViolationCells()), []);
   assert.deepEqual(sorted(index.getBlockedCells()), ["1,1", "2,2", "3,3"]);
+});
+
+test("prospective checks detect violations created by multiple added cells", () => {
+  const index = new LineIndex(3);
+  index.add(1, 1);
+  const lines = index.findViolationLinesAfterAdding([[0, 0], [2, 2]]);
+  assert.equal(lines.length, 1);
+  assert.deepEqual(lines[0].points, [[0, 0], [1, 1], [2, 2]]);
+  assert.deepEqual(index.findViolationLinesAfterAdding([[0, 0]]), []);
+  assert.equal(index.getViolationCells().size, 0);
+});
+
+test("prospective violation lines match brute force for random candidate sets", () => {
+  const random = makeRandom(20260721);
+  for (let trial = 0; trial < 300; trial++) {
+    const size = 3 + Math.floor(random() * 5);
+    const allCells = [];
+    for (let row = 0; row < size; row++) {
+      for (let column = 0; column < size; column++) allCells.push([row, column]);
+    }
+    allCells.sort(() => random() - 0.5);
+    const selected = allCells.slice(0, Math.floor(random() * (size + 2)));
+    const candidates = allCells.slice(
+      selected.length,
+      selected.length + 1 + Math.floor(random() * 7),
+    );
+    const index = new LineIndex(size);
+    for (const point of selected) index.add(...point);
+
+    const candidateKeys = new Set(candidates.map((point) => key(...point)));
+    const combined = [...selected, ...candidates];
+    let expected = false;
+    for (let first = 0; first < combined.length && !expected; first++) {
+      for (let second = first + 1; second < combined.length && !expected; second++) {
+        for (let third = second + 1; third < combined.length; third++) {
+          if (
+            collinear(combined[first], combined[second], combined[third]) &&
+            [combined[first], combined[second], combined[third]].some((point) =>
+              candidateKeys.has(key(...point)),
+            )
+          ) {
+            expected = true;
+            break;
+          }
+        }
+      }
+    }
+    assert.equal(
+      index.findViolationLinesAfterAdding(candidates).length > 0,
+      expected,
+      `trial ${trial}`,
+    );
+  }
 });
 
 test("incremental line index matches brute force through random edits", () => {

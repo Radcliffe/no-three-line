@@ -91,6 +91,7 @@
       this.lines = new Map();
       this.pointLines = new Map();
       this.blockedCounts = new Map();
+      this.blockedLineKeys = new Map();
       this.badCounts = new Map();
       this.blockedCells = new Set();
       this.badCells = new Set();
@@ -131,6 +132,17 @@
       ) {
         const key = cellKey(row, column);
         const count = (this.blockedCounts.get(key) || 0) + change;
+        let lineKeys = this.blockedLineKeys.get(key);
+        if (change > 0) {
+          if (!lineKeys) {
+            lineKeys = new Set();
+            this.blockedLineKeys.set(key, lineKeys);
+          }
+          lineKeys.add(line.key);
+        } else if (lineKeys) {
+          lineKeys.delete(line.key);
+          if (lineKeys.size === 0) this.blockedLineKeys.delete(key);
+        }
         if (count > 0) {
           this.blockedCounts.set(key, count);
           if (!this.selectedCells.has(key)) {
@@ -232,6 +244,102 @@
 
     getViolationCells() {
       return this.badCells;
+    }
+
+    describeLine(line, extraCells = []) {
+      const points = new Map();
+      if (line.points) {
+        for (const pointKey of line.points) {
+          const point = this.selectedCells.get(pointKey);
+          if (point) points.set(pointKey, point);
+        }
+      }
+      for (const [row, column] of extraCells) {
+        points.set(cellKey(row, column), [row, column]);
+      }
+      return {
+        key: line.key,
+        startRow: line.startRow,
+        startColumn: line.startColumn,
+        stepRow: line.stepRow,
+        stepColumn: line.stepColumn,
+        points: Array.from(points.values()),
+      };
+    }
+
+    getBlockingLines(row, column) {
+      this.validateCell(row, column);
+      const lineKeys = this.blockedLineKeys.get(cellKey(row, column));
+      if (!lineKeys) return [];
+      return Array.from(lineKeys, (lineKey) =>
+        this.describeLine(this.lines.get(lineKey)),
+      );
+    }
+
+    getViolationLines() {
+      const violations = [];
+      for (const line of this.lines.values()) {
+        if (line.points.size >= 3) violations.push(this.describeLine(line));
+      }
+      return violations;
+    }
+
+    findViolationLinesAfterAdding(cells) {
+      const candidates = new Map();
+      for (const [row, column] of cells) {
+        this.validateCell(row, column);
+        const key = cellKey(row, column);
+        if (!this.selectedCells.has(key)) candidates.set(key, [row, column]);
+      }
+
+      const candidateCells = Array.from(candidates.values());
+      const violations = new Map();
+      const addIfViolation = (line) => {
+        if (violations.has(line.key)) return;
+        const points = [];
+        let row = line.startRow;
+        let column = line.startColumn;
+        while (
+          row >= 0 &&
+          row < this.size &&
+          column >= 0 &&
+          column < this.size
+        ) {
+          const key = cellKey(row, column);
+          if (this.selectedCells.has(key) || candidates.has(key)) {
+            points.push([row, column]);
+          }
+          row += line.stepRow;
+          column += line.stepColumn;
+        }
+        if (points.length >= 3) {
+          violations.set(line.key, this.describeLine(line, points));
+        }
+      };
+
+      for (const [row, column] of candidateCells) {
+        const lineKeys = this.blockedLineKeys.get(cellKey(row, column));
+        if (!lineKeys) continue;
+        for (const lineKey of lineKeys) addIfViolation(this.lines.get(lineKey));
+      }
+
+      for (let first = 0; first < candidateCells.length; first++) {
+        for (let second = first + 1; second < candidateCells.length; second++) {
+          const [firstRow, firstColumn] = candidateCells[first];
+          const [secondRow, secondColumn] = candidateCells[second];
+          addIfViolation(
+            lineThrough(
+              firstRow,
+              firstColumn,
+              secondRow,
+              secondColumn,
+              this.size,
+            ),
+          );
+        }
+      }
+
+      return Array.from(violations.values());
     }
   }
 

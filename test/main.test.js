@@ -101,6 +101,7 @@ function startApp(search, { clipboardFails = false } = {}) {
     "solutionBtn", "targetCount", "symmetry", "configurationCode",
     "loadCodeBtn", "codeStatus", "disableBlockedCells",
     "undoBtn", "redoBtn", "copyLinkBtn",
+    "lineExplanation",
   ];
   const elements = Object.fromEntries(ids.map((id) => [id, new FakeElement()]));
   elements.symmetry.value = "iden";
@@ -187,6 +188,20 @@ test("URL-encoded symmetry punctuation is decoded before loading", () => {
   assert.equal(elements.configurationCode.value, "+010212");
 });
 
+test("orbit-aware marking scales to the largest bundled configuration", () => {
+  const source = fs.readFileSync(
+    path.join(projectRoot, "optimal-solutions.generated.js"),
+    "utf8",
+  );
+  const context = vm.createContext({});
+  vm.runInContext(`${source}\nthis.solutions = optimalSolutions;`, context);
+  const code = context.solutions[74];
+  const elements = startApp(`?code=${encodeURIComponent(code)}`);
+  assert.equal(elements.gridSize.value, "74");
+  assert.equal(elements.activeCount.textContent, "148");
+  assert.equal(elements.configurationCode.value, code);
+});
+
 test("an invalid code query reports an error without changing the default grid", () => {
   const elements = startApp("?code=bad");
   assert.equal(elements.gridSize.value, "3");
@@ -208,11 +223,56 @@ test("move prevention cannot be bypassed by symmetry-generated cells", () => {
     (cell) => cell.dataset.row === "0" && cell.dataset.col === "0",
   );
   elements.grid.dispatch("click", { target: center });
+  assert.equal(corner.disabled, true);
+  assert.equal(corner.classList.contains("blocked"), true);
   elements.grid.dispatch("click", { target: corner });
 
   assert.equal(elements.activeCount.textContent, "1");
   assert.equal(elements.lineWarning.classList.contains("visible"), false);
   assert.equal(corner.classList.contains("active"), false);
+});
+
+test("changing symmetry refreshes orbit-aware illegal cells", () => {
+  const elements = startApp("");
+  const center = elements.grid.children.find(
+    (cell) => cell.dataset.row === "1" && cell.dataset.col === "1",
+  );
+  const corner = elements.grid.children.find(
+    (cell) => cell.dataset.row === "0" && cell.dataset.col === "0",
+  );
+  elements.grid.dispatch("click", { target: center });
+  assert.equal(corner.disabled, false);
+
+  elements.symmetry.value = "rot2";
+  elements.symmetry.dispatch("change");
+  assert.equal(corner.disabled, true);
+  assert.match(corner.attributes.get("aria-label"), /symmetry orbit/);
+  elements.grid.dispatch("pointerover", { target: corner });
+  const oppositeCorner = elements.grid.children.find(
+    (cell) => cell.dataset.row === "2" && cell.dataset.col === "2",
+  );
+  assert.equal(oppositeCorner.classList.contains("orbit-explained"), true);
+  assert.match(elements.lineExplanation.textContent, /outlined symmetry orbit/);
+});
+
+test("hovering a blocked cell highlights and explains its responsible line", () => {
+  const elements = startApp("");
+  const cellAt = (row, col) => elements.grid.children.find(
+    (cell) => cell.dataset.row === String(row) && cell.dataset.col === String(col),
+  );
+  elements.grid.dispatch("click", { target: cellAt(0, 0) });
+  elements.grid.dispatch("click", { target: cellAt(2, 2) });
+  const blockedCenter = cellAt(1, 1);
+  elements.grid.dispatch("pointerover", { target: blockedCenter });
+
+  assert.match(elements.lineExplanation.textContent, /highlighted line/);
+  assert.equal(blockedCenter.classList.contains("line-explained"), true);
+  assert.equal(cellAt(0, 0).classList.contains("line-source"), true);
+  assert.equal(cellAt(2, 2).classList.contains("line-source"), true);
+
+  elements.grid.dispatch("pointerout", { target: blockedCenter });
+  assert.match(elements.lineExplanation.textContent, /Hover over a gray or red cell/);
+  assert.equal(blockedCenter.classList.contains("line-explained"), false);
 });
 
 test("board changes synchronize the URL and can be undone and redone", () => {

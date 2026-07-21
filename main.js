@@ -16,8 +16,11 @@ const disableBlockedCellsInput = document.getElementById("disableBlockedCells");
 const undoBtn = document.getElementById("undoBtn");
 const redoBtn = document.getElementById("redoBtn");
 const copyLinkBtn = document.getElementById("copyLinkBtn");
+const lineExplanation = document.getElementById("lineExplanation");
 
 const HISTORY_LIMIT = 100;
+const LINE_EXPLANATION_HELP =
+  "Hover over a gray or red cell to see the responsible line.";
 
 let size = 3;
 let activeCells = new Set();
@@ -29,6 +32,8 @@ let disableBlockedCells =
 let undoStack = [];
 let redoStack = [];
 let urlSyncEnabled = false;
+let cellLineExplanations = new Map();
+let explainedCellKeys = new Set();
 
 disableBlockedCellsInput.checked = disableBlockedCells;
 
@@ -101,15 +106,24 @@ function renderGrid(initialCells = []) {
 }
 
 function updateDisplay() {
+  clearLineExplanation();
   const badCells = lineIndex.getViolationCells();
-  const blockedCells = disableBlockedCells
-    ? lineIndex.getBlockedCells()
-    : new Set();
+  const blockedState = computeBlockedState();
+  const blockedCells = blockedState.cells;
+  cellLineExplanations = blockedState.explanations;
+
+  for (const line of lineIndex.getViolationLines()) {
+    for (const [row, col] of line.points) {
+      const cellKey = key(row, col);
+      if (activeCells.has(cellKey)) addLineExplanations(cellKey, [line]);
+    }
+  }
 
   for (const [cellKey, cell] of cellsByKey.entries()) {
     const isActive = activeCells.has(cellKey);
     const isBad = badCells.has(cellKey);
     const isBlocked = !isActive && blockedCells.has(cellKey);
+    const isOrbitBlocked = blockedState.orbitCells.has(cellKey);
     const [row, col] = parseKey(cellKey);
 
     cell.classList.toggle("active", isActive);
@@ -117,17 +131,120 @@ function updateDisplay() {
     cell.classList.toggle("blocked", isBlocked);
     cell.disabled = isBlocked;
     cell.title = isBlocked
-      ? `(${row}, ${col}) — selecting this cell would make three in a line`
+      ? `(${row}, ${col}) — selecting ${isOrbitBlocked ? "this symmetry orbit" : "this cell"} would make three in a line`
       : `(${row}, ${col})`;
     cell.setAttribute(
       "aria-label",
-      `Row ${row + 1}, column ${col + 1}, ${isActive ? "active" : "inactive"}${isBad ? ", on a line with three or more active cells" : ""}${isBlocked ? ", unavailable because it would make three in a line" : ""}`,
+      `Row ${row + 1}, column ${col + 1}, ${isActive ? "active" : "inactive"}${isBad ? ", on a line with three or more active cells" : ""}${isBlocked ? `, unavailable because ${isOrbitBlocked ? "its symmetry orbit" : "it"} would make three in a line` : ""}`,
     );
   }
 
   activeCountEl.textContent = String(activeCells.size);
   lineWarning.classList.toggle("visible", badCells.size > 0);
   updateConfigurationCode();
+}
+
+function addLineExplanations(cellKey, lines) {
+  let explanations = cellLineExplanations.get(cellKey);
+  if (!explanations) {
+    explanations = new Map();
+    cellLineExplanations.set(cellKey, explanations);
+  }
+  for (const line of lines) explanations.set(line.key, line);
+}
+
+function computeBlockedState() {
+  const cells = new Set();
+  const orbitCells = new Set();
+  const explanations = new Map();
+  if (!disableBlockedCells) return { cells, orbitCells, explanations };
+
+  cellLineExplanations = explanations;
+  if (symmetry === "iden") {
+    for (const blockedKey of lineIndex.getBlockedCells()) {
+      cells.add(blockedKey);
+      const [row, col] = parseKey(blockedKey);
+      addLineExplanations(blockedKey, lineIndex.getBlockingLines(row, col));
+    }
+    return { cells, orbitCells, explanations };
+  }
+
+  const processed = new Set();
+  for (const cellKey of cellsByKey.keys()) {
+    if (activeCells.has(cellKey) || processed.has(cellKey)) continue;
+    const [row, col] = parseKey(cellKey);
+    const orbit = symmetricCellKeys(row, col);
+    const candidates = [];
+    for (const orbitKey of orbit) {
+      processed.add(orbitKey);
+      if (!activeCells.has(orbitKey)) candidates.push(parseKey(orbitKey));
+    }
+    const lines = lineIndex.findViolationLinesAfterAdding(candidates);
+    if (lines.length === 0) continue;
+    for (const [candidateRow, candidateCol] of candidates) {
+      const candidateKey = key(candidateRow, candidateCol);
+      cells.add(candidateKey);
+      orbitCells.add(candidateKey);
+      addLineExplanations(candidateKey, lines);
+    }
+  }
+  return { cells, orbitCells, explanations };
+}
+
+function clearLineExplanation() {
+  for (const cellKey of explainedCellKeys) {
+    const cell = cellsByKey.get(cellKey);
+    cell?.classList.remove(
+      "line-explained",
+      "line-source",
+      "orbit-explained",
+    );
+  }
+  explainedCellKeys.clear();
+  lineExplanation.textContent = LINE_EXPLANATION_HELP;
+  lineExplanation.classList.remove("visible");
+}
+
+function showLineExplanation(cell) {
+  clearLineExplanation();
+  const cellKey = key(cell.dataset.row, cell.dataset.col);
+  const explanationMap = cellLineExplanations.get(cellKey);
+  if (!explanationMap || explanationMap.size === 0) return;
+
+  const lines = Array.from(explanationMap.values());
+  const orbit = symmetricCellKeys(cell.dataset.row, cell.dataset.col);
+  if (cell.classList.contains("blocked") && orbit.size > 1) {
+    for (const orbitKey of orbit) {
+      cellsByKey.get(orbitKey)?.classList.add("orbit-explained");
+      explainedCellKeys.add(orbitKey);
+    }
+  }
+  for (const line of lines) {
+    let row = line.startRow;
+    let col = line.startColumn;
+    while (row >= 0 && row < size && col >= 0 && col < size) {
+      const lineCellKey = key(row, col);
+      cellsByKey.get(lineCellKey)?.classList.add("line-explained");
+      explainedCellKeys.add(lineCellKey);
+      row += line.stepRow;
+      col += line.stepColumn;
+    }
+    for (const [pointRow, pointCol] of line.points) {
+      const pointKey = key(pointRow, pointCol);
+      if (activeCells.has(pointKey)) {
+        cellsByKey.get(pointKey)?.classList.add("line-source");
+        explainedCellKeys.add(pointKey);
+      }
+    }
+  }
+
+  const lineCount = lines.length;
+  if (cell.classList.contains("blocked")) {
+    lineExplanation.textContent = `${orbit.size > 1 ? "The outlined symmetry orbit" : "This move"} would create three in a line${lineCount > 1 ? ` on ${lineCount} highlighted lines` : " on the highlighted line"}.`;
+  } else {
+    lineExplanation.textContent = `This point belongs to ${lineCount > 1 ? `${lineCount} violating lines` : "a violating line"}; ${lineCount > 1 ? "they are" : "it is"} highlighted.`;
+  }
+  lineExplanation.classList.add("visible");
 }
 
 function activeCellCoordinates() {
@@ -295,6 +412,23 @@ grid.addEventListener("click", (event) => {
   }
 });
 
+grid.addEventListener("pointerover", (event) => {
+  const cell = event.target.closest(".cell");
+  if (cell) showLineExplanation(cell);
+});
+
+grid.addEventListener("pointerout", (event) => {
+  const cell = event.target.closest(".cell");
+  if (cell && document.activeElement !== cell) clearLineExplanation();
+});
+
+grid.addEventListener("focusin", (event) => {
+  const cell = event.target.closest(".cell");
+  if (cell) showLineExplanation(cell);
+});
+
+grid.addEventListener("focusout", clearLineExplanation);
+
 gridSizeSelect.addEventListener("change", () => {
   const previousState = snapshotState();
   size = Number(gridSizeSelect.value);
@@ -389,22 +523,13 @@ function toggleCell(row, col) {
   } else {
     const orbit = symmetricCellKeys(row, col);
     if (disableBlockedCells) {
-      const existingViolations = new Set(lineIndex.getViolationCells());
-      const addedCells = [];
-      for (const orbitKey of orbit) {
-        if (!activeCells.has(orbitKey)) {
-          addActiveCell(orbitKey);
-          addedCells.push(orbitKey);
-        }
+      const candidates = Array.from(orbit, parseKey).filter(
+        ([candidateRow, candidateCol]) =>
+          !activeCells.has(key(candidateRow, candidateCol)),
+      );
+      if (lineIndex.findViolationLinesAfterAdding(candidates).length > 0) {
+        return false;
       }
-      const createsViolation = Array.from(
-        lineIndex.getViolationCells(),
-        (violationKey) => !existingViolations.has(violationKey),
-      ).some(Boolean);
-      for (let index = addedCells.length - 1; index >= 0; index--) {
-        deleteActiveCell(addedCells[index]);
-      }
-      if (createsViolation) return false;
     }
     for (const orbitKey of orbit) addActiveCell(orbitKey);
     return true;

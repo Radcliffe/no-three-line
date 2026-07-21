@@ -9,6 +9,7 @@ The app supports grids from 3 × 3 through 90 × 90 and includes known configura
 - Interactive square grid with selectable points.
 - Incremental detection of lines containing three or more selected points.
 - Checked-by-default prevention of moves that would complete such a line.
+- Symmetry-aware illegal-move marking and hover/focus line explanations.
 - Identity, rotational, diagonal, orthogonal, and full symmetry modes.
 - Loading and displaying compact configuration codes.
 - Shareable URLs that stay synchronized with complete configurations.
