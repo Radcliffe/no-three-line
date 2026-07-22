@@ -321,6 +321,33 @@ test("line violation highlights can be hidden and are enabled by default", () =>
   assert.equal(elements.lineWarning.classList.contains("visible"), true);
 });
 
+test("active cells turn green when a player reaches an optimal solution", () => {
+  const elements = startApp("");
+  const cellAt = (row, col) => elements.grid.children.find(
+    (cell) => cell.dataset.row === String(row) && cell.dataset.col === String(col),
+  );
+  const optimalCells = [[0, 0], [0, 1], [1, 0], [1, 2], [2, 1], [2, 2]];
+
+  for (const [row, col] of optimalCells) {
+    elements.grid.dispatch("click", { target: cellAt(row, col) });
+  }
+
+  assert.equal(elements.activeCount.textContent, "6");
+  assert.equal(elements.grid.classList.contains("optimal"), true);
+
+  elements.grid.dispatch("click", { target: cellAt(0, 0) });
+  assert.equal(elements.grid.classList.contains("optimal"), false);
+});
+
+test("showing a bundled optimal solution turns its active cells green", () => {
+  const elements = startApp("", { solutions: { 3: "x010212" } });
+
+  elements.solutionBtn.dispatch("click");
+
+  assert.equal(elements.activeCount.textContent, "6");
+  assert.equal(elements.grid.classList.contains("optimal"), true);
+});
+
 test("optimal solution information includes known discoverer and date", () => {
   const code = "o2423670617014535";
   const elements = startApp(`?code=${code}`, {

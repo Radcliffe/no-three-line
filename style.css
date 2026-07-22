@@ -7,6 +7,8 @@
     --cell: #ffffff;
     --cell-hover: #eef2ff;
     --active: #2563eb;
+    --optimal: #16a34a;
+    --optimal-hover: #15803d;
     --bad: #dc2626;
     --bad-bg: #fee2e2;
     --explain: #d97706;
@@ -293,6 +295,14 @@ button:disabled {
 
 .cell.active:hover {
     background: #1d4ed8;
+}
+
+.grid.optimal .cell.active {
+    background: var(--optimal);
+}
+
+.grid.optimal .cell.active:hover {
+    background: var(--optimal-hover);
 }
 
 .cell.line-hit:hover {

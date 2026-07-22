@@ -135,6 +135,7 @@ function renderGrid(initialCells = []) {
 function updateDisplay() {
   clearLineExplanation();
   const badCells = lineIndex.getViolationCells();
+  const isOptimal = activeCells.size === size * 2 && badCells.size === 0;
   const blockedState = computeBlockedState();
   const blockedCells = blockedState.cells;
   cellLineExplanations = blockedState.explanations;
@@ -184,6 +185,7 @@ function updateDisplay() {
   displayedOrbitCells = nextOrbitCells;
 
   activeCountEl.textContent = String(activeCells.size);
+  grid.classList.toggle("optimal", isOptimal);
   lineWarning.classList.toggle(
     "visible",
     showLineViolations && badCells.size > 0,
