@@ -190,7 +190,7 @@ function updateDisplay() {
     "visible",
     showLineViolations && badCells.size > 0,
   );
-  updateConfigurationCode();
+  updateConfigurationCode(badCells.size === 0);
 }
 
 function addSetDifferences(target, first, second) {
@@ -316,7 +316,7 @@ function activeCellCoordinates() {
   return Array.from(activeCells, parseKey);
 }
 
-function updateConfigurationCode() {
+function updateConfigurationCode(hasNoViolations = true) {
   let code = "";
   try {
     code = NoThreeLineCodec.encodeConfiguration(
@@ -330,7 +330,7 @@ function updateConfigurationCode() {
   if (urlSyncEnabled) synchronizeUrl(code);
   codeStatus.textContent = "";
   codeStatus.classList.remove("error");
-  if (code && !optimalSolutions[size]) {
+  if (code && hasNoViolations && !optimalSolutions[size]) {
     discovery.style.display = 'block';
   } else {
     discovery.style.display = 'none';
