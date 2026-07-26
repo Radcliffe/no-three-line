@@ -20,7 +20,7 @@ const copyLinkBtn = document.getElementById("copyLinkBtn");
 const lineExplanation = document.getElementById("lineExplanation");
 const solutionPanel = document.getElementById("solutionPanel");
 const solutionText = document.getElementById("solutionText");
-
+const discovery = document.getElementById("discovery");
 const HISTORY_LIMIT = 100;
 const OPTIMAL_SOLUTION_ATTRIBUTIONS =
   typeof optimalSolutionAttributions === "undefined"
@@ -330,6 +330,11 @@ function updateConfigurationCode() {
   if (urlSyncEnabled) synchronizeUrl(code);
   codeStatus.textContent = "";
   codeStatus.classList.remove("error");
+  if (code && !optimalSolutions[size]) {
+    discovery.style.display = 'block';
+  } else {
+    discovery.style.display = 'none';
+  }
 }
 
 function synchronizeUrl(code) {

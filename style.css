@@ -397,3 +397,9 @@ button:disabled {
 .site-footer a {
     color: var(--active);
 }
+
+#discovery {
+    display: none;
+    color:#92400e;
+    font-weight: bold;
+}
