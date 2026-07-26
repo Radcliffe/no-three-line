@@ -1,7 +1,13 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const test = require("node:test");
+const vm = require("node:vm");
 
-const { startApp } = require("./helpers/app-harness");
+const { projectRoot, startApp } = require("./helpers/app-harness");
+
+const MIN_SIZE = 3;
+const MAX_SIZE = 90;
 
 const THREE_BY_THREE_OPTIMAL = [
   [0, 0], [0, 1], [1, 0], [1, 2], [2, 1], [2, 2],
@@ -204,6 +210,30 @@ test("the discovery notice stays hidden when the size has a bundled solution", (
   clickCells(elements, THREE_BY_THREE_OPTIMAL);
   assert.equal(elements.configurationCode.value, ".010212");
   assert.equal(elements.discovery.style.display, "none");
+});
+
+// A genuinely new solution cannot be constructed in a test: the sizes below are
+// exactly the ones for which no 2n-point configuration is known. This pins down
+// which sizes can reach the discovery notice in production, where the tests
+// above inject a bundle to exercise both branches on a small grid. Update this
+// list whenever a solution is added to optimal-solutions.txt.
+test("the discovery notice is reachable only for sizes the bundle omits", () => {
+  const context = vm.createContext({});
+  vm.runInContext(
+    `${fs.readFileSync(path.join(projectRoot, "optimal-solutions.generated.js"), "utf8")}
+     this.solutions = optimalSolutions;`,
+    context,
+  );
+
+  const unsolved = [];
+  for (let size = MIN_SIZE; size <= MAX_SIZE; size++) {
+    if (!context.solutions[size]) unsolved.push(size);
+  }
+
+  assert.deepEqual(unsolved, [
+    71, 73, 75, 76, 77, 78, 79, 80, 81, 82,
+    83, 84, 85, 86, 87, 88, 89, 90,
+  ]);
 });
 
 test("the code field and share link track the board", () => {
