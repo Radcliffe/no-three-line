@@ -37,7 +37,15 @@ Run the dependency-free test suite with:
 npm test
 ```
 
-The suite checks compact-code validation and round trips, randomized incremental line-index updates against a brute-force reference, every bundled optimal solution, and reproducibility of the generated solution bundle.
+The suite checks compact-code validation and round trips, randomized incremental line-index updates against a brute-force reference, every bundled optimal solution, reproducibility of the generated solution bundle, and app behavior driven through a fake DOM.
+
+Three tests are pinned to the contents of the bundle and must be updated when a solution is added for a new size:
+
+| Test | File | What to update |
+|---|---|---|
+| `the discovery notice is reachable only for sizes the bundle omits` | `test/game.test.js` | Remove the newly solved size from the expected list of unsolved sizes. |
+| `every bundled solution has a dated attribution summary` | `test/main.test.js` | Add a matching row to `optimal-solution-attributions.js` and `ATTRIBUTION.md`. |
+| `converter reproduces the checked-in solution bundle` | `test/converter.test.js` | Regenerate `optimal-solutions.generated.js` with `./convert.sh`. |
 
 ## Compact configuration encoding
 
@@ -108,6 +116,8 @@ python3 convert_optimal_solutions.py \
 ```
 
 The converter validates that every parsed solution is square, uses a recognized symmetry class, fits the 90-character alphabet, and selects exactly two cells per row.
+
+The bundle currently covers 70 sizes from 3 through 74; it omits 71, 73, and 75 through 90. Those omitted sizes are the ones for which the app offers to report a discovery, so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
 
 ## Project structure
 
