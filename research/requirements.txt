@@ -1,0 +1,2 @@
+python-sat==1.9.dev7
+z3-solver>=4.16.0,<5

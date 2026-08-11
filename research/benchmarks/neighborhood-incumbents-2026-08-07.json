@@ -1,0 +1,1118 @@
+{
+  "censoredCurve": [
+    {
+      "mean": 223.5,
+      "median": 234.0,
+      "milliseconds": 200,
+      "minimum": 180,
+      "solvedFraction": 0.0
+    },
+    {
+      "mean": 188.5,
+      "median": 188.0,
+      "milliseconds": 500,
+      "minimum": 156,
+      "solvedFraction": 0.0
+    },
+    {
+      "mean": 176.0,
+      "median": 178.0,
+      "milliseconds": 1000,
+      "minimum": 140,
+      "solvedFraction": 0.0
+    },
+    {
+      "mean": 160.5,
+      "median": 166.0,
+      "milliseconds": 1500,
+      "minimum": 136,
+      "solvedFraction": 0.0
+    },
+    {
+      "mean": 159.0,
+      "median": 164.0,
+      "milliseconds": 2000,
+      "minimum": 136,
+      "solvedFraction": 0.0
+    }
+  ],
+  "finalEnergy": {
+    "maximum": 176,
+    "mean": 159.0,
+    "median": 164.0,
+    "minimum": 136
+  },
+  "firstSeed": 90,
+  "liftFrom": null,
+  "medianTimeToZeroMs": null,
+  "n": 76,
+  "runResults": [
+    {
+      "bestCode": "ol&WwLPOeSwF$6(X#nqKv0GLr5c7RYdM)i&149RKpu@%<By8ZJ]k<8bv#0[PWVXGjk>j!dz3qEYCnQ$fzN]Ea7U1TUxgiho4{DIc?2T3ue?F%2B9JOtm@[>AV5rafm!b)Msx{ItNQDg6(CyHlZposHhAS",
+      "bestEnergy": 160,
+      "initialEnergy": 476.0,
+      "iterations": 952,
+      "progress": [
+        {
+          "energy": 476,
+          "milliseconds": 2,
+          "thread": 0
+        },
+        {
+          "energy": 448,
+          "milliseconds": 8,
+          "thread": 0
+        },
+        {
+          "energy": 432,
+          "milliseconds": 8,
+          "thread": 0
+        },
+        {
+          "energy": 424,
+          "milliseconds": 8,
+          "thread": 0
+        },
+        {
+          "energy": 404,
+          "milliseconds": 9,
+          "thread": 0
+        },
+        {
+          "energy": 360,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 352,
+          "milliseconds": 15,
+          "thread": 0
+        },
+        {
+          "energy": 340,
+          "milliseconds": 17,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 44,
+          "thread": 0
+        },
+        {
+          "energy": 328,
+          "milliseconds": 45,
+          "thread": 0
+        },
+        {
+          "energy": 296,
+          "milliseconds": 54,
+          "thread": 0
+        },
+        {
+          "energy": 288,
+          "milliseconds": 54,
+          "thread": 0
+        },
+        {
+          "energy": 284,
+          "milliseconds": 55,
+          "thread": 0
+        },
+        {
+          "energy": 272,
+          "milliseconds": 57,
+          "thread": 0
+        },
+        {
+          "energy": 260,
+          "milliseconds": 69,
+          "thread": 0
+        },
+        {
+          "energy": 256,
+          "milliseconds": 75,
+          "thread": 0
+        },
+        {
+          "energy": 252,
+          "milliseconds": 77,
+          "thread": 0
+        },
+        {
+          "energy": 244,
+          "milliseconds": 93,
+          "thread": 0
+        },
+        {
+          "energy": 220,
+          "milliseconds": 94,
+          "thread": 0
+        },
+        {
+          "energy": 212,
+          "milliseconds": 104,
+          "thread": 0
+        },
+        {
+          "energy": 208,
+          "milliseconds": 105,
+          "thread": 0
+        },
+        {
+          "energy": 196,
+          "milliseconds": 107,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 113,
+          "thread": 0
+        },
+        {
+          "energy": 188,
+          "milliseconds": 179,
+          "thread": 0
+        },
+        {
+          "energy": 180,
+          "milliseconds": 181,
+          "thread": 0
+        },
+        {
+          "energy": 176,
+          "milliseconds": 603,
+          "thread": 0
+        },
+        {
+          "energy": 164,
+          "milliseconds": 610,
+          "thread": 0
+        },
+        {
+          "energy": 160,
+          "milliseconds": 746,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 90,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.015822
+    },
+    {
+      "bestCode": "oQzNenuWlu)4tbwRaCG9@MvTgN?Wf0ILPe?6lAz245PmyU&$>bkty2{L!3HO%XrVi#]BjDa1Gf!p(6O7Yx>d#U%3DViMgBpw]7s0<FKTc1CAjFRo)[<E&S(8Zosv{Yh8qXkIr9@x$dmHcK[5JShJQZqEn",
+      "bestEnergy": 168,
+      "initialEnergy": 380.0,
+      "iterations": 872,
+      "progress": [
+        {
+          "energy": 380,
+          "milliseconds": 1,
+          "thread": 0
+        },
+        {
+          "energy": 368,
+          "milliseconds": 10,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 10,
+          "thread": 0
+        },
+        {
+          "energy": 304,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 300,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 292,
+          "milliseconds": 39,
+          "thread": 0
+        },
+        {
+          "energy": 280,
+          "milliseconds": 40,
+          "thread": 0
+        },
+        {
+          "energy": 272,
+          "milliseconds": 41,
+          "thread": 0
+        },
+        {
+          "energy": 264,
+          "milliseconds": 49,
+          "thread": 0
+        },
+        {
+          "energy": 252,
+          "milliseconds": 51,
+          "thread": 0
+        },
+        {
+          "energy": 248,
+          "milliseconds": 58,
+          "thread": 0
+        },
+        {
+          "energy": 236,
+          "milliseconds": 117,
+          "thread": 0
+        },
+        {
+          "energy": 232,
+          "milliseconds": 202,
+          "thread": 0
+        },
+        {
+          "energy": 228,
+          "milliseconds": 282,
+          "thread": 0
+        },
+        {
+          "energy": 208,
+          "milliseconds": 303,
+          "thread": 0
+        },
+        {
+          "energy": 204,
+          "milliseconds": 351,
+          "thread": 0
+        },
+        {
+          "energy": 200,
+          "milliseconds": 352,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 358,
+          "thread": 0
+        },
+        {
+          "energy": 188,
+          "milliseconds": 1156,
+          "thread": 0
+        },
+        {
+          "energy": 168,
+          "milliseconds": 1157,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 91,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.008834
+    },
+    {
+      "bestCode": "oFZUsMuX$Ph5)c&WeRrCi6iGv3@EOY#q{o%gnBt2SIQ1d8<FUb#G[HtT?duYmq>9A4!H]kz7{LS6pO(ls0!ET3w7[&@1NRfJa8kKw4xDcjy2?a>nvl<K%QXBP0NDfpz9]IxV(V$MmZhAb5)WoCgJrLjey",
+      "bestEnergy": 140,
+      "initialEnergy": 392.0,
+      "iterations": 824,
+      "progress": [
+        {
+          "energy": 392,
+          "milliseconds": 3,
+          "thread": 0
+        },
+        {
+          "energy": 384,
+          "milliseconds": 12,
+          "thread": 0
+        },
+        {
+          "energy": 356,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 312,
+          "milliseconds": 15,
+          "thread": 0
+        },
+        {
+          "energy": 292,
+          "milliseconds": 15,
+          "thread": 0
+        },
+        {
+          "energy": 284,
+          "milliseconds": 19,
+          "thread": 0
+        },
+        {
+          "energy": 280,
+          "milliseconds": 20,
+          "thread": 0
+        },
+        {
+          "energy": 276,
+          "milliseconds": 20,
+          "thread": 0
+        },
+        {
+          "energy": 264,
+          "milliseconds": 20,
+          "thread": 0
+        },
+        {
+          "energy": 252,
+          "milliseconds": 20,
+          "thread": 0
+        },
+        {
+          "energy": 248,
+          "milliseconds": 165,
+          "thread": 0
+        },
+        {
+          "energy": 240,
+          "milliseconds": 177,
+          "thread": 0
+        },
+        {
+          "energy": 232,
+          "milliseconds": 229,
+          "thread": 0
+        },
+        {
+          "energy": 228,
+          "milliseconds": 274,
+          "thread": 0
+        },
+        {
+          "energy": 224,
+          "milliseconds": 347,
+          "thread": 0
+        },
+        {
+          "energy": 216,
+          "milliseconds": 373,
+          "thread": 0
+        },
+        {
+          "energy": 200,
+          "milliseconds": 375,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 390,
+          "thread": 0
+        },
+        {
+          "energy": 184,
+          "milliseconds": 415,
+          "thread": 0
+        },
+        {
+          "energy": 172,
+          "milliseconds": 433,
+          "thread": 0
+        },
+        {
+          "energy": 160,
+          "milliseconds": 466,
+          "thread": 0
+        },
+        {
+          "energy": 156,
+          "milliseconds": 467,
+          "thread": 0
+        },
+        {
+          "energy": 148,
+          "milliseconds": 505,
+          "thread": 0
+        },
+        {
+          "energy": 144,
+          "milliseconds": 506,
+          "thread": 0
+        },
+        {
+          "energy": 140,
+          "milliseconds": 677,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 92,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.016259
+    },
+    {
+      "bestCode": "oRUOnr%a@CLV%PpKbhx3Mbm25w[D#FeJz8qCeKknyv!X[2@GW6>f(1JA{UgIal{f)8qSsPVEHk]&!7A3TwzioLlN?5Y0SdvXj0&u>6Y1(hx9<4g7IFQTtZ$N?EuZyD#4H)<Rcr]GWctOoBis$9dBMQpjm",
+      "bestEnergy": 176,
+      "initialEnergy": 436.0,
+      "iterations": 986,
+      "progress": [
+        {
+          "energy": 436,
+          "milliseconds": 1,
+          "thread": 0
+        },
+        {
+          "energy": 400,
+          "milliseconds": 6,
+          "thread": 0
+        },
+        {
+          "energy": 392,
+          "milliseconds": 6,
+          "thread": 0
+        },
+        {
+          "energy": 356,
+          "milliseconds": 12,
+          "thread": 0
+        },
+        {
+          "energy": 340,
+          "milliseconds": 17,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 28,
+          "thread": 0
+        },
+        {
+          "energy": 280,
+          "milliseconds": 37,
+          "thread": 0
+        },
+        {
+          "energy": 244,
+          "milliseconds": 39,
+          "thread": 0
+        },
+        {
+          "energy": 236,
+          "milliseconds": 48,
+          "thread": 0
+        },
+        {
+          "energy": 224,
+          "milliseconds": 51,
+          "thread": 0
+        },
+        {
+          "energy": 212,
+          "milliseconds": 79,
+          "thread": 0
+        },
+        {
+          "energy": 208,
+          "milliseconds": 222,
+          "thread": 0
+        },
+        {
+          "energy": 204,
+          "milliseconds": 230,
+          "thread": 0
+        },
+        {
+          "energy": 196,
+          "milliseconds": 395,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 406,
+          "thread": 0
+        },
+        {
+          "energy": 188,
+          "milliseconds": 407,
+          "thread": 0
+        },
+        {
+          "energy": 184,
+          "milliseconds": 436,
+          "thread": 0
+        },
+        {
+          "energy": 180,
+          "milliseconds": 746,
+          "thread": 0
+        },
+        {
+          "energy": 176,
+          "milliseconds": 1868,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 93,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.013005
+    },
+    {
+      "bestCode": "oGqV?byfzRfNT9cIR1Mj(A&e$BKJk3Q2Wo{avH!l#W$SeX?0)gjGidz![JsD)9OP>tyOr34BLQw6<2(Hns%[]MpFK1op@5#Lu47EaVxUX5{8gZlChDS7wId0Ph<n]Tut%CZA&6Ur>mvb@kqYmEYFc8iNx",
+      "bestEnergy": 164,
+      "initialEnergy": 504.0,
+      "iterations": 897,
+      "progress": [
+        {
+          "energy": 504,
+          "milliseconds": 1,
+          "thread": 0
+        },
+        {
+          "energy": 448,
+          "milliseconds": 6,
+          "thread": 0
+        },
+        {
+          "energy": 424,
+          "milliseconds": 6,
+          "thread": 0
+        },
+        {
+          "energy": 408,
+          "milliseconds": 7,
+          "thread": 0
+        },
+        {
+          "energy": 380,
+          "milliseconds": 7,
+          "thread": 0
+        },
+        {
+          "energy": 364,
+          "milliseconds": 8,
+          "thread": 0
+        },
+        {
+          "energy": 360,
+          "milliseconds": 8,
+          "thread": 0
+        },
+        {
+          "energy": 356,
+          "milliseconds": 9,
+          "thread": 0
+        },
+        {
+          "energy": 344,
+          "milliseconds": 9,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 15,
+          "thread": 0
+        },
+        {
+          "energy": 320,
+          "milliseconds": 18,
+          "thread": 0
+        },
+        {
+          "energy": 316,
+          "milliseconds": 19,
+          "thread": 0
+        },
+        {
+          "energy": 312,
+          "milliseconds": 39,
+          "thread": 0
+        },
+        {
+          "energy": 300,
+          "milliseconds": 44,
+          "thread": 0
+        },
+        {
+          "energy": 284,
+          "milliseconds": 45,
+          "thread": 0
+        },
+        {
+          "energy": 276,
+          "milliseconds": 45,
+          "thread": 0
+        },
+        {
+          "energy": 268,
+          "milliseconds": 49,
+          "thread": 0
+        },
+        {
+          "energy": 252,
+          "milliseconds": 134,
+          "thread": 0
+        },
+        {
+          "energy": 248,
+          "milliseconds": 138,
+          "thread": 0
+        },
+        {
+          "energy": 240,
+          "milliseconds": 151,
+          "thread": 0
+        },
+        {
+          "energy": 236,
+          "milliseconds": 188,
+          "thread": 0
+        },
+        {
+          "energy": 216,
+          "milliseconds": 220,
+          "thread": 0
+        },
+        {
+          "energy": 196,
+          "milliseconds": 287,
+          "thread": 0
+        },
+        {
+          "energy": 184,
+          "milliseconds": 311,
+          "thread": 0
+        },
+        {
+          "energy": 172,
+          "milliseconds": 314,
+          "thread": 0
+        },
+        {
+          "energy": 168,
+          "milliseconds": 768,
+          "thread": 0
+        },
+        {
+          "energy": 164,
+          "milliseconds": 1890,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 94,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.017831
+    },
+    {
+      "bestCode": "oHe8UDKMUopKbs%LmJ>FVly6TOYo<XbA@Gxv{HWW?)<6!l]dn4$4DNX7TAMm%]>f@uvnzV$0dNZz)5Eeqa{CiEQIJ9Y13BRr&k!gq#[C[Qa3S7(258hhw0IGx9&cg2Pfpk(FSiy1uRsBLctOPjrt#j?Zw",
+      "bestEnergy": 164,
+      "initialEnergy": 416.0,
+      "iterations": 873,
+      "progress": [
+        {
+          "energy": 416,
+          "milliseconds": 3,
+          "thread": 0
+        },
+        {
+          "energy": 364,
+          "milliseconds": 16,
+          "thread": 0
+        },
+        {
+          "energy": 356,
+          "milliseconds": 18,
+          "thread": 0
+        },
+        {
+          "energy": 352,
+          "milliseconds": 19,
+          "thread": 0
+        },
+        {
+          "energy": 320,
+          "milliseconds": 19,
+          "thread": 0
+        },
+        {
+          "energy": 316,
+          "milliseconds": 20,
+          "thread": 0
+        },
+        {
+          "energy": 312,
+          "milliseconds": 44,
+          "thread": 0
+        },
+        {
+          "energy": 304,
+          "milliseconds": 47,
+          "thread": 0
+        },
+        {
+          "energy": 288,
+          "milliseconds": 121,
+          "thread": 0
+        },
+        {
+          "energy": 276,
+          "milliseconds": 125,
+          "thread": 0
+        },
+        {
+          "energy": 256,
+          "milliseconds": 138,
+          "thread": 0
+        },
+        {
+          "energy": 248,
+          "milliseconds": 138,
+          "thread": 0
+        },
+        {
+          "energy": 240,
+          "milliseconds": 234,
+          "thread": 0
+        },
+        {
+          "energy": 236,
+          "milliseconds": 243,
+          "thread": 0
+        },
+        {
+          "energy": 232,
+          "milliseconds": 286,
+          "thread": 0
+        },
+        {
+          "energy": 216,
+          "milliseconds": 289,
+          "thread": 0
+        },
+        {
+          "energy": 212,
+          "milliseconds": 651,
+          "thread": 0
+        },
+        {
+          "energy": 208,
+          "milliseconds": 676,
+          "thread": 0
+        },
+        {
+          "energy": 200,
+          "milliseconds": 689,
+          "thread": 0
+        },
+        {
+          "energy": 196,
+          "milliseconds": 712,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 720,
+          "thread": 0
+        },
+        {
+          "energy": 184,
+          "milliseconds": 1125,
+          "thread": 0
+        },
+        {
+          "energy": 180,
+          "milliseconds": 1484,
+          "thread": 0
+        },
+        {
+          "energy": 164,
+          "milliseconds": 1492,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 95,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.012446
+    },
+    {
+      "bestCode": "oorEWUm8ult$%LyVXD]DWKf5U5m@?Z>6JSqVZdk3y4&O(0NGrcs0gcf2C4xIa%<w!@>P!AQwzIkOQnpTvEHn&7o197H2BdvG[$<YbX{LbMxq{6pA[F]TaeiNlu(1e89R)j)Yth#3#giFsBCKSJ?RjhzMP",
+      "bestEnergy": 136,
+      "initialEnergy": 376.0,
+      "iterations": 843,
+      "progress": [
+        {
+          "energy": 376,
+          "milliseconds": 3,
+          "thread": 0
+        },
+        {
+          "energy": 372,
+          "milliseconds": 14,
+          "thread": 0
+        },
+        {
+          "energy": 320,
+          "milliseconds": 15,
+          "thread": 0
+        },
+        {
+          "energy": 312,
+          "milliseconds": 16,
+          "thread": 0
+        },
+        {
+          "energy": 288,
+          "milliseconds": 28,
+          "thread": 0
+        },
+        {
+          "energy": 280,
+          "milliseconds": 29,
+          "thread": 0
+        },
+        {
+          "energy": 272,
+          "milliseconds": 40,
+          "thread": 0
+        },
+        {
+          "energy": 268,
+          "milliseconds": 59,
+          "thread": 0
+        },
+        {
+          "energy": 264,
+          "milliseconds": 80,
+          "thread": 0
+        },
+        {
+          "energy": 228,
+          "milliseconds": 98,
+          "thread": 0
+        },
+        {
+          "energy": 220,
+          "milliseconds": 98,
+          "thread": 0
+        },
+        {
+          "energy": 208,
+          "milliseconds": 108,
+          "thread": 0
+        },
+        {
+          "energy": 204,
+          "milliseconds": 127,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 466,
+          "thread": 0
+        },
+        {
+          "energy": 180,
+          "milliseconds": 581,
+          "thread": 0
+        },
+        {
+          "energy": 176,
+          "milliseconds": 958,
+          "thread": 0
+        },
+        {
+          "energy": 168,
+          "milliseconds": 1028,
+          "thread": 0
+        },
+        {
+          "energy": 160,
+          "milliseconds": 1064,
+          "thread": 0
+        },
+        {
+          "energy": 156,
+          "milliseconds": 1084,
+          "thread": 0
+        },
+        {
+          "energy": 140,
+          "milliseconds": 1311,
+          "thread": 0
+        },
+        {
+          "energy": 136,
+          "milliseconds": 1461,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 96,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.013291
+    },
+    {
+      "bestCode": "oZbotNsKfRr7lYyH)GnWkA&EJIqZyh%6Dk?l!i$p%1]2X4bC<Jd1a8Rn[5H9GVXIjE@js3(#{Oor{0MPp0D6]LU9zUvgix@w)4Qm?d>au2$c[g<3>BOCV7S8T#(BWFeNvuzA&ThQx5wFfS!MmYtLqKPce",
+      "bestEnergy": 164,
+      "initialEnergy": 444.0,
+      "iterations": 810,
+      "progress": [
+        {
+          "energy": 444,
+          "milliseconds": 1,
+          "thread": 0
+        },
+        {
+          "energy": 428,
+          "milliseconds": 10,
+          "thread": 0
+        },
+        {
+          "energy": 408,
+          "milliseconds": 11,
+          "thread": 0
+        },
+        {
+          "energy": 384,
+          "milliseconds": 11,
+          "thread": 0
+        },
+        {
+          "energy": 360,
+          "milliseconds": 12,
+          "thread": 0
+        },
+        {
+          "energy": 356,
+          "milliseconds": 12,
+          "thread": 0
+        },
+        {
+          "energy": 348,
+          "milliseconds": 12,
+          "thread": 0
+        },
+        {
+          "energy": 336,
+          "milliseconds": 22,
+          "thread": 0
+        },
+        {
+          "energy": 308,
+          "milliseconds": 28,
+          "thread": 0
+        },
+        {
+          "energy": 296,
+          "milliseconds": 46,
+          "thread": 0
+        },
+        {
+          "energy": 276,
+          "milliseconds": 55,
+          "thread": 0
+        },
+        {
+          "energy": 268,
+          "milliseconds": 141,
+          "thread": 0
+        },
+        {
+          "energy": 260,
+          "milliseconds": 143,
+          "thread": 0
+        },
+        {
+          "energy": 256,
+          "milliseconds": 167,
+          "thread": 0
+        },
+        {
+          "energy": 232,
+          "milliseconds": 167,
+          "thread": 0
+        },
+        {
+          "energy": 228,
+          "milliseconds": 284,
+          "thread": 0
+        },
+        {
+          "energy": 216,
+          "milliseconds": 301,
+          "thread": 0
+        },
+        {
+          "energy": 212,
+          "milliseconds": 602,
+          "thread": 0
+        },
+        {
+          "energy": 200,
+          "milliseconds": 604,
+          "thread": 0
+        },
+        {
+          "energy": 192,
+          "milliseconds": 1028,
+          "thread": 0
+        },
+        {
+          "energy": 188,
+          "milliseconds": 1346,
+          "thread": 0
+        },
+        {
+          "energy": 184,
+          "milliseconds": 1458,
+          "thread": 0
+        },
+        {
+          "energy": 180,
+          "milliseconds": 1467,
+          "thread": 0
+        },
+        {
+          "energy": 168,
+          "milliseconds": 1497,
+          "thread": 0
+        },
+        {
+          "energy": 164,
+          "milliseconds": 1517,
+          "thread": 0
+        }
+      ],
+      "restarts": 1,
+      "seed": 97,
+      "solved": false,
+      "timeToZeroMs": null,
+      "validation": null,
+      "wallSeconds": 2.019
+    }
+  ],
+  "runs": 8,
+  "secondsPerRun": 2,
+  "solved": 0,
+  "solvedFraction": 0.0,
+  "threadsPerRun": 1
+}

@@ -3,6 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 const vm = require("node:vm");
+const numberOfSolutions = 71;
 
 require("../configuration-codec.js");
 
@@ -252,7 +253,7 @@ test("every bundled optimal solution decodes and has no three in line", () => {
   const context = vm.createContext({});
   vm.runInContext(`${source}\nthis.solutions = optimalSolutions;`, context);
 
-  assert.equal(Object.keys(context.solutions).length, 70);
+  assert.equal(Object.keys(context.solutions).length, numberOfSolutions);
   for (const [sizeText, code] of Object.entries(context.solutions)) {
     const size = Number(sizeText);
     const decoded = decodeConfiguration(code, size);

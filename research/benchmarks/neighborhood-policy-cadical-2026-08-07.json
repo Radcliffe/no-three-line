@@ -1,0 +1,2941 @@
+{
+  "benchmark": "rot4 SAT repair neighborhood policies",
+  "date": "2026-08-07",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.0",
+    "sbva": null,
+    "solver": "cadical195"
+  },
+  "instanceResults": [
+    {
+      "bestEnergy": 124,
+      "incumbent": "ol&WwLPOeSwF$6(X#nqKv0GLr5c7RYdM)i&149RKpu@%<By8ZJ]k<8bv#0[PWVXGjk>j!dz3qEYCnQ$fzN]Ea7U1TUxgiho4{DIc?2T3ue?F%2B9JOtm@[>AV5rafm!b)Msx{ItNQDg6(CyHlZposHhAS",
+      "index": 0,
+      "initialEnergy": 160,
+      "results": {
+        "greedy+score": {
+          "bestCode": "ojkWwPrOeSwF$6(DVElWraydg5cR!s?A)it14RUKpGuEZ29XYJ]T<Ybv#8[0o0vG!@>Bqnq3sB&CnQ$A%L]NQN%197xI{P{4?DIcf2k3ufg@<ezJxOtjm[>KV5&8L7mb)XaFdMhSzi#6(CyHlZpMoHhTU",
+          "calls": 18,
+          "candidates": 14,
+          "coreArcAssumptions": 701,
+          "coreCoverageFraction": 0.3152639087018545,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 221,
+          "cuts": 776,
+          "energy": 124,
+          "expansions": [
+            {
+              "addedVertices": [
+                7,
+                16
+              ],
+              "arcAssumptions": 266,
+              "coreSize": 266,
+              "coveredArcAssumptions": 85,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 181
+            },
+            {
+              "addedVertices": [
+                11,
+                14
+              ],
+              "arcAssumptions": 225,
+              "coreSize": 225,
+              "coveredArcAssumptions": 74,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 151
+            },
+            {
+              "addedVertices": [
+                8,
+                22
+              ],
+              "arcAssumptions": 210,
+              "coreSize": 210,
+              "coveredArcAssumptions": 62,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 148
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 36,
+          "initialEnergy": 160,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              0,
+              9,
+              10,
+              21,
+              23,
+              29,
+              30,
+              34
+            ],
+            "exact": null,
+            "freeVertices": [
+              0,
+              9,
+              10,
+              13,
+              21,
+              23,
+              29,
+              30,
+              33,
+              34
+            ],
+            "haloVertices": [
+              13,
+              33
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 480,
+          "statistics": {
+            "conflicts": 13757,
+            "decisions": 66483,
+            "propagations": 12550251,
+            "restarts": 1033,
+            "satSeconds": 1.7855249999999994
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 112,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 124,
+            "violatingLines": 112
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.105817667004885
+        },
+        "greedy-random+score": {
+          "bestCode": "ol&WwLPOeSwF$6(X#nqKv0GLr5c7RYdM)i&149RKpu@%<By8ZJ]k<8bv#0[PWVXGjk>j!dz3qEYCnQ$fzN]Ea7U1TUxgiho4{DIc?2T3ue?F%2B9JOtm@[>AV5rafm!b)Msx{ItNQDg6(CyHlZposHhAS",
+          "calls": 20,
+          "candidates": 17,
+          "coreArcAssumptions": 574,
+          "coreCoverageFraction": 0.28222996515679444,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 162,
+          "cuts": 894,
+          "energy": 160,
+          "expansions": [
+            {
+              "addedVertices": [
+                5,
+                11
+              ],
+              "arcAssumptions": 284,
+              "coreSize": 284,
+              "coveredArcAssumptions": 78,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 206
+            },
+            {
+              "addedVertices": [
+                2,
+                3
+              ],
+              "arcAssumptions": 290,
+              "coreSize": 290,
+              "coveredArcAssumptions": 84,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 206
+            }
+          ],
+          "finalFreeVertices": 15,
+          "improvement": 0,
+          "initialEnergy": 160,
+          "initialFreeVertices": 11,
+          "initialNeighborhood": {
+            "coverSize": 9,
+            "coverVertices": [
+              0,
+              9,
+              15,
+              19,
+              21,
+              23,
+              29,
+              30,
+              34
+            ],
+            "exact": null,
+            "freeVertices": [
+              0,
+              9,
+              12,
+              15,
+              19,
+              21,
+              23,
+              29,
+              30,
+              34,
+              35
+            ],
+            "haloVertices": [
+              12,
+              35
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 480,
+          "statistics": {
+            "conflicts": 13029,
+            "decisions": 82817,
+            "propagations": 14525152,
+            "restarts": 1330,
+            "satSeconds": 1.796578
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 148,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 160,
+            "violatingLines": 148
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.14744004199747
+        },
+        "minimum+score": {
+          "bestCode": "oOYWwALAjXwM$6(SZnqKv]<Eu5cRZd%Vlgi149RBsp@J<q)8MK{jk8bv#F!PW3PGyk>G[d{#!EYCnQ$fz7D0a4x1TFxo]ho7yDIc?TU0tr?5N2u9OL%m@[>VXSiBaemb)Jz23ItNQel6(CrHgU&s&Hhfp",
+          "calls": 18,
+          "candidates": 13,
+          "coreArcAssumptions": 614,
+          "coreCoverageFraction": 0.40716612377850164,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 250,
+          "cuts": 677,
+          "energy": 144,
+          "expansions": [
+            {
+              "addedVertices": [
+                28,
+                33
+              ],
+              "arcAssumptions": 54,
+              "coreSize": 54,
+              "coveredArcAssumptions": 34,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                2,
+                3
+              ],
+              "arcAssumptions": 255,
+              "coreSize": 255,
+              "coveredArcAssumptions": 91,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 164
+            },
+            {
+              "addedVertices": [
+                11,
+                15
+              ],
+              "arcAssumptions": 182,
+              "coreSize": 182,
+              "coveredArcAssumptions": 67,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 115
+            },
+            {
+              "addedVertices": [
+                7,
+                19
+              ],
+              "arcAssumptions": 123,
+              "coreSize": 123,
+              "coveredArcAssumptions": 58,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 65
+            }
+          ],
+          "finalFreeVertices": 17,
+          "improvement": 16,
+          "initialEnergy": 160,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              0,
+              14,
+              21,
+              22,
+              24,
+              30,
+              35
+            ],
+            "exact": {
+              "attempts": 4,
+              "lowerBound": 4,
+              "seconds": 0.01696
+            },
+            "freeVertices": [
+              0,
+              10,
+              14,
+              16,
+              21,
+              22,
+              24,
+              30,
+              35
+            ],
+            "haloVertices": [
+              16,
+              10
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 480,
+          "statistics": {
+            "conflicts": 14078,
+            "decisions": 64530,
+            "propagations": 11946237,
+            "restarts": 1704,
+            "satSeconds": 1.8818789999999999
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 144,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 144,
+            "violatingLines": 144
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1827682080038358
+        }
+      },
+      "winners": [
+        "greedy+score"
+      ]
+    },
+    {
+      "bestEnergy": 148,
+      "incumbent": "oQzNenuWlu)4tbwRaCG9@MvTgN?Wf0ILPe?6lAz245PmyU&$>bkty2{L!3HO%XrVi#]BjDa1Gf!p(6O7Yx>d#U%3DViMgBpw]7s0<FKTc1CAjFRo)[<E&S(8Zosv{Yh8qXkIr9@x$dmHcK[5JShJQZqEn",
+      "index": 1,
+      "initialEnergy": 168,
+      "results": {
+        "greedy+score": {
+          "bestCode": "oQzNenuWlu)4tbwRaCG9@MvTgN?Wf0ILPe?6lAz245PmyU&$>bkty2{L!3HO%XrVi#]BjDa1Gf!p(6O7Yx>d#U%3DViMgBpw]7s0<FKTc1CAjFRo)[<E&S(8Zosv{Yh8qXkIr9@x$dmHcK[5JShJQZqEn",
+          "calls": 17,
+          "candidates": 12,
+          "coreArcAssumptions": 532,
+          "coreCoverageFraction": 0.39473684210526316,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 210,
+          "cuts": 693,
+          "energy": 168,
+          "expansions": [
+            {
+              "addedVertices": [
+                8,
+                7
+              ],
+              "arcAssumptions": 260,
+              "coreSize": 260,
+              "coveredArcAssumptions": 86,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 174
+            },
+            {
+              "addedVertices": [
+                27,
+                32
+              ],
+              "arcAssumptions": 81,
+              "coreSize": 81,
+              "coveredArcAssumptions": 41,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 40
+            },
+            {
+              "addedVertices": [
+                35,
+                37
+              ],
+              "arcAssumptions": 64,
+              "coreSize": 64,
+              "coveredArcAssumptions": 26,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 38
+            },
+            {
+              "addedVertices": [
+                15,
+                18
+              ],
+              "arcAssumptions": 127,
+              "coreSize": 127,
+              "coveredArcAssumptions": 57,
+              "freeVertices": 18,
+              "policy": "score",
+              "remainingArcAssumptions": 70
+            }
+          ],
+          "finalFreeVertices": 18,
+          "improvement": 0,
+          "initialEnergy": 168,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              3,
+              10,
+              12,
+              13,
+              21,
+              24,
+              31,
+              36
+            ],
+            "exact": null,
+            "freeVertices": [
+              1,
+              3,
+              10,
+              12,
+              13,
+              16,
+              21,
+              24,
+              31,
+              36
+            ],
+            "haloVertices": [
+              1,
+              16
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 481,
+          "statistics": {
+            "conflicts": 15015,
+            "decisions": 53692,
+            "propagations": 12963293,
+            "restarts": 718,
+            "satSeconds": 1.912783
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 162,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 168,
+            "violatingLines": 162
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.1934628330054693
+        },
+        "greedy-random+score": {
+          "bestCode": "oQdHVnuhzu)4tDbRhTg9@MvTgLpx(3pLNDeZ>Ar245Py$I&UyCEVt2{l!Rb%?fqo>378BUdGw0Yl(6Sf{Hxaj%?!]1PNY8Bcm7S0<Kiz$FjAvCFo)[<M&1eZ#qsO]6GOsXkIr9@XkWmc#K[5JEWJQiwan",
+          "calls": 20,
+          "candidates": 16,
+          "coreArcAssumptions": 519,
+          "coreCoverageFraction": 0.4007707129094412,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 208,
+          "cuts": 848,
+          "energy": 156,
+          "expansions": [
+            {
+              "addedVertices": [
+                30,
+                32
+              ],
+              "arcAssumptions": 86,
+              "coreSize": 86,
+              "coveredArcAssumptions": 49,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 37
+            },
+            {
+              "addedVertices": [
+                3,
+                15
+              ],
+              "arcAssumptions": 225,
+              "coreSize": 225,
+              "coveredArcAssumptions": 85,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 140
+            },
+            {
+              "addedVertices": [
+                8,
+                17
+              ],
+              "arcAssumptions": 208,
+              "coreSize": 208,
+              "coveredArcAssumptions": 74,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 134
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 12,
+          "initialEnergy": 168,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              12,
+              13,
+              21,
+              22,
+              24,
+              28,
+              31,
+              36
+            ],
+            "exact": null,
+            "freeVertices": [
+              1,
+              12,
+              13,
+              14,
+              21,
+              22,
+              24,
+              28,
+              31,
+              36
+            ],
+            "haloVertices": [
+              1,
+              14
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 481,
+          "statistics": {
+            "conflicts": 12492,
+            "decisions": 117482,
+            "propagations": 15771973,
+            "restarts": 1950,
+            "satSeconds": 1.86278
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 132,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 156,
+            "violatingLines": 132
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.1880435409839265
+        },
+        "minimum+score": {
+          "bestCode": "oQzLanuWlu)4tbwTZU&9@8ra#ILBo0IVpYe6lz$245P$>AUgkFbDt2{VW3HN!r?mym]NYgxG!%>p(6O1B7xGXfq3RFR8M7qw]hi0<K#cyTXj&1Co)[<CES(ZfOiv{P%svDdM?9@AjekHcK[5JShJQdsEn",
+          "calls": 15,
+          "candidates": 10,
+          "coreArcAssumptions": 596,
+          "coreCoverageFraction": 0.4110738255033557,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 245,
+          "cuts": 558,
+          "energy": 148,
+          "expansions": [
+            {
+              "addedVertices": [
+                34,
+                1
+              ],
+              "arcAssumptions": 41,
+              "coreSize": 41,
+              "coveredArcAssumptions": 22,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                23,
+                27
+              ],
+              "arcAssumptions": 79,
+              "coreSize": 79,
+              "coveredArcAssumptions": 45,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 34
+            },
+            {
+              "addedVertices": [
+                7,
+                8
+              ],
+              "arcAssumptions": 214,
+              "coreSize": 214,
+              "coveredArcAssumptions": 79,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 135
+            },
+            {
+              "addedVertices": [
+                11,
+                16
+              ],
+              "arcAssumptions": 161,
+              "coreSize": 161,
+              "coveredArcAssumptions": 59,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 102
+            },
+            {
+              "addedVertices": [
+                18,
+                22
+              ],
+              "arcAssumptions": 101,
+              "coreSize": 101,
+              "coveredArcAssumptions": 40,
+              "freeVertices": 19,
+              "policy": "score",
+              "remainingArcAssumptions": 61
+            }
+          ],
+          "finalFreeVertices": 19,
+          "improvement": 20,
+          "initialEnergy": 168,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              10,
+              12,
+              13,
+              21,
+              31,
+              33,
+              36
+            ],
+            "exact": {
+              "attempts": 4,
+              "lowerBound": 4,
+              "seconds": 0.035403
+            },
+            "freeVertices": [
+              10,
+              12,
+              13,
+              15,
+              21,
+              29,
+              31,
+              33,
+              36
+            ],
+            "haloVertices": [
+              29,
+              15
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 481,
+          "statistics": {
+            "conflicts": 13092,
+            "decisions": 44171,
+            "propagations": 11502493,
+            "restarts": 1106,
+            "satSeconds": 1.8539440000000005
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 136,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 148,
+            "violatingLines": 136
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1332650000113063
+        }
+      },
+      "winners": [
+        "minimum+score"
+      ]
+    },
+    {
+      "bestEnergy": 140,
+      "incumbent": "oFZUsMuX$Ph5)c&WeRrCi6iGv3@EOY#q{o%gnBt2SIQ1d8<FUb#G[HtT?duYmq>9A4!H]kz7{LS6pO(ls0!ET3w7[&@1NRfJa8kKw4xDcjy2?a>nvl<K%QXBP0NDfpz9]IxV(V$MmZhAb5)WoCgJrLjey",
+      "index": 2,
+      "initialEnergy": 140,
+      "results": {
+        "greedy+score": {
+          "bestCode": "oFZUsMuX$Ph5)c&WeRrCi6iGv3@EOY#q{o%gnBt2SIQ1d8<FUb#G[HtT?duYmq>9A4!H]kz7{LS6pO(ls0!ET3w7[&@1NRfJa8kKw4xDcjy2?a>nvl<K%QXBP0NDfpz9]IxV(V$MmZhAb5)WoCgJrLjey",
+          "calls": 24,
+          "candidates": 17,
+          "coreArcAssumptions": 621,
+          "coreCoverageFraction": 0.4718196457326892,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 293,
+          "cuts": 854,
+          "energy": 140,
+          "expansions": [
+            {
+              "addedVertices": [
+                26,
+                36
+              ],
+              "arcAssumptions": 62,
+              "coreSize": 62,
+              "coveredArcAssumptions": 40,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 22
+            },
+            {
+              "addedVertices": [
+                14,
+                24
+              ],
+              "arcAssumptions": 82,
+              "coreSize": 82,
+              "coveredArcAssumptions": 61,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 21
+            },
+            {
+              "addedVertices": [
+                10,
+                9
+              ],
+              "arcAssumptions": 21,
+              "coreSize": 21,
+              "coveredArcAssumptions": 4,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                6,
+                7
+              ],
+              "arcAssumptions": 189,
+              "coreSize": 189,
+              "coveredArcAssumptions": 68,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 121
+            },
+            {
+              "addedVertices": [
+                1,
+                13
+              ],
+              "arcAssumptions": 150,
+              "coreSize": 150,
+              "coveredArcAssumptions": 64,
+              "freeVertices": 18,
+              "policy": "score",
+              "remainingArcAssumptions": 86
+            },
+            {
+              "addedVertices": [
+                4,
+                18
+              ],
+              "arcAssumptions": 117,
+              "coreSize": 117,
+              "coveredArcAssumptions": 56,
+              "freeVertices": 20,
+              "policy": "score",
+              "remainingArcAssumptions": 61
+            }
+          ],
+          "finalFreeVertices": 20,
+          "improvement": 0,
+          "initialEnergy": 140,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              3,
+              17,
+              20,
+              21,
+              32,
+              37
+            ],
+            "exact": null,
+            "freeVertices": [
+              3,
+              17,
+              20,
+              21,
+              32,
+              33,
+              34,
+              37
+            ],
+            "haloVertices": [
+              34,
+              33
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 482,
+          "statistics": {
+            "conflicts": 13430,
+            "decisions": 57206,
+            "propagations": 13231639,
+            "restarts": 323,
+            "satSeconds": 1.8111800000000007
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 128,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 140,
+            "violatingLines": 128
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.1565858329995535
+        },
+        "greedy-random+score": {
+          "bestCode": "oFZUsMuX$Ph5)c&WeRrCi6iGv3@EOY#q{o%gnBt2SIQ1d8<FUb#G[HtT?duYmq>9A4!H]kz7{LS6pO(ls0!ET3w7[&@1NRfJa8kKw4xDcjy2?a>nvl<K%QXBP0NDfpz9]IxV(V$MmZhAb5)WoCgJrLjey",
+          "calls": 15,
+          "candidates": 11,
+          "coreArcAssumptions": 357,
+          "coreCoverageFraction": 0.31932773109243695,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 114,
+          "cuts": 659,
+          "energy": 140,
+          "expansions": [
+            {
+              "addedVertices": [
+                19,
+                16
+              ],
+              "arcAssumptions": 3,
+              "coreSize": 3,
+              "coveredArcAssumptions": 2,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 1
+            },
+            {
+              "addedVertices": [
+                26,
+                8
+              ],
+              "arcAssumptions": 47,
+              "coreSize": 47,
+              "coveredArcAssumptions": 31,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 16
+            },
+            {
+              "addedVertices": [
+                4,
+                11
+              ],
+              "arcAssumptions": 307,
+              "coreSize": 307,
+              "coveredArcAssumptions": 81,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 226
+            }
+          ],
+          "finalFreeVertices": 14,
+          "improvement": 0,
+          "initialEnergy": 140,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              13,
+              17,
+              20,
+              21,
+              32,
+              37
+            ],
+            "exact": null,
+            "freeVertices": [
+              13,
+              17,
+              20,
+              21,
+              32,
+              33,
+              34,
+              37
+            ],
+            "haloVertices": [
+              34,
+              33
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 482,
+          "statistics": {
+            "conflicts": 13801,
+            "decisions": 89596,
+            "propagations": 13642460,
+            "restarts": 2521,
+            "satSeconds": 1.9364679999999999
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 128,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 140,
+            "violatingLines": 128
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.2019278339867014
+        },
+        "minimum+score": {
+          "bestCode": "oFZUsMuX$Ph5)c&WeRrCi6iGv3@EOY#q{o%gnBt2SIQ1d8<FUb#G[HtT?duYmq>9A4!H]kz7{LS6pO(ls0!ET3w7[&@1NRfJa8kKw4xDcjy2?a>nvl<K%QXBP0NDfpz9]IxV(V$MmZhAb5)WoCgJrLjey",
+          "calls": 22,
+          "candidates": 16,
+          "coreArcAssumptions": 796,
+          "coreCoverageFraction": 0.4635678391959799,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 369,
+          "cuts": 835,
+          "energy": 140,
+          "expansions": [
+            {
+              "addedVertices": [
+                17,
+                31
+              ],
+              "arcAssumptions": 92,
+              "coreSize": 92,
+              "coveredArcAssumptions": 73,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                16,
+                37
+              ],
+              "arcAssumptions": 82,
+              "coreSize": 82,
+              "coveredArcAssumptions": 63,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                12,
+                10
+              ],
+              "arcAssumptions": 170,
+              "coreSize": 170,
+              "coveredArcAssumptions": 76,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 94
+            },
+            {
+              "addedVertices": [
+                3,
+                0
+              ],
+              "arcAssumptions": 244,
+              "coreSize": 244,
+              "coveredArcAssumptions": 85,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 159
+            },
+            {
+              "addedVertices": [
+                4,
+                7
+              ],
+              "arcAssumptions": 208,
+              "coreSize": 208,
+              "coveredArcAssumptions": 72,
+              "freeVertices": 18,
+              "policy": "score",
+              "remainingArcAssumptions": 136
+            }
+          ],
+          "finalFreeVertices": 18,
+          "improvement": 0,
+          "initialEnergy": 140,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              1,
+              9,
+              24,
+              25,
+              26,
+              35
+            ],
+            "exact": {
+              "attempts": 3,
+              "lowerBound": 4,
+              "seconds": 0.005869
+            },
+            "freeVertices": [
+              1,
+              9,
+              24,
+              25,
+              26,
+              33,
+              34,
+              35
+            ],
+            "haloVertices": [
+              34,
+              33
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 482,
+          "statistics": {
+            "conflicts": 14192,
+            "decisions": 56880,
+            "propagations": 12857981,
+            "restarts": 263,
+            "satSeconds": 1.807968
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 128,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 140,
+            "violatingLines": 128
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1829967090161517
+        }
+      },
+      "winners": [
+        "minimum+score",
+        "greedy+score",
+        "greedy-random+score"
+      ]
+    },
+    {
+      "bestEnergy": 168,
+      "incumbent": "oRUOnr%a@CLV%PpKbhx3Mbm25w[D#FeJz8qCeKknyv!X[2@GW6>f(1JA{UgIal{f)8qSsPVEHk]&!7A3TwzioLlN?5Y0SdvXj0&u>6Y1(hx9<4g7IFQTtZ$N?EuZyD#4H)<Rcr]GWctOoBis$9dBMQpjm",
+      "index": 3,
+      "initialEnergy": 176,
+      "results": {
+        "greedy+score": {
+          "bestCode": "ofgOnr%a@GlY%PqKbhx3MFj25VwD#Ezh&8[CsKkRnv!HV2@6mZ>l(1JNu4PIaAXs$8F0j0)cpk]Z!7e3TOb5{U{y?CLg&dvo[Jqu>6S1eR(9<iw7IQmTtL$4?AWEzD#Hi)<Uyr]GWctNoBfSx9dBMQpXY",
+          "calls": 13,
+          "candidates": 9,
+          "coreArcAssumptions": 296,
+          "coreCoverageFraction": 0.5,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 148,
+          "cuts": 525,
+          "energy": 168,
+          "expansions": [
+            {
+              "addedVertices": [
+                27,
+                28
+              ],
+              "arcAssumptions": 43,
+              "coreSize": 43,
+              "coveredArcAssumptions": 26,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                14,
+                30
+              ],
+              "arcAssumptions": 83,
+              "coreSize": 83,
+              "coveredArcAssumptions": 50,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 33
+            },
+            {
+              "addedVertices": [
+                5,
+                6
+              ],
+              "arcAssumptions": 170,
+              "coreSize": 170,
+              "coveredArcAssumptions": 72,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 98
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 8,
+          "initialEnergy": 176,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              0,
+              10,
+              15,
+              21,
+              23,
+              24,
+              31,
+              35
+            ],
+            "exact": null,
+            "freeVertices": [
+              0,
+              4,
+              10,
+              15,
+              21,
+              23,
+              24,
+              31,
+              34,
+              35
+            ],
+            "haloVertices": [
+              4,
+              34
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 483,
+          "statistics": {
+            "conflicts": 13340,
+            "decisions": 58483,
+            "propagations": 10783028,
+            "restarts": 942,
+            "satSeconds": 1.821117
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 150,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 168,
+            "violatingLines": 150
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.07626887501101
+        },
+        "greedy-random+score": {
+          "bestCode": "oYaOwBQJjCLVaPpKbhxiuEbl<n[D#y&Ee8q1TKk9]v!X[emGW6>m(C<MPBgIw3Y9)8qSsj{FM){&!7A05ry0ULlN?5@f]HvX%or2$6R1(hxRZ4g7I3@Ttk>N?ZzAFD#4Q2SczJVGWctOodis$Uun%Hpdf",
+          "calls": 18,
+          "candidates": 14,
+          "coreArcAssumptions": 627,
+          "coreCoverageFraction": 0.36363636363636365,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 228,
+          "cuts": 716,
+          "energy": 168,
+          "expansions": [
+            {
+              "addedVertices": [
+                35,
+                2
+              ],
+              "arcAssumptions": 40,
+              "coreSize": 40,
+              "coveredArcAssumptions": 21,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                0,
+                11
+              ],
+              "arcAssumptions": 226,
+              "coreSize": 226,
+              "coveredArcAssumptions": 84,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 142
+            },
+            {
+              "addedVertices": [
+                17,
+                19
+              ],
+              "arcAssumptions": 156,
+              "coreSize": 156,
+              "coveredArcAssumptions": 53,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 103
+            },
+            {
+              "addedVertices": [
+                1,
+                10
+              ],
+              "arcAssumptions": 205,
+              "coreSize": 205,
+              "coveredArcAssumptions": 70,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 135
+            }
+          ],
+          "finalFreeVertices": 17,
+          "improvement": 8,
+          "initialEnergy": 176,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              9,
+              14,
+              26,
+              27,
+              30,
+              34,
+              36
+            ],
+            "exact": null,
+            "freeVertices": [
+              3,
+              6,
+              9,
+              14,
+              26,
+              27,
+              30,
+              34,
+              36
+            ],
+            "haloVertices": [
+              3,
+              6
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 483,
+          "statistics": {
+            "conflicts": 12618,
+            "decisions": 60592,
+            "propagations": 11685039,
+            "restarts": 1210,
+            "satSeconds": 1.7965829999999998
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 156,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 168,
+            "violatingLines": 156
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.121058999997331
+        },
+        "minimum+score": {
+          "bestCode": "oRdOulve@CLV%QY7!hx3Xbm5vw[MOSdKQ8qCe2B1rjyX[J#GW#>Tby(A{2zUoKkf)8qs@V(3H0Eo&APz{w]6i9LN?5YTtPjE<0&6Fck1DhxDu4gFUM>%<Z$N?ntalpr4HI)Rcg]GW7!fnBis$9ZISJpam",
+          "calls": 17,
+          "candidates": 11,
+          "coreArcAssumptions": 392,
+          "coreCoverageFraction": 0.4336734693877551,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 170,
+          "cuts": 600,
+          "energy": 168,
+          "expansions": [
+            {
+              "addedVertices": [
+                25,
+                18
+              ],
+              "arcAssumptions": 47,
+              "coreSize": 47,
+              "coveredArcAssumptions": 28,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                20,
+                29
+              ],
+              "arcAssumptions": 54,
+              "coreSize": 54,
+              "coveredArcAssumptions": 34,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                13,
+                2
+              ],
+              "arcAssumptions": 20,
+              "coreSize": 20,
+              "coveredArcAssumptions": 3,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                15,
+                19
+              ],
+              "arcAssumptions": 163,
+              "coreSize": 163,
+              "coveredArcAssumptions": 59,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 104
+            },
+            {
+              "addedVertices": [
+                22,
+                28
+              ],
+              "arcAssumptions": 108,
+              "coreSize": 108,
+              "coveredArcAssumptions": 46,
+              "freeVertices": 19,
+              "policy": "score",
+              "remainingArcAssumptions": 62
+            }
+          ],
+          "finalFreeVertices": 19,
+          "improvement": 8,
+          "initialEnergy": 176,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              6,
+              9,
+              14,
+              26,
+              30,
+              34,
+              36
+            ],
+            "exact": {
+              "attempts": 4,
+              "lowerBound": 4,
+              "seconds": 0.017878
+            },
+            "freeVertices": [
+              3,
+              6,
+              7,
+              9,
+              14,
+              26,
+              30,
+              34,
+              36
+            ],
+            "haloVertices": [
+              3,
+              7
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 483,
+          "statistics": {
+            "conflicts": 12134,
+            "decisions": 49081,
+            "propagations": 11146062,
+            "restarts": 570,
+            "satSeconds": 1.805448
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 144,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 168,
+            "violatingLines": 144
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1078484999889042
+        }
+      },
+      "winners": [
+        "greedy+score",
+        "greedy-random+score",
+        "minimum+score"
+      ]
+    },
+    {
+      "bestEnergy": 140,
+      "incumbent": "oGqV?byfzRfNT9cIR1Mj(A&e$BKJk3Q2Wo{avH!l#W$SeX?0)gjGidz![JsD)9OP>tyOr34BLQw6<2(Hns%[]MpFK1op@5#Lu47EaVxUX5{8gZlChDS7wId0Ph<n]Tut%CZA&6Ur>mvb@kqYmEYFc8iNx",
+      "index": 4,
+      "initialEnergy": 164,
+      "results": {
+        "greedy+score": {
+          "bestCode": "obnb?pyfzRfNTntIR1ogrA&G#jtBN3M2WJ%avH!lx6CSe9z#)2U8k06![JsP)CpehVy9a34LVgw>{01HXis[]d@FiWZO$5oLu47({T?j<5DE@Zl$(GS7wIdBuh<r]q%KUDxA&MXP>mvKQkqYmEYFO8cQc",
+          "calls": 18,
+          "candidates": 13,
+          "coreArcAssumptions": 465,
+          "coreCoverageFraction": 0.513978494623656,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 239,
+          "cuts": 709,
+          "energy": 152,
+          "expansions": [
+            {
+              "addedVertices": [
+                16,
+                37
+              ],
+              "arcAssumptions": 71,
+              "coreSize": 71,
+              "coveredArcAssumptions": 52,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                12,
+                30
+              ],
+              "arcAssumptions": 77,
+              "coreSize": 77,
+              "coveredArcAssumptions": 59,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 18
+            },
+            {
+              "addedVertices": [
+                13,
+                31
+              ],
+              "arcAssumptions": 122,
+              "coreSize": 122,
+              "coveredArcAssumptions": 50,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 72
+            },
+            {
+              "addedVertices": [
+                1,
+                2
+              ],
+              "arcAssumptions": 195,
+              "coreSize": 195,
+              "coveredArcAssumptions": 78,
+              "freeVertices": 18,
+              "policy": "score",
+              "remainingArcAssumptions": 117
+            }
+          ],
+          "finalFreeVertices": 18,
+          "improvement": 12,
+          "initialEnergy": 164,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              0,
+              6,
+              11,
+              20,
+              24,
+              25,
+              26,
+              33
+            ],
+            "exact": null,
+            "freeVertices": [
+              0,
+              6,
+              11,
+              20,
+              22,
+              24,
+              25,
+              26,
+              29,
+              33
+            ],
+            "haloVertices": [
+              29,
+              22
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 484,
+          "statistics": {
+            "conflicts": 12470,
+            "decisions": 55008,
+            "propagations": 11295086,
+            "restarts": 696,
+            "satSeconds": 1.7661380000000007
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 152,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 152,
+            "violatingLines": 152
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.077384207979776
+        },
+        "greedy-random+score": {
+          "bestCode": "oGZLObyfzRf8p9cIRM)g(A&HuXtJk3N2Wj{a%o!B#CSj>Q?oz5>INdr![etDVGLhkVy9$34S{Qw6<2(Hn0l[]C@FiTWsxi#KZ47Maqv1)EP8n1Ul$D%7PBd0Uh<q]TuKgJwA&6X5rmvb@O?YmEYFcpsex",
+          "calls": 16,
+          "candidates": 13,
+          "coreArcAssumptions": 699,
+          "coreCoverageFraction": 0.2632331902718169,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 184,
+          "cuts": 695,
+          "energy": 140,
+          "expansions": [
+            {
+              "addedVertices": [
+                0,
+                11
+              ],
+              "arcAssumptions": 351,
+              "coreSize": 351,
+              "coveredArcAssumptions": 90,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 261
+            },
+            {
+              "addedVertices": [
+                5,
+                1
+              ],
+              "arcAssumptions": 348,
+              "coreSize": 348,
+              "coveredArcAssumptions": 94,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 254
+            }
+          ],
+          "finalFreeVertices": 14,
+          "improvement": 24,
+          "initialEnergy": 164,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              20,
+              25,
+              26,
+              28,
+              30,
+              31,
+              33,
+              35
+            ],
+            "exact": null,
+            "freeVertices": [
+              18,
+              20,
+              23,
+              25,
+              26,
+              28,
+              30,
+              31,
+              33,
+              35
+            ],
+            "haloVertices": [
+              23,
+              18
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 484,
+          "statistics": {
+            "conflicts": 12971,
+            "decisions": 55260,
+            "propagations": 11583870,
+            "restarts": 1032,
+            "satSeconds": 1.7926939999999998
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 140,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 140,
+            "violatingLines": 140
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.104326417000266
+        },
+        "minimum+score": {
+          "bestCode": "oGqV?byfzRfNT9cIR1Mj(A&e$BKJk3Q2Wo{avH!l#W$SeX?0)gjGidz![JsD)9OP>tyOr34BLQw6<2(Hns%[]MpFK1op@5#Lu47EaVxUX5{8gZlChDS7wId0Ph<n]Tut%CZA&6Ur>mvb@kqYmEYFc8iNx",
+          "calls": 21,
+          "candidates": 15,
+          "coreArcAssumptions": 535,
+          "coreCoverageFraction": 0.508411214953271,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 272,
+          "cuts": 787,
+          "energy": 164,
+          "expansions": [
+            {
+              "addedVertices": [
+                20,
+                21
+              ],
+              "arcAssumptions": 87,
+              "coreSize": 87,
+              "coveredArcAssumptions": 67,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                26,
+                19
+              ],
+              "arcAssumptions": 39,
+              "coreSize": 39,
+              "coveredArcAssumptions": 23,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 16
+            },
+            {
+              "addedVertices": [
+                11,
+                9
+              ],
+              "arcAssumptions": 130,
+              "coreSize": 130,
+              "coveredArcAssumptions": 62,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 68
+            },
+            {
+              "addedVertices": [
+                1,
+                15
+              ],
+              "arcAssumptions": 146,
+              "coreSize": 146,
+              "coveredArcAssumptions": 63,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 83
+            },
+            {
+              "addedVertices": [
+                6,
+                13
+              ],
+              "arcAssumptions": 133,
+              "coreSize": 133,
+              "coveredArcAssumptions": 57,
+              "freeVertices": 19,
+              "policy": "score",
+              "remainingArcAssumptions": 76
+            }
+          ],
+          "finalFreeVertices": 19,
+          "improvement": 0,
+          "initialEnergy": 164,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              12,
+              14,
+              25,
+              30,
+              32,
+              35,
+              36
+            ],
+            "exact": {
+              "attempts": 4,
+              "lowerBound": 4,
+              "seconds": 0.020128
+            },
+            "freeVertices": [
+              3,
+              12,
+              14,
+              25,
+              30,
+              31,
+              32,
+              35,
+              36
+            ],
+            "haloVertices": [
+              3,
+              31
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 484,
+          "statistics": {
+            "conflicts": 12430,
+            "decisions": 53387,
+            "propagations": 11096845,
+            "restarts": 301,
+            "satSeconds": 1.7913009999999998
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 164,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 164,
+            "violatingLines": 164
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1643342089955695
+        }
+      },
+      "winners": [
+        "greedy-random+score"
+      ]
+    },
+    {
+      "bestEnergy": 144,
+      "incumbent": "oHe8UDKMUopKbs%LmJ>FVly6TOYo<XbA@Gxv{HWW?)<6!l]dn4$4DNX7TAMm%]>f@uvnzV$0dNZz)5Eeqa{CiEQIJ9Y13BRr&k!gq#[C[Qa3S7(258hhw0IGx9&cg2Pfpk(FSiy1uRsBLctOPjrt#j?Zw",
+      "index": 5,
+      "initialEnergy": 164,
+      "results": {
+        "greedy+score": {
+          "bestCode": "oHe8UDKMUopKbs%LmJ>FVly6TOYo<XbA@Gxv{HWW?)<6!l]dn4$4DNX7TAMm%]>f@uvnzV$0dNZz)5Eeqa{CiEQIJ9Y13BRr&k!gq#[C[Qa3S7(258hhw0IGx9&cg2Pfpk(FSiy1uRsBLctOPjrt#j?Zw",
+          "calls": 18,
+          "candidates": 14,
+          "coreArcAssumptions": 470,
+          "coreCoverageFraction": 0.35106382978723405,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 165,
+          "cuts": 744,
+          "energy": 164,
+          "expansions": [
+            {
+              "addedVertices": [
+                11,
+                13
+              ],
+              "arcAssumptions": 62,
+              "coreSize": 62,
+              "coveredArcAssumptions": 44,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 18
+            },
+            {
+              "addedVertices": [
+                25,
+                26
+              ],
+              "arcAssumptions": 49,
+              "coreSize": 49,
+              "coveredArcAssumptions": 32,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                0,
+                5
+              ],
+              "arcAssumptions": 359,
+              "coreSize": 359,
+              "coveredArcAssumptions": 89,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 270
+            }
+          ],
+          "finalFreeVertices": 14,
+          "improvement": 0,
+          "initialEnergy": 164,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              6,
+              20,
+              28,
+              29,
+              32,
+              35
+            ],
+            "exact": null,
+            "freeVertices": [
+              6,
+              20,
+              24,
+              28,
+              29,
+              30,
+              32,
+              35
+            ],
+            "haloVertices": [
+              24,
+              30
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 485,
+          "statistics": {
+            "conflicts": 12488,
+            "decisions": 56836,
+            "propagations": 12111500,
+            "restarts": 647,
+            "satSeconds": 1.8014219999999994
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 152,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 164,
+            "violatingLines": 152
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.136243041983107
+        },
+        "greedy-random+score": {
+          "bestCode": "oHe8UDKMUopKbs%LmJ>FVly6TOYo<XbA@Gxv{HWW?)<6!l]dn4$4DNX7TAMm%]>f@uvnzV$0dNZz)5Eeqa{CiEQIJ9Y13BRr&k!gq#[C[Qa3S7(258hhw0IGx9&cg2Pfpk(FSiy1uRsBLctOPjrt#j?Zw",
+          "calls": 20,
+          "candidates": 15,
+          "coreArcAssumptions": 750,
+          "coreCoverageFraction": 0.37333333333333335,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 280,
+          "cuts": 757,
+          "energy": 164,
+          "expansions": [
+            {
+              "addedVertices": [
+                5,
+                13
+              ],
+              "arcAssumptions": 73,
+              "coreSize": 73,
+              "coveredArcAssumptions": 57,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 16
+            },
+            {
+              "addedVertices": [
+                18,
+                19
+              ],
+              "arcAssumptions": 73,
+              "coreSize": 73,
+              "coveredArcAssumptions": 56,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                2,
+                10
+              ],
+              "arcAssumptions": 280,
+              "coreSize": 280,
+              "coveredArcAssumptions": 85,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 195
+            },
+            {
+              "addedVertices": [
+                0,
+                1
+              ],
+              "arcAssumptions": 324,
+              "coreSize": 324,
+              "coveredArcAssumptions": 82,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 242
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 0,
+          "initialEnergy": 164,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              20,
+              21,
+              27,
+              28,
+              32,
+              35
+            ],
+            "exact": null,
+            "freeVertices": [
+              20,
+              21,
+              24,
+              27,
+              28,
+              30,
+              32,
+              35
+            ],
+            "haloVertices": [
+              24,
+              30
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 485,
+          "statistics": {
+            "conflicts": 11953,
+            "decisions": 52099,
+            "propagations": 11457877,
+            "restarts": 368,
+            "satSeconds": 1.712067
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 152,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 164,
+            "violatingLines": 152
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.0790668340050615
+        },
+        "minimum+score": {
+          "bestCode": "oaf8$K&HuopX$s%Lme>FV2F6T15QoXb&@Gxv]Hn3WN<6!bhet4l4DI#7TOjm%Saf@Muz)0V8Nj{rzEM0Uq?i{5EJr9YdlBRUpk!Dv#[S[KZWc7(2qh]Qw3IGx9AcgPn)>k(y<iy1ZRsBLCgOPJwAtC?Yd",
+          "calls": 15,
+          "candidates": 10,
+          "coreArcAssumptions": 591,
+          "coreCoverageFraction": 0.42978003384094754,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 254,
+          "cuts": 579,
+          "energy": 144,
+          "expansions": [
+            {
+              "addedVertices": [
+                28,
+                23
+              ],
+              "arcAssumptions": 48,
+              "coreSize": 48,
+              "coveredArcAssumptions": 28,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                5,
+                0
+              ],
+              "arcAssumptions": 252,
+              "coreSize": 252,
+              "coveredArcAssumptions": 98,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 154
+            },
+            {
+              "addedVertices": [
+                19,
+                18
+              ],
+              "arcAssumptions": 79,
+              "coreSize": 79,
+              "coveredArcAssumptions": 50,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 29
+            },
+            {
+              "addedVertices": [
+                2,
+                3
+              ],
+              "arcAssumptions": 212,
+              "coreSize": 212,
+              "coveredArcAssumptions": 78,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 134
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 20,
+          "initialEnergy": 164,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              10,
+              12,
+              20,
+              22,
+              32,
+              35
+            ],
+            "exact": {
+              "attempts": 3,
+              "lowerBound": 4,
+              "seconds": 0.01292
+            },
+            "freeVertices": [
+              10,
+              12,
+              20,
+              22,
+              26,
+              30,
+              32,
+              35
+            ],
+            "haloVertices": [
+              26,
+              30
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 485,
+          "statistics": {
+            "conflicts": 12548,
+            "decisions": 46793,
+            "propagations": 10706878,
+            "restarts": 1706,
+            "satSeconds": 1.8171389999999998
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 132,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 144,
+            "violatingLines": 132
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1026441660069395
+        }
+      },
+      "winners": [
+        "minimum+score"
+      ]
+    },
+    {
+      "bestEnergy": 136,
+      "incumbent": "oorEWUm8ult$%LyVXD]DWKf5U5m@?Z>6JSqVZdk3y4&O(0NGrcs0gcf2C4xIa%<w!@>P!AQwzIkOQnpTvEHn&7o197H2BdvG[$<YbX{LbMxq{6pA[F]TaeiNlu(1e89R)j)Yth#3#giFsBCKSJ?RjhzMP",
+      "index": 6,
+      "initialEnergy": 136,
+      "results": {
+        "greedy+score": {
+          "bestCode": "oorEWUm8ult$%LyVXD]DWKf5U5m@?Z>6JSqVZdk3y4&O(0NGrcs0gcf2C4xIa%<w!@>P!AQwzIkOQnpTvEHn&7o197H2BdvG[$<YbX{LbMxq{6pA[F]TaeiNlu(1e89R)j)Yth#3#giFsBCKSJ?RjhzMP",
+          "calls": 23,
+          "candidates": 17,
+          "coreArcAssumptions": 327,
+          "coreCoverageFraction": 0.5198776758409785,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 170,
+          "cuts": 875,
+          "energy": 136,
+          "expansions": [
+            {
+              "addedVertices": [
+                15,
+                32
+              ],
+              "arcAssumptions": 103,
+              "coreSize": 103,
+              "coveredArcAssumptions": 64,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 39
+            },
+            {
+              "addedVertices": [
+                36,
+                8
+              ],
+              "arcAssumptions": 38,
+              "coreSize": 38,
+              "coveredArcAssumptions": 18,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                14,
+                18
+              ],
+              "arcAssumptions": 132,
+              "coreSize": 132,
+              "coveredArcAssumptions": 64,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 68
+            },
+            {
+              "addedVertices": [
+                35,
+                0
+              ],
+              "arcAssumptions": 37,
+              "coreSize": 37,
+              "coveredArcAssumptions": 20,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 17
+            },
+            {
+              "addedVertices": [
+                11,
+                33
+              ],
+              "arcAssumptions": 17,
+              "coreSize": 17,
+              "coveredArcAssumptions": 4,
+              "freeVertices": 19,
+              "policy": "score",
+              "remainingArcAssumptions": 13
+            }
+          ],
+          "finalFreeVertices": 19,
+          "improvement": 0,
+          "initialEnergy": 136,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              1,
+              6,
+              9,
+              17,
+              20,
+              29,
+              34
+            ],
+            "exact": null,
+            "freeVertices": [
+              1,
+              6,
+              9,
+              10,
+              13,
+              17,
+              20,
+              29,
+              34
+            ],
+            "haloVertices": [
+              10,
+              13
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 486,
+          "statistics": {
+            "conflicts": 11229,
+            "decisions": 126051,
+            "propagations": 13611814,
+            "restarts": 1740,
+            "satSeconds": 1.7213740000000002
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 136,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 136,
+            "violatingLines": 136
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.093059666978661
+        },
+        "greedy-random+score": {
+          "bestCode": "oorEWUm8ult$%LyVXD]DWKf5U5m@?Z>6JSqVZdk3y4&O(0NGrcs0gcf2C4xIa%<w!@>P!AQwzIkOQnpTvEHn&7o197H2BdvG[$<YbX{LbMxq{6pA[F]TaeiNlu(1e89R)j)Yth#3#giFsBCKSJ?RjhzMP",
+          "calls": 20,
+          "candidates": 15,
+          "coreArcAssumptions": 785,
+          "coreCoverageFraction": 0.3375796178343949,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 265,
+          "cuts": 779,
+          "energy": 136,
+          "expansions": [
+            {
+              "addedVertices": [
+                36,
+                3
+              ],
+              "arcAssumptions": 40,
+              "coreSize": 40,
+              "coveredArcAssumptions": 22,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 18
+            },
+            {
+              "addedVertices": [
+                10,
+                8
+              ],
+              "arcAssumptions": 305,
+              "coreSize": 305,
+              "coveredArcAssumptions": 89,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 216
+            },
+            {
+              "addedVertices": [
+                2,
+                4
+              ],
+              "arcAssumptions": 225,
+              "coreSize": 225,
+              "coveredArcAssumptions": 87,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 138
+            },
+            {
+              "addedVertices": [
+                13,
+                19
+              ],
+              "arcAssumptions": 215,
+              "coreSize": 215,
+              "coveredArcAssumptions": 67,
+              "freeVertices": 17,
+              "policy": "score",
+              "remainingArcAssumptions": 148
+            }
+          ],
+          "finalFreeVertices": 17,
+          "improvement": 0,
+          "initialEnergy": 136,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              9,
+              20,
+              24,
+              29,
+              30,
+              31,
+              34
+            ],
+            "exact": null,
+            "freeVertices": [
+              7,
+              9,
+              11,
+              20,
+              24,
+              29,
+              30,
+              31,
+              34
+            ],
+            "haloVertices": [
+              7,
+              11
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 486,
+          "statistics": {
+            "conflicts": 11486,
+            "decisions": 53633,
+            "propagations": 10805225,
+            "restarts": 642,
+            "satSeconds": 1.6893190000000002
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 136,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 136,
+            "violatingLines": 136
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.094489582988899
+        },
+        "minimum+score": {
+          "bestCode": "oorEWUm8ult$%LyVXD]DWKf5U5m@?Z>6JSqVZdk3y4&O(0NGrcs0gcf2C4xIa%<w!@>P!AQwzIkOQnpTvEHn&7o197H2BdvG[$<YbX{LbMxq{6pA[F]TaeiNlu(1e89R)j)Yth#3#giFsBCKSJ?RjhzMP",
+          "calls": 22,
+          "candidates": 16,
+          "coreArcAssumptions": 723,
+          "coreCoverageFraction": 0.47579529737206083,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 344,
+          "cuts": 806,
+          "energy": 136,
+          "expansions": [
+            {
+              "addedVertices": [
+                32,
+                4
+              ],
+              "arcAssumptions": 46,
+              "coreSize": 46,
+              "coveredArcAssumptions": 26,
+              "freeVertices": 10,
+              "policy": "score",
+              "remainingArcAssumptions": 20
+            },
+            {
+              "addedVertices": [
+                10,
+                14
+              ],
+              "arcAssumptions": 234,
+              "coreSize": 234,
+              "coveredArcAssumptions": 84,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 150
+            },
+            {
+              "addedVertices": [
+                20,
+                18
+              ],
+              "arcAssumptions": 83,
+              "coreSize": 83,
+              "coveredArcAssumptions": 64,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 19
+            },
+            {
+              "addedVertices": [
+                13,
+                37
+              ],
+              "arcAssumptions": 72,
+              "coreSize": 72,
+              "coveredArcAssumptions": 44,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 28
+            },
+            {
+              "addedVertices": [
+                8,
+                19
+              ],
+              "arcAssumptions": 145,
+              "coreSize": 145,
+              "coveredArcAssumptions": 59,
+              "freeVertices": 18,
+              "policy": "score",
+              "remainingArcAssumptions": 86
+            },
+            {
+              "addedVertices": [
+                6,
+                3
+              ],
+              "arcAssumptions": 143,
+              "coreSize": 143,
+              "coveredArcAssumptions": 67,
+              "freeVertices": 20,
+              "policy": "score",
+              "remainingArcAssumptions": 76
+            }
+          ],
+          "finalFreeVertices": 20,
+          "improvement": 0,
+          "initialEnergy": 136,
+          "initialFreeVertices": 8,
+          "initialNeighborhood": {
+            "coverSize": 6,
+            "coverVertices": [
+              1,
+              9,
+              15,
+              17,
+              29,
+              34
+            ],
+            "exact": {
+              "attempts": 3,
+              "lowerBound": 4,
+              "seconds": 0.005212
+            },
+            "freeVertices": [
+              1,
+              9,
+              15,
+              17,
+              24,
+              29,
+              34,
+              35
+            ],
+            "haloVertices": [
+              35,
+              24
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 486,
+          "statistics": {
+            "conflicts": 11651,
+            "decisions": 58582,
+            "propagations": 12085130,
+            "restarts": 1181,
+            "satSeconds": 1.742072
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 136,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 136,
+            "violatingLines": 136
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.1097585830138996
+        }
+      },
+      "winners": [
+        "greedy+score",
+        "greedy-random+score",
+        "minimum+score"
+      ]
+    },
+    {
+      "bestEnergy": 128,
+      "incumbent": "oZbotNsKfRr7lYyH)GnWkA&EJIqZyh%6Dk?l!i$p%1]2X4bC<Jd1a8Rn[5H9GVXIjE@js3(#{Oor{0MPp0D6]LU9zUvgix@w)4Qm?d>au2$c[g<3>BOCV7S8T#(BWFeNvuzA&ThQx5wFfS!MmYtLqKPce",
+      "index": 7,
+      "initialEnergy": 164,
+      "results": {
+        "greedy+score": {
+          "bestCode": "oWbOoM@BKF#dlYfosGn2kA&F]Ia4ZNe%[k?Jli$pwN]7Xb<tzJ>178RWn5H9GVXIjm{js6(E#5$r{0MC)Dz6(LU0RUvgix@w)Qhm?!>1uEK2cg!3qHOCVSu8T4BZqe[dv3yA&T<QxLPYfSaDyt%9rPpch",
+          "calls": 9,
+          "candidates": 7,
+          "coreArcAssumptions": 3,
+          "coreCoverageFraction": 0.6666666666666666,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 2,
+          "cuts": 412,
+          "energy": 128,
+          "expansions": [
+            {
+              "addedVertices": [
+                6,
+                4
+              ],
+              "arcAssumptions": 3,
+              "coreSize": 3,
+              "coveredArcAssumptions": 2,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 1
+            }
+          ],
+          "finalFreeVertices": 13,
+          "improvement": 36,
+          "initialEnergy": 164,
+          "initialFreeVertices": 11,
+          "initialNeighborhood": {
+            "coverSize": 9,
+            "coverVertices": [
+              1,
+              2,
+              3,
+              7,
+              11,
+              23,
+              32,
+              35,
+              36
+            ],
+            "exact": null,
+            "freeVertices": [
+              1,
+              2,
+              3,
+              7,
+              11,
+              13,
+              19,
+              23,
+              32,
+              35,
+              36
+            ],
+            "haloVertices": [
+              19,
+              13
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy"
+          },
+          "initialPolicy": "greedy",
+          "seed": 487,
+          "statistics": {
+            "conflicts": 12931,
+            "decisions": 72661,
+            "propagations": 12104830,
+            "restarts": 2987,
+            "satSeconds": 1.88541
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 116,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 128,
+            "violatingLines": 116
+          },
+          "variant": "greedy+score",
+          "wallSeconds": 2.111279792006826
+        },
+        "greedy-random+score": {
+          "bestCode": "oZbotNsKfRr7lYyH)GnWkA&EJIqZyh%6Dk?l!i$p%1]2X4bC<Jd1a8Rn[5H9GVXIjE@js3(#{Oor{0MPp0D6]LU9zUvgix@w)4Qm?d>au2$c[g<3>BOCV7S8T#(BWFeNvuzA&ThQx5wFfS!MmYtLqKPce",
+          "calls": 16,
+          "candidates": 12,
+          "coreArcAssumptions": 488,
+          "coreCoverageFraction": 0.32786885245901637,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 160,
+          "cuts": 669,
+          "energy": 164,
+          "expansions": [
+            {
+              "addedVertices": [
+                18,
+                27
+              ],
+              "arcAssumptions": 3,
+              "coreSize": 3,
+              "coveredArcAssumptions": 2,
+              "freeVertices": 12,
+              "policy": "score",
+              "remainingArcAssumptions": 1
+            },
+            {
+              "addedVertices": [
+                0,
+                12
+              ],
+              "arcAssumptions": 239,
+              "coreSize": 239,
+              "coveredArcAssumptions": 82,
+              "freeVertices": 14,
+              "policy": "score",
+              "remainingArcAssumptions": 157
+            },
+            {
+              "addedVertices": [
+                9,
+                15
+              ],
+              "arcAssumptions": 246,
+              "coreSize": 246,
+              "coveredArcAssumptions": 76,
+              "freeVertices": 16,
+              "policy": "score",
+              "remainingArcAssumptions": 170
+            }
+          ],
+          "finalFreeVertices": 16,
+          "improvement": 0,
+          "initialEnergy": 164,
+          "initialFreeVertices": 10,
+          "initialNeighborhood": {
+            "coverSize": 8,
+            "coverVertices": [
+              13,
+              14,
+              16,
+              23,
+              32,
+              35,
+              36,
+              37
+            ],
+            "exact": null,
+            "freeVertices": [
+              8,
+              13,
+              14,
+              16,
+              17,
+              23,
+              32,
+              35,
+              36,
+              37
+            ],
+            "haloVertices": [
+              17,
+              8
+            ],
+            "minimumFillVertices": [],
+            "policy": "greedy-random"
+          },
+          "initialPolicy": "greedy-random",
+          "seed": 487,
+          "statistics": {
+            "conflicts": 11948,
+            "decisions": 75641,
+            "propagations": 12179726,
+            "restarts": 1671,
+            "satSeconds": 1.820337
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 152,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 164,
+            "violatingLines": 152
+          },
+          "variant": "greedy-random+score",
+          "wallSeconds": 2.118760207988089
+        },
+        "minimum+score": {
+          "bestCode": "obeotM&CXOq7lq#H)LnGW2nEmc]6uh%FyO@l!ikDY1MP?t<46x[1s8ABd5HIdVXIjE@j]Zu0fRTC{0$kmY{Je3U9zUvgiavw)a%&?L>4G([2K8or>f#TV7S9pFyBWJ(3bRzQ<hxQs5wDNS!Npg$ArKPZc",
+          "calls": 20,
+          "candidates": 16,
+          "coreArcAssumptions": 727,
+          "coreCoverageFraction": 0.2517193947730399,
+          "corePolicy": "score",
+          "coveredCoreArcAssumptions": 183,
+          "cuts": 848,
+          "energy": 152,
+          "expansions": [
+            {
+              "addedVertices": [
+                12,
+                15
+              ],
+              "arcAssumptions": 3,
+              "coreSize": 3,
+              "coveredArcAssumptions": 2,
+              "freeVertices": 11,
+              "policy": "score",
+              "remainingArcAssumptions": 1
+            },
+            {
+              "addedVertices": [
+                4,
+                2
+              ],
+              "arcAssumptions": 390,
+              "coreSize": 390,
+              "coveredArcAssumptions": 101,
+              "freeVertices": 13,
+              "policy": "score",
+              "remainingArcAssumptions": 289
+            },
+            {
+              "addedVertices": [
+                6,
+                16
+              ],
+              "arcAssumptions": 334,
+              "coreSize": 334,
+              "coveredArcAssumptions": 80,
+              "freeVertices": 15,
+              "policy": "score",
+              "remainingArcAssumptions": 254
+            }
+          ],
+          "finalFreeVertices": 15,
+          "improvement": 12,
+          "initialEnergy": 164,
+          "initialFreeVertices": 9,
+          "initialNeighborhood": {
+            "coverSize": 7,
+            "coverVertices": [
+              3,
+              10,
+              22,
+              27,
+              29,
+              35,
+              36
+            ],
+            "exact": {
+              "attempts": 4,
+              "lowerBound": 4,
+              "seconds": 0.014065
+            },
+            "freeVertices": [
+              3,
+              10,
+              19,
+              21,
+              22,
+              27,
+              29,
+              35,
+              36
+            ],
+            "haloVertices": [
+              19,
+              21
+            ],
+            "minimumFillVertices": [],
+            "policy": "minimum"
+          },
+          "initialPolicy": "minimum",
+          "seed": 487,
+          "statistics": {
+            "conflicts": 12402,
+            "decisions": 64571,
+            "propagations": 12591995,
+            "restarts": 1075,
+            "satSeconds": 1.8214859999999997
+          },
+          "status": "timeout",
+          "validation": {
+            "applicationViolatingLines": 152,
+            "rot4": true,
+            "rowPerfectFactor": true,
+            "triples": 152,
+            "violatingLines": 152
+          },
+          "variant": "minimum+score",
+          "wallSeconds": 2.2025680000078864
+        }
+      },
+      "winners": [
+        "greedy+score"
+      ]
+    }
+  ],
+  "n": 76,
+  "parameters": {
+    "coreVertices": 6,
+    "expandBy": 2,
+    "freeFraction": 0.15,
+    "haloVertices": 2
+  },
+  "rngStreams": "split-cover-halo-core-cut",
+  "secondsPerVariant": 2.0,
+  "seedStart": 480,
+  "summary": {
+    "greedy+score": {
+      "coreCoverageFraction": 0.4240117130307467,
+      "energies": [
+        124,
+        168,
+        140,
+        168,
+        152,
+        164,
+        136,
+        128
+      ],
+      "improvements": [
+        36,
+        0,
+        0,
+        8,
+        12,
+        0,
+        0,
+        36
+      ],
+      "meanEnergy": 147.5,
+      "meanImprovement": 11.5,
+      "meanWallSeconds": 2.118762739621161,
+      "medianEnergy": 146.0,
+      "medianImprovement": 4.0,
+      "medianWallSeconds": 2.1085487295058556,
+      "solved": 0,
+      "totalCandidates": 103,
+      "totalExpansions": 29
+    },
+    "greedy-random+score": {
+      "coreCoverageFraction": 0.3336111689935403,
+      "energies": [
+        160,
+        156,
+        140,
+        168,
+        140,
+        164,
+        136,
+        164
+      ],
+      "improvements": [
+        0,
+        12,
+        0,
+        8,
+        24,
+        0,
+        0,
+        0
+      ],
+      "meanEnergy": 153.5,
+      "meanImprovement": 5.5,
+      "meanWallSeconds": 2.131889182368468,
+      "medianEnergy": 158.0,
+      "medianImprovement": 0.0,
+      "medianWallSeconds": 2.11990960399271,
+      "solved": 0,
+      "totalCandidates": 113,
+      "totalExpansions": 25
+    },
+    "minimum+score": {
+      "coreCoverageFraction": 0.41958182549256134,
+      "energies": [
+        144,
+        148,
+        140,
+        168,
+        164,
+        144,
+        136,
+        152
+      ],
+      "improvements": [
+        16,
+        20,
+        0,
+        8,
+        0,
+        20,
+        0,
+        12
+      ],
+      "meanEnergy": 149.5,
+      "meanImprovement": 9.5,
+      "meanWallSeconds": 2.1482729218805616,
+      "medianEnergy": 146.0,
+      "medianImprovement": 10.0,
+      "medianWallSeconds": 2.148799604503438,
+      "solved": 0,
+      "totalCandidates": 107,
+      "totalExpansions": 37
+    }
+  },
+  "variants": [
+    "greedy+score",
+    "greedy-random+score",
+    "minimum+score"
+  ],
+  "winsByFinalEnergy": {
+    "greedy+score": 2,
+    "greedy-random+score": 1,
+    "minimum+score": 2,
+    "ties": 3
+  }
+}

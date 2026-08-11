@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "benchmark": "pigeonhole proof-producing preprocessing",
+  "formula": {
+    "holes": 8,
+    "pigeons": 9,
+    "variables": 72,
+    "clauses": 297
+  },
+  "cadical": {
+    "version": "3.0.1",
+    "source": "https://github.com/arminbiere/cadical",
+    "commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+    "binarySha256": "6b2ffd83d0c046fa938440fe676ec0d220d5a3b9c17e2d9d11d4f55d2e1f066f"
+  },
+  "inProcessBridge": {
+    "source": "research/cadical-proof-bridge.cpp",
+    "sourceSha256": "d35ed9ebff958e8a6d03fbacc27e7133405a002b6beb98cc86ec92d0ab0a4a1f",
+    "platform": "arm64 macOS",
+    "librarySha256": "20f1f30b20ae7ed80676bff9e36fcee561fcb0fb5c74f80beb05af3304401287"
+  },
+  "checker": {
+    "name": "drat-trim",
+    "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "binarySha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+  },
+  "repetitions": 10,
+  "endToEndRegression": {
+    "description": "SBVA discovery formula followed by certification of the retained original formula",
+    "originalClauses": 70,
+    "searchClausesAfterSbva": 64,
+    "originalFormulaSha256": "3eff5efc12ee9d2a3056d9253bca77b785aa35136944ea08c1201567997639c0",
+    "binaryDratBytes": 46,
+    "binaryDratSha256": "a6b91acd3f45ec06fb54b1e5ec9f231053f0a9b58d9c5447bf5c893a561b0f3e",
+    "lratSha256": "2df76b9186d4d711189553faa6742d66a23cf77e3e7ea4fbf39fb0e8e77975af",
+    "dratTrimVerified": true,
+    "cakeLprMarker": "s VERIFIED UNSAT",
+    "satCertificationRejected": true,
+    "inProcessDeadlineReturnedUnknown": true,
+    "commandAndLibraryProofsIdentical": true
+  },
+  "variants": [
+    {
+      "factor": false,
+      "seconds": [0.327007, 0.320273, 0.318138, 0.316496, 0.31744, 0.325679, 0.31788, 0.317676, 0.317755, 0.317991],
+      "meanSeconds": 0.319634,
+      "proofBytes": 1665899,
+      "proofSha256": "c6b7021a96fdef209dda4c91e42ee680cfabcef7287d47087d4df723d0a80b5c",
+      "allProofsVerified": true
+    },
+    {
+      "factor": true,
+      "seconds": [0.016452, 0.015773, 0.015514, 0.015613, 0.015938, 0.015721, 0.015683, 0.015362, 0.015873, 0.015598],
+      "meanSeconds": 0.015753,
+      "proofBytes": 67949,
+      "proofSha256": "3ec379fd1b521c25a8a5fd4135da3792645c8a8d82cb9228937981f369775d76",
+      "allProofsVerified": true
+    }
+  ],
+  "inProcessVariant": {
+    "factor": true,
+    "setupSeconds": [0.003009, 0.000551, 0.000556, 0.000563, 0.000527, 0.000546, 0.000535, 0.000526, 0.000518, 0.000545],
+    "solveSeconds": [0.012694, 0.011913, 0.012039, 0.012298, 0.012013, 0.012434, 0.011943, 0.012023, 0.012006, 0.011985],
+    "meanSetupSeconds": 0.000788,
+    "meanSolveSeconds": 0.012135,
+    "proofBytes": 67949,
+    "proofSha256": "3ec379fd1b521c25a8a5fd4135da3792645c8a8d82cb9228937981f369775d76",
+    "allProofsVerified": true
+  },
+  "factorSpeedup": 20.29,
+  "factorProofSizeRatio": 0.041,
+  "processToLibraryBoundarySpeedup": 1.298,
+  "processToLibraryIncludingSetupSpeedup": 1.219,
+  "conclusion": "On this structured proof-production regression, bounded variable addition was 20.3x faster and emitted a proof about 24.5x smaller. The synchronized in-process solver reduced the final certification boundary by 1.30x, or 1.22x even charging its one-time setup. This validates the mechanisms but is not an n=76 performance claim."
+}

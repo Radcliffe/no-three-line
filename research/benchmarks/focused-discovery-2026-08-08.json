@@ -1,0 +1,4324 @@
+{
+  "completedRounds": 120,
+  "finalCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+  "finalEnergy": 88,
+  "local": {
+    "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+    "bestEnergy": 88,
+    "initialEnergy": 301.0,
+    "iterations": 1902,
+    "progress": [
+      {
+        "energy": 88,
+        "milliseconds": 3,
+        "thread": 0
+      }
+    ],
+    "restarts": 8,
+    "stagnationRestarts": 0
+  },
+  "n": 76,
+  "repair": {
+    "backend": "portfolio",
+    "best_bad_lines": 88,
+    "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+    "best_triples": 88,
+    "results": {
+      "sat-cadical195-cover-greedy-random-h4-x2": {
+        "active_solver": "cadical195",
+        "backend": "sat",
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "calls": 19,
+        "candidates": 14,
+        "clauses": 70072,
+        "core_expansion_policy": "score",
+        "cuts": 722,
+        "expansions": [
+          {
+            "addedVertices": [
+              16,
+              20
+            ],
+            "arcAssumptions": 116,
+            "coreSize": 116,
+            "coveredArcAssumptions": 69,
+            "freeVertices": 12,
+            "policy": "score",
+            "remainingArcAssumptions": 47
+          },
+          {
+            "addedVertices": [
+              13,
+              36
+            ],
+            "arcAssumptions": 82,
+            "coreSize": 82,
+            "coveredArcAssumptions": 50,
+            "freeVertices": 14,
+            "policy": "score",
+            "remainingArcAssumptions": 32
+          },
+          {
+            "addedVertices": [
+              4,
+              0
+            ],
+            "arcAssumptions": 238,
+            "coreSize": 238,
+            "coveredArcAssumptions": 84,
+            "freeVertices": 16,
+            "policy": "score",
+            "remainingArcAssumptions": 154
+          },
+          {
+            "addedVertices": [
+              9,
+              7
+            ],
+            "arcAssumptions": 175,
+            "coreSize": 175,
+            "coveredArcAssumptions": 68,
+            "freeVertices": 18,
+            "policy": "score",
+            "remainingArcAssumptions": 107
+          }
+        ],
+        "free_vertices": 18,
+        "initial_bad_lines": 88,
+        "initial_free_vertices": 10,
+        "initial_neighborhood": {
+          "coverSize": 6,
+          "coverVertices": [
+            1,
+            19,
+            24,
+            26,
+            28,
+            32
+          ],
+          "exact": null,
+          "freeVertices": [
+            1,
+            2,
+            19,
+            21,
+            22,
+            24,
+            26,
+            28,
+            32,
+            35
+          ],
+          "haloVertices": [
+            35,
+            21,
+            2,
+            22
+          ],
+          "minimumFillVertices": [],
+          "policy": "greedy-random"
+        },
+        "initial_triples": 88,
+        "n": 76,
+        "preprocessing": null,
+        "proof": null,
+        "proof_shadow": null,
+        "rng_streams": "split-cover-halo-core-cut",
+        "seconds": 30.389,
+        "seed": 1319,
+        "solver": "cadical195",
+        "statistics": {
+          "conflicts": 82583,
+          "decisions": 254430,
+          "propagations": 56690615,
+          "restarts": 14032,
+          "satSeconds": 21.130744000000004
+        },
+        "status": "timeout",
+        "variables": 29672
+      },
+      "sat-cadical195-cover-minimum-h0-x4": {
+        "active_solver": "cadical195",
+        "backend": "sat",
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "calls": 23,
+        "candidates": 19,
+        "clauses": 82398,
+        "core_expansion_policy": "score",
+        "cuts": 944,
+        "expansions": [
+          {
+            "addedVertices": [
+              25,
+              31,
+              35,
+              4
+            ],
+            "arcAssumptions": 92,
+            "coreSize": 92,
+            "coveredArcAssumptions": 71,
+            "freeVertices": 10,
+            "policy": "score",
+            "remainingArcAssumptions": 21
+          },
+          {
+            "addedVertices": [
+              11,
+              16,
+              20,
+              9
+            ],
+            "arcAssumptions": 129,
+            "coreSize": 129,
+            "coveredArcAssumptions": 111,
+            "freeVertices": 14,
+            "policy": "score",
+            "remainingArcAssumptions": 18
+          },
+          {
+            "addedVertices": [
+              13,
+              12,
+              22,
+              17
+            ],
+            "arcAssumptions": 217,
+            "coreSize": 217,
+            "coveredArcAssumptions": 122,
+            "freeVertices": 18,
+            "policy": "score",
+            "remainingArcAssumptions": 95
+          }
+        ],
+        "free_vertices": 18,
+        "initial_bad_lines": 88,
+        "initial_free_vertices": 6,
+        "initial_neighborhood": {
+          "coverSize": 6,
+          "coverVertices": [
+            1,
+            7,
+            18,
+            19,
+            24,
+            28
+          ],
+          "exact": {
+            "attempts": 3,
+            "lowerBound": 4,
+            "seconds": 0.015337
+          },
+          "freeVertices": [
+            1,
+            7,
+            18,
+            19,
+            24,
+            28
+          ],
+          "haloVertices": [],
+          "minimumFillVertices": [],
+          "policy": "minimum"
+        },
+        "initial_triples": 88,
+        "n": 76,
+        "preprocessing": null,
+        "proof": null,
+        "proof_shadow": null,
+        "rng_streams": "split-cover-halo-core-cut",
+        "seconds": 30.266,
+        "seed": 1319,
+        "solver": "cadical195",
+        "statistics": {
+          "conflicts": 91945,
+          "decisions": 209575,
+          "propagations": 67049697,
+          "restarts": 4000,
+          "satSeconds": 21.175739000000004
+        },
+        "status": "timeout",
+        "variables": 34552
+      },
+      "sat-glucose42-cover-greedy-random-h0-x4": {
+        "active_solver": "glucose42",
+        "backend": "sat",
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "calls": 26,
+        "candidates": 22,
+        "clauses": 83076,
+        "core_expansion_policy": "score",
+        "cuts": 1000,
+        "expansions": [
+          {
+            "addedVertices": [
+              4,
+              14,
+              3,
+              7
+            ],
+            "arcAssumptions": 80,
+            "coreSize": 80,
+            "coveredArcAssumptions": 65,
+            "freeVertices": 10,
+            "policy": "score",
+            "remainingArcAssumptions": 15
+          },
+          {
+            "addedVertices": [
+              12,
+              13,
+              21,
+              20
+            ],
+            "arcAssumptions": 256,
+            "coreSize": 256,
+            "coveredArcAssumptions": 146,
+            "freeVertices": 14,
+            "policy": "score",
+            "remainingArcAssumptions": 110
+          },
+          {
+            "addedVertices": [
+              2,
+              9,
+              16,
+              18
+            ],
+            "arcAssumptions": 231,
+            "coreSize": 231,
+            "coveredArcAssumptions": 144,
+            "freeVertices": 18,
+            "policy": "score",
+            "remainingArcAssumptions": 87
+          }
+        ],
+        "free_vertices": 18,
+        "initial_bad_lines": 88,
+        "initial_free_vertices": 6,
+        "initial_neighborhood": {
+          "coverSize": 6,
+          "coverVertices": [
+            1,
+            19,
+            24,
+            26,
+            28,
+            32
+          ],
+          "exact": null,
+          "freeVertices": [
+            1,
+            19,
+            24,
+            26,
+            28,
+            32
+          ],
+          "haloVertices": [],
+          "minimumFillVertices": [],
+          "policy": "greedy-random"
+        },
+        "initial_triples": 88,
+        "n": 76,
+        "preprocessing": null,
+        "proof": null,
+        "proof_shadow": null,
+        "rng_streams": "split-cover-halo-core-cut",
+        "seconds": 30.384,
+        "seed": 1319,
+        "solver": "glucose42",
+        "statistics": {
+          "conflicts": 89449,
+          "decisions": 148172,
+          "propagations": 126474255,
+          "restarts": 202,
+          "satSeconds": 20.954143000000013
+        },
+        "status": "timeout",
+        "variables": 34558
+      },
+      "sat-glucose42-cover-minimum-h4-x2": {
+        "active_solver": "glucose42",
+        "backend": "sat",
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "calls": 24,
+        "candidates": 19,
+        "clauses": 77558,
+        "core_expansion_policy": "score",
+        "cuts": 836,
+        "expansions": [
+          {
+            "addedVertices": [
+              11,
+              13
+            ],
+            "arcAssumptions": 137,
+            "coreSize": 137,
+            "coveredArcAssumptions": 70,
+            "freeVertices": 12,
+            "policy": "score",
+            "remainingArcAssumptions": 67
+          },
+          {
+            "addedVertices": [
+              37,
+              20
+            ],
+            "arcAssumptions": 39,
+            "coreSize": 39,
+            "coveredArcAssumptions": 21,
+            "freeVertices": 14,
+            "policy": "score",
+            "remainingArcAssumptions": 18
+          },
+          {
+            "addedVertices": [
+              6,
+              14
+            ],
+            "arcAssumptions": 197,
+            "coreSize": 197,
+            "coveredArcAssumptions": 59,
+            "freeVertices": 16,
+            "policy": "score",
+            "remainingArcAssumptions": 138
+          },
+          {
+            "addedVertices": [
+              10,
+              16
+            ],
+            "arcAssumptions": 179,
+            "coreSize": 179,
+            "coveredArcAssumptions": 57,
+            "freeVertices": 18,
+            "policy": "score",
+            "remainingArcAssumptions": 122
+          }
+        ],
+        "free_vertices": 18,
+        "initial_bad_lines": 88,
+        "initial_free_vertices": 10,
+        "initial_neighborhood": {
+          "coverSize": 6,
+          "coverVertices": [
+            1,
+            7,
+            18,
+            19,
+            24,
+            28
+          ],
+          "exact": {
+            "attempts": 3,
+            "lowerBound": 4,
+            "seconds": 0.021082
+          },
+          "freeVertices": [
+            1,
+            2,
+            7,
+            18,
+            19,
+            23,
+            24,
+            25,
+            28,
+            35
+          ],
+          "haloVertices": [
+            35,
+            23,
+            2,
+            25
+          ],
+          "minimumFillVertices": [],
+          "policy": "minimum"
+        },
+        "initial_triples": 88,
+        "n": 76,
+        "preprocessing": null,
+        "proof": null,
+        "proof_shadow": null,
+        "rng_streams": "split-cover-halo-core-cut",
+        "seconds": 32.98,
+        "seed": 1319,
+        "solver": "glucose42",
+        "statistics": {
+          "conflicts": 92277,
+          "decisions": 144036,
+          "propagations": 131584311,
+          "restarts": 691,
+          "satSeconds": 23.477866000000002
+        },
+        "status": "timeout",
+        "variables": 32710
+      },
+      "z3": {
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "candidates": 18,
+        "cuts": 895,
+        "expansions": 3,
+        "free_vertices": 14,
+        "initial_bad_lines": 88,
+        "initial_free_vertices": 8,
+        "initial_triples": 88,
+        "iterations": 22,
+        "n": 76,
+        "seconds": 30.27,
+        "seed": 1319,
+        "status": "unknown"
+      }
+    },
+    "status": "timeout",
+    "winner": "sat-glucose42-cover-minimum-h4-x2"
+  },
+  "repairSchedule": "final",
+  "requestedRounds": 120,
+  "roundResults": [
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": null,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 339.0,
+        "iterations": 2367,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 1,
+      "seed": 1200
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 309.5,
+        "iterations": 2314,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 2,
+      "seed": 1201
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 302.0,
+        "iterations": 2270,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 3,
+      "seed": 1202
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 311.0,
+        "iterations": 2517,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 4,
+      "seed": 1203
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 315.5,
+        "iterations": 2218,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 5,
+      "seed": 1204
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 350.5,
+        "iterations": 2453,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 6,
+      "seed": 1205
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 327.5,
+        "iterations": 2666,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 7,
+      "seed": 1206
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 340.5,
+        "iterations": 2250,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 8,
+      "seed": 1207
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 278.5,
+        "iterations": 2283,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 9,
+      "seed": 1208
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 310.0,
+        "iterations": 2415,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 10,
+      "seed": 1209
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 329.0,
+        "iterations": 2496,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 11,
+      "seed": 1210
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 347.5,
+        "iterations": 2492,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 12,
+      "seed": 1211
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 92,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 92,
+        "initialEnergy": 336.0,
+        "iterations": 2553,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 92,
+      "repairSeconds": 0.0,
+      "round": 13,
+      "seed": 1212
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCJ6VGv3@EOY#q{M%PgBt2@IQ1d8xFUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!DcjyG?a>nv9<K%XoBr0NDfpz9]Ixi(u$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 92,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 298.0,
+        "iterations": 2193,
+        "progress": [
+          {
+            "energy": 92,
+            "milliseconds": 3,
+            "thread": 3
+          },
+          {
+            "energy": 88,
+            "milliseconds": 277,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 14,
+      "seed": 1213
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 333.5,
+        "iterations": 2461,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 15,
+      "seed": 1214
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 294.5,
+        "iterations": 2417,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 16,
+      "seed": 1215
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 342.5,
+        "iterations": 2213,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 17,
+      "seed": 1216
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 336.0,
+        "iterations": 2273,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 18,
+      "seed": 1217
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 374.5,
+        "iterations": 2515,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 19,
+      "seed": 1218
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.0,
+        "iterations": 2283,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 20,
+      "seed": 1219
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.5,
+        "iterations": 2429,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 21,
+      "seed": 1220
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 322.0,
+        "iterations": 2360,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 22,
+      "seed": 1221
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 330.5,
+        "iterations": 2383,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 23,
+      "seed": 1222
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 304.0,
+        "iterations": 2355,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 24,
+      "seed": 1223
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 320.5,
+        "iterations": 2504,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 25,
+      "seed": 1224
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 353.5,
+        "iterations": 2438,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 26,
+      "seed": 1225
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 315.0,
+        "iterations": 2431,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 27,
+      "seed": 1226
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 307.5,
+        "iterations": 2366,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 28,
+      "seed": 1227
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 354.5,
+        "iterations": 2492,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 29,
+      "seed": 1228
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 327.5,
+        "iterations": 2435,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 30,
+      "seed": 1229
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 337.5,
+        "iterations": 2374,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 31,
+      "seed": 1230
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 317.0,
+        "iterations": 2466,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 32,
+      "seed": 1231
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 309.0,
+        "iterations": 2314,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 33,
+      "seed": 1232
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 293.0,
+        "iterations": 2462,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 34,
+      "seed": 1233
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 291.0,
+        "iterations": 2556,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 35,
+      "seed": 1234
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 347.0,
+        "iterations": 2435,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 36,
+      "seed": 1235
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.0,
+        "iterations": 2575,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 37,
+      "seed": 1236
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 291.0,
+        "iterations": 2444,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 38,
+      "seed": 1237
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 309.0,
+        "iterations": 2300,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 39,
+      "seed": 1238
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 266.5,
+        "iterations": 2508,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 40,
+      "seed": 1239
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 279.5,
+        "iterations": 2330,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 41,
+      "seed": 1240
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 297.0,
+        "iterations": 2827,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 42,
+      "seed": 1241
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 370.5,
+        "iterations": 2419,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 43,
+      "seed": 1242
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 341.5,
+        "iterations": 2603,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 44,
+      "seed": 1243
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 332.5,
+        "iterations": 2511,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 45,
+      "seed": 1244
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 366.0,
+        "iterations": 2348,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 46,
+      "seed": 1245
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 280.0,
+        "iterations": 2655,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 47,
+      "seed": 1246
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 303.5,
+        "iterations": 2233,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 48,
+      "seed": 1247
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 300.5,
+        "iterations": 2586,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 49,
+      "seed": 1248
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 312.5,
+        "iterations": 2611,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 50,
+      "seed": 1249
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 397.5,
+        "iterations": 2505,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 51,
+      "seed": 1250
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 285.5,
+        "iterations": 2618,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 52,
+      "seed": 1251
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 308.0,
+        "iterations": 2207,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 53,
+      "seed": 1252
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 266.0,
+        "iterations": 2199,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 54,
+      "seed": 1253
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 324.0,
+        "iterations": 1592,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 55,
+      "seed": 1254
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 308.0,
+        "iterations": 1994,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 6,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 56,
+      "seed": 1255
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 325.0,
+        "iterations": 2449,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 57,
+      "seed": 1256
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 304.5,
+        "iterations": 2490,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 58,
+      "seed": 1257
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 313.0,
+        "iterations": 2149,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 59,
+      "seed": 1258
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 330.5,
+        "iterations": 2320,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 60,
+      "seed": 1259
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 310.0,
+        "iterations": 2574,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 61,
+      "seed": 1260
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 302.0,
+        "iterations": 2542,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 62,
+      "seed": 1261
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 318.5,
+        "iterations": 2460,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 5,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 63,
+      "seed": 1262
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.0,
+        "iterations": 2512,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 64,
+      "seed": 1263
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 328.5,
+        "iterations": 2100,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 65,
+      "seed": 1264
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 321.0,
+        "iterations": 2104,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 66,
+      "seed": 1265
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 318.0,
+        "iterations": 2450,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 67,
+      "seed": 1266
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 317.5,
+        "iterations": 2112,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 68,
+      "seed": 1267
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 350.0,
+        "iterations": 2480,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 69,
+      "seed": 1268
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 327.0,
+        "iterations": 2143,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 7,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 70,
+      "seed": 1269
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 311.5,
+        "iterations": 2516,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 71,
+      "seed": 1270
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 269.5,
+        "iterations": 2355,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 72,
+      "seed": 1271
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 306.0,
+        "iterations": 2186,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 73,
+      "seed": 1272
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 283.5,
+        "iterations": 2270,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 74,
+      "seed": 1273
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 307.5,
+        "iterations": 2370,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 75,
+      "seed": 1274
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.0,
+        "iterations": 2021,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 76,
+      "seed": 1275
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 347.0,
+        "iterations": 2510,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 77,
+      "seed": 1276
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 297.0,
+        "iterations": 2314,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 78,
+      "seed": 1277
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 345.0,
+        "iterations": 2235,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 79,
+      "seed": 1278
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 350.5,
+        "iterations": 2481,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 4
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 80,
+      "seed": 1279
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 312.5,
+        "iterations": 2515,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 81,
+      "seed": 1280
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 307.5,
+        "iterations": 2506,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 82,
+      "seed": 1281
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 299.5,
+        "iterations": 2556,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 83,
+      "seed": 1282
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 341.0,
+        "iterations": 2563,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 84,
+      "seed": 1283
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 301.0,
+        "iterations": 2455,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 85,
+      "seed": 1284
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 313.5,
+        "iterations": 2416,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 86,
+      "seed": 1285
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 333.0,
+        "iterations": 2616,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 87,
+      "seed": 1286
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 343.5,
+        "iterations": 2585,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 88,
+      "seed": 1287
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 296.0,
+        "iterations": 2458,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 89,
+      "seed": 1288
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 300.5,
+        "iterations": 2439,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 90,
+      "seed": 1289
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 297.5,
+        "iterations": 2407,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 91,
+      "seed": 1290
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 275.0,
+        "iterations": 2368,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 92,
+      "seed": 1291
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 349.0,
+        "iterations": 2311,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 93,
+      "seed": 1292
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 280.5,
+        "iterations": 2449,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 94,
+      "seed": 1293
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 279.5,
+        "iterations": 2437,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 7,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 95,
+      "seed": 1294
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 324.0,
+        "iterations": 2385,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 96,
+      "seed": 1295
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 314.5,
+        "iterations": 2583,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 97,
+      "seed": 1296
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 327.5,
+        "iterations": 2476,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 98,
+      "seed": 1297
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 313.5,
+        "iterations": 2186,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 99,
+      "seed": 1298
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 302.5,
+        "iterations": 2431,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 100,
+      "seed": 1299
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 307.0,
+        "iterations": 2402,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 101,
+      "seed": 1300
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 348.5,
+        "iterations": 2617,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 102,
+      "seed": 1301
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 337.5,
+        "iterations": 2702,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 103,
+      "seed": 1302
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 378.0,
+        "iterations": 2299,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 104,
+      "seed": 1303
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 296.0,
+        "iterations": 2497,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 3
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 105,
+      "seed": 1304
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 310.5,
+        "iterations": 2411,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 106,
+      "seed": 1305
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 306.0,
+        "iterations": 2537,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 107,
+      "seed": 1306
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 305.5,
+        "iterations": 2591,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 1,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 108,
+      "seed": 1307
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 306.0,
+        "iterations": 2381,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 109,
+      "seed": 1308
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 292.0,
+        "iterations": 1988,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 110,
+      "seed": 1309
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 282.5,
+        "iterations": 2429,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 111,
+      "seed": 1310
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 324.0,
+        "iterations": 2539,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 112,
+      "seed": 1311
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 306.5,
+        "iterations": 2574,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 1
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 113,
+      "seed": 1312
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 307.0,
+        "iterations": 2652,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 114,
+      "seed": 1313
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 323.0,
+        "iterations": 2431,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 115,
+      "seed": 1314
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 314.5,
+        "iterations": 2372,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 116,
+      "seed": 1315
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 324.0,
+        "iterations": 2502,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 4,
+            "thread": 2
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 117,
+      "seed": 1316
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 308.5,
+        "iterations": 2402,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 118,
+      "seed": 1317
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 310.5,
+        "iterations": 2566,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 2,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": null,
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 0.0,
+      "round": 119,
+      "seed": 1318
+    },
+    {
+      "endingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "endingEnergy": 88,
+      "incomingCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "incomingEnergy": 88,
+      "local": {
+        "bestCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "bestEnergy": 88,
+        "initialEnergy": 301.0,
+        "iterations": 1902,
+        "progress": [
+          {
+            "energy": 88,
+            "milliseconds": 3,
+            "thread": 0
+          }
+        ],
+        "restarts": 8,
+        "stagnationRestarts": 0
+      },
+      "localSeconds": 1,
+      "repair": {
+        "backend": "portfolio",
+        "best_bad_lines": 88,
+        "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+        "best_triples": 88,
+        "results": {
+          "sat-cadical195-cover-greedy-random-h4-x2": {
+            "active_solver": "cadical195",
+            "backend": "sat",
+            "best_bad_lines": 88,
+            "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+            "best_triples": 88,
+            "calls": 19,
+            "candidates": 14,
+            "clauses": 70072,
+            "core_expansion_policy": "score",
+            "cuts": 722,
+            "expansions": [
+              {
+                "addedVertices": [
+                  16,
+                  20
+                ],
+                "arcAssumptions": 116,
+                "coreSize": 116,
+                "coveredArcAssumptions": 69,
+                "freeVertices": 12,
+                "policy": "score",
+                "remainingArcAssumptions": 47
+              },
+              {
+                "addedVertices": [
+                  13,
+                  36
+                ],
+                "arcAssumptions": 82,
+                "coreSize": 82,
+                "coveredArcAssumptions": 50,
+                "freeVertices": 14,
+                "policy": "score",
+                "remainingArcAssumptions": 32
+              },
+              {
+                "addedVertices": [
+                  4,
+                  0
+                ],
+                "arcAssumptions": 238,
+                "coreSize": 238,
+                "coveredArcAssumptions": 84,
+                "freeVertices": 16,
+                "policy": "score",
+                "remainingArcAssumptions": 154
+              },
+              {
+                "addedVertices": [
+                  9,
+                  7
+                ],
+                "arcAssumptions": 175,
+                "coreSize": 175,
+                "coveredArcAssumptions": 68,
+                "freeVertices": 18,
+                "policy": "score",
+                "remainingArcAssumptions": 107
+              }
+            ],
+            "free_vertices": 18,
+            "initial_bad_lines": 88,
+            "initial_free_vertices": 10,
+            "initial_neighborhood": {
+              "coverSize": 6,
+              "coverVertices": [
+                1,
+                19,
+                24,
+                26,
+                28,
+                32
+              ],
+              "exact": null,
+              "freeVertices": [
+                1,
+                2,
+                19,
+                21,
+                22,
+                24,
+                26,
+                28,
+                32,
+                35
+              ],
+              "haloVertices": [
+                35,
+                21,
+                2,
+                22
+              ],
+              "minimumFillVertices": [],
+              "policy": "greedy-random"
+            },
+            "initial_triples": 88,
+            "n": 76,
+            "preprocessing": null,
+            "proof": null,
+            "proof_shadow": null,
+            "rng_streams": "split-cover-halo-core-cut",
+            "seconds": 30.389,
+            "seed": 1319,
+            "solver": "cadical195",
+            "statistics": {
+              "conflicts": 82583,
+              "decisions": 254430,
+              "propagations": 56690615,
+              "restarts": 14032,
+              "satSeconds": 21.130744000000004
+            },
+            "status": "timeout",
+            "variables": 29672
+          },
+          "sat-cadical195-cover-minimum-h0-x4": {
+            "active_solver": "cadical195",
+            "backend": "sat",
+            "best_bad_lines": 88,
+            "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+            "best_triples": 88,
+            "calls": 23,
+            "candidates": 19,
+            "clauses": 82398,
+            "core_expansion_policy": "score",
+            "cuts": 944,
+            "expansions": [
+              {
+                "addedVertices": [
+                  25,
+                  31,
+                  35,
+                  4
+                ],
+                "arcAssumptions": 92,
+                "coreSize": 92,
+                "coveredArcAssumptions": 71,
+                "freeVertices": 10,
+                "policy": "score",
+                "remainingArcAssumptions": 21
+              },
+              {
+                "addedVertices": [
+                  11,
+                  16,
+                  20,
+                  9
+                ],
+                "arcAssumptions": 129,
+                "coreSize": 129,
+                "coveredArcAssumptions": 111,
+                "freeVertices": 14,
+                "policy": "score",
+                "remainingArcAssumptions": 18
+              },
+              {
+                "addedVertices": [
+                  13,
+                  12,
+                  22,
+                  17
+                ],
+                "arcAssumptions": 217,
+                "coreSize": 217,
+                "coveredArcAssumptions": 122,
+                "freeVertices": 18,
+                "policy": "score",
+                "remainingArcAssumptions": 95
+              }
+            ],
+            "free_vertices": 18,
+            "initial_bad_lines": 88,
+            "initial_free_vertices": 6,
+            "initial_neighborhood": {
+              "coverSize": 6,
+              "coverVertices": [
+                1,
+                7,
+                18,
+                19,
+                24,
+                28
+              ],
+              "exact": {
+                "attempts": 3,
+                "lowerBound": 4,
+                "seconds": 0.015337
+              },
+              "freeVertices": [
+                1,
+                7,
+                18,
+                19,
+                24,
+                28
+              ],
+              "haloVertices": [],
+              "minimumFillVertices": [],
+              "policy": "minimum"
+            },
+            "initial_triples": 88,
+            "n": 76,
+            "preprocessing": null,
+            "proof": null,
+            "proof_shadow": null,
+            "rng_streams": "split-cover-halo-core-cut",
+            "seconds": 30.266,
+            "seed": 1319,
+            "solver": "cadical195",
+            "statistics": {
+              "conflicts": 91945,
+              "decisions": 209575,
+              "propagations": 67049697,
+              "restarts": 4000,
+              "satSeconds": 21.175739000000004
+            },
+            "status": "timeout",
+            "variables": 34552
+          },
+          "sat-glucose42-cover-greedy-random-h0-x4": {
+            "active_solver": "glucose42",
+            "backend": "sat",
+            "best_bad_lines": 88,
+            "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+            "best_triples": 88,
+            "calls": 26,
+            "candidates": 22,
+            "clauses": 83076,
+            "core_expansion_policy": "score",
+            "cuts": 1000,
+            "expansions": [
+              {
+                "addedVertices": [
+                  4,
+                  14,
+                  3,
+                  7
+                ],
+                "arcAssumptions": 80,
+                "coreSize": 80,
+                "coveredArcAssumptions": 65,
+                "freeVertices": 10,
+                "policy": "score",
+                "remainingArcAssumptions": 15
+              },
+              {
+                "addedVertices": [
+                  12,
+                  13,
+                  21,
+                  20
+                ],
+                "arcAssumptions": 256,
+                "coreSize": 256,
+                "coveredArcAssumptions": 146,
+                "freeVertices": 14,
+                "policy": "score",
+                "remainingArcAssumptions": 110
+              },
+              {
+                "addedVertices": [
+                  2,
+                  9,
+                  16,
+                  18
+                ],
+                "arcAssumptions": 231,
+                "coreSize": 231,
+                "coveredArcAssumptions": 144,
+                "freeVertices": 18,
+                "policy": "score",
+                "remainingArcAssumptions": 87
+              }
+            ],
+            "free_vertices": 18,
+            "initial_bad_lines": 88,
+            "initial_free_vertices": 6,
+            "initial_neighborhood": {
+              "coverSize": 6,
+              "coverVertices": [
+                1,
+                19,
+                24,
+                26,
+                28,
+                32
+              ],
+              "exact": null,
+              "freeVertices": [
+                1,
+                19,
+                24,
+                26,
+                28,
+                32
+              ],
+              "haloVertices": [],
+              "minimumFillVertices": [],
+              "policy": "greedy-random"
+            },
+            "initial_triples": 88,
+            "n": 76,
+            "preprocessing": null,
+            "proof": null,
+            "proof_shadow": null,
+            "rng_streams": "split-cover-halo-core-cut",
+            "seconds": 30.384,
+            "seed": 1319,
+            "solver": "glucose42",
+            "statistics": {
+              "conflicts": 89449,
+              "decisions": 148172,
+              "propagations": 126474255,
+              "restarts": 202,
+              "satSeconds": 20.954143000000013
+            },
+            "status": "timeout",
+            "variables": 34558
+          },
+          "sat-glucose42-cover-minimum-h4-x2": {
+            "active_solver": "glucose42",
+            "backend": "sat",
+            "best_bad_lines": 88,
+            "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+            "best_triples": 88,
+            "calls": 24,
+            "candidates": 19,
+            "clauses": 77558,
+            "core_expansion_policy": "score",
+            "cuts": 836,
+            "expansions": [
+              {
+                "addedVertices": [
+                  11,
+                  13
+                ],
+                "arcAssumptions": 137,
+                "coreSize": 137,
+                "coveredArcAssumptions": 70,
+                "freeVertices": 12,
+                "policy": "score",
+                "remainingArcAssumptions": 67
+              },
+              {
+                "addedVertices": [
+                  37,
+                  20
+                ],
+                "arcAssumptions": 39,
+                "coreSize": 39,
+                "coveredArcAssumptions": 21,
+                "freeVertices": 14,
+                "policy": "score",
+                "remainingArcAssumptions": 18
+              },
+              {
+                "addedVertices": [
+                  6,
+                  14
+                ],
+                "arcAssumptions": 197,
+                "coreSize": 197,
+                "coveredArcAssumptions": 59,
+                "freeVertices": 16,
+                "policy": "score",
+                "remainingArcAssumptions": 138
+              },
+              {
+                "addedVertices": [
+                  10,
+                  16
+                ],
+                "arcAssumptions": 179,
+                "coreSize": 179,
+                "coveredArcAssumptions": 57,
+                "freeVertices": 18,
+                "policy": "score",
+                "remainingArcAssumptions": 122
+              }
+            ],
+            "free_vertices": 18,
+            "initial_bad_lines": 88,
+            "initial_free_vertices": 10,
+            "initial_neighborhood": {
+              "coverSize": 6,
+              "coverVertices": [
+                1,
+                7,
+                18,
+                19,
+                24,
+                28
+              ],
+              "exact": {
+                "attempts": 3,
+                "lowerBound": 4,
+                "seconds": 0.021082
+              },
+              "freeVertices": [
+                1,
+                2,
+                7,
+                18,
+                19,
+                23,
+                24,
+                25,
+                28,
+                35
+              ],
+              "haloVertices": [
+                35,
+                23,
+                2,
+                25
+              ],
+              "minimumFillVertices": [],
+              "policy": "minimum"
+            },
+            "initial_triples": 88,
+            "n": 76,
+            "preprocessing": null,
+            "proof": null,
+            "proof_shadow": null,
+            "rng_streams": "split-cover-halo-core-cut",
+            "seconds": 32.98,
+            "seed": 1319,
+            "solver": "glucose42",
+            "statistics": {
+              "conflicts": 92277,
+              "decisions": 144036,
+              "propagations": 131584311,
+              "restarts": 691,
+              "satSeconds": 23.477866000000002
+            },
+            "status": "timeout",
+            "variables": 32710
+          },
+          "z3": {
+            "best_bad_lines": 88,
+            "best_code": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+            "best_triples": 88,
+            "candidates": 18,
+            "cuts": 895,
+            "expansions": 3,
+            "free_vertices": 14,
+            "initial_bad_lines": 88,
+            "initial_free_vertices": 8,
+            "initial_triples": 88,
+            "iterations": 22,
+            "n": 76,
+            "seconds": 30.27,
+            "seed": 1319,
+            "status": "unknown"
+          }
+        },
+        "status": "timeout",
+        "winner": "sat-glucose42-cover-minimum-h4-x2"
+      },
+      "repairInputCode": "oFQZshuX$hj5)c&eoRrCr6VGv3@EOY#q{u%PgBt2GIQ1d89FUb#7wt{T?VdYm4ql&24H]kz7>LS6pO(ls1!ET3w[<ASN[Rfai8k0KH!Dcjy@?a>nvx<K%XoBJ0NDfpz9]Ixi(M$MmPZAb5)UWCgJWLeny",
+      "repairInputEnergy": 88,
+      "repairSeconds": 30.0,
+      "round": 120,
+      "seed": 1319
+    }
+  ],
+  "seed": 1200,
+  "solved": false,
+  "totalLocalSeconds": 120,
+  "totalRepairSeconds": 30.0,
+  "validation": null
+}

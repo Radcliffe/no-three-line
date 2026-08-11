@@ -1,0 +1,78 @@
+{
+  "date": "2026-08-07",
+  "environment": {
+    "satSolver": "glucose42",
+    "sbva": "/usr/local/bin/sbva",
+    "note": "Requested solver limits are soft; measured wall times are reported."
+  },
+  "lineIncidence": {
+    "n": 76,
+    "initialCuts": 148,
+    "quadraticSecondsPerBatch": 0.0280956,
+    "linearSecondsPerBatch": 0.00163739,
+    "speedup": 17.16
+  },
+  "n30": {
+    "incumbent": "oHM9HBQ2GAM5O8A04DNFSNPFR013L9BIK8QST2E461E6GPTJL5O7JDR3ICK7C",
+    "initialEnergy": 20,
+    "secondsPerBackend": 3,
+    "seed": 30,
+    "finalEnergy": {
+      "sat": 4,
+      "sat-sbva": 8,
+      "z3": 12
+    },
+    "sbvaFormula": {
+      "inputVariables": 1867,
+      "outputVariables": 1867,
+      "inputClauses": 3741,
+      "outputClauses": 3741,
+      "seconds": 0.020638
+    }
+  },
+  "n76": {
+    "incumbent": "oWcX$Nnawm!LSgi4VDJkupvFI1bq?lsY%HT3xA%9?KtE)QeD<APep2r4UE)9xWm6!j{6>dyMPY]0$C{3forFa1(0U7(RhG@5zj[M<OZo&2#Zn5zKt8@B&G]kwBfLS8Nc>vyIOJTu#i[VXls7RHdQqCgbh",
+    "initialEnergy": 148,
+    "secondsPerBackend": 3,
+    "runs": [
+      {
+        "seed": 76,
+        "energy": {"sat": 144, "sat-sbva": 112, "z3": 148},
+        "wallSeconds": {"sat": 3.1316, "sat-sbva": 3.193053, "z3": 3.256272}
+      },
+      {
+        "seed": 77,
+        "energy": {"sat": 148, "sat-sbva": 148, "z3": 148},
+        "wallSeconds": {"sat": 3.133745, "sat-sbva": 3.196619, "z3": 3.222112}
+      },
+      {
+        "seed": 78,
+        "energy": {"sat": 120, "sat-sbva": 148, "z3": 148},
+        "wallSeconds": {"sat": 3.322807, "sat-sbva": 3.138427, "z3": 3.230403}
+      }
+    ],
+    "meanEnergy": {"sat": 137.3333333333, "sat-sbva": 136, "z3": 148},
+    "meanWallSeconds": {"sat": 3.1960506667, "sat-sbva": 3.176033, "z3": 3.2362623333},
+    "wins": {"sat": 1, "sat-sbva": 1, "ties": 1, "z3": 0},
+    "sbvaFormula": {
+      "inputVariables": 13838,
+      "outputVariables": 13849,
+      "inputClauses": 28350,
+      "outputClauses": 28337,
+      "secondsMean": 0.230759
+    },
+    "bestObserved": {
+      "backend": "sat-sbva",
+      "seed": 76,
+      "energy": 112,
+      "code": "oWcegJOawZn8SirVzu)C#pvFIb@9l7go%HT3xA%8<KtRj6NorA<FN4fasD)YxLW6!j{1EQk1[m]0$C{3R4>Tnz>0U7(hsGf5#LdY[qy2&MPq(UmKt2?B&G]kwBPX!S@9cvyIOD$5JEiMVl?QeHdpuXZbh",
+      "validation": {
+        "rot4": true,
+        "rowPerfectFactor": true,
+        "triples": 112,
+        "violatingLines": 112,
+        "applicationViolatingLines": 112
+      }
+    }
+  }
+}

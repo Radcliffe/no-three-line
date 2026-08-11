@@ -1,0 +1,90 @@
+{
+  "date": "2026-08-07",
+  "n": 76,
+  "incumbentGeneration": {
+    "secondsPerRun": 2,
+    "threadsPerRun": 1,
+    "seeds": [80, 81, 82],
+    "runs": [
+      {
+        "seed": 80,
+        "energy": 120,
+        "code": "oHcLUGTNXjlMeSfCGOkz%i$9oA!Vo9pQb!<n{IvRWNaa>Y)t]E?BDHyXu4(8<4>A#Zum]6r5hst0yF{KLW)M(3RJeD&1[2?6[JgFw#%8z3K5f1ddqhmIv0Q27cnO@Pi7&P@CVBETpx$YlZrSUgqkxjsbw"
+      },
+      {
+        "seed": 81,
+        "energy": 148,
+        "code": "o8RJPghDsP&TVhs9Qy{f!4%AOTyZ]Nl8CMUcrefN>SU36Hxuzb%[>m!Q{Et$)txX)262i9II#adHpOwadDvv@V<(<5gGK5CKz0n7R14BcEJGw(]jl1qYZMbjr$?Sq3eFkp&B[7Y0Fn@LWikAoL#WXoum?"
+      },
+      {
+        "seed": 82,
+        "energy": 156,
+        "code": "oE!GpaleqO$c&lm0?7WIe5$Tw4Abnj{FyV>Biu@IaqrnoKW3K1[LfDL6j26f%ERHxr?XgPT39u<5#D)2J@]koXg8MGwmzBY(<U(s#Ys4>t]htPQMNdv9JV%1iFy0UQc&[HkC)Zvh!8{RSAbCpNZSdOx7z"
+      }
+    ]
+  },
+  "repair": {
+    "secondsPerBackend": 3,
+    "repairSeeds": [180, 181, 182],
+    "backends": [
+      "sat-cadical195",
+      "sat-cadical195-sbva",
+      "sat-glucose42",
+      "sat-glucose42-sbva"
+    ],
+    "finalEnergyByInstance": [
+      {
+        "repairSeed": 180,
+        "initial": 120,
+        "sat-cadical195": 120,
+        "sat-cadical195-sbva": 120,
+        "sat-glucose42": 120,
+        "sat-glucose42-sbva": 120
+      },
+      {
+        "repairSeed": 181,
+        "initial": 148,
+        "sat-cadical195": 140,
+        "sat-cadical195-sbva": 140,
+        "sat-glucose42": 144,
+        "sat-glucose42-sbva": 128
+      },
+      {
+        "repairSeed": 182,
+        "initial": 156,
+        "sat-cadical195": 156,
+        "sat-cadical195-sbva": 156,
+        "sat-glucose42": 156,
+        "sat-glucose42-sbva": 156
+      }
+    ],
+    "meanFinalEnergy": {
+      "sat-cadical195": 138.6666666667,
+      "sat-cadical195-sbva": 138.6666666667,
+      "sat-glucose42": 140,
+      "sat-glucose42-sbva": 134.6666666667,
+      "portfolio": 134.6666666667
+    },
+    "meanWallSeconds": {
+      "sat-cadical195": 3.1577346667,
+      "sat-cadical195-sbva": 3.1707813333,
+      "sat-glucose42": 3.1825113333,
+      "sat-glucose42-sbva": 3.1630963333
+    },
+    "uniqueWins": {
+      "sat-cadical195": 0,
+      "sat-cadical195-sbva": 0,
+      "sat-glucose42": 0,
+      "sat-glucose42-sbva": 1,
+      "ties": 2
+    },
+    "bestImprovement": {
+      "backend": "sat-glucose42-sbva",
+      "repairSeed": 181,
+      "initialEnergy": 148,
+      "finalEnergy": 128,
+      "code": "oSZPkhuFZP&yzDqQYq$Lm4%AO8VX(5v5]MUcrEf2nSUk@Hx68b%[>J!9ht{1LtxX$2Ri#I!]{adHpOwad037vDVm<CgGKs>0KW@7u14Bc?(Gw9TjlQ<YzMbjr3)I)6gi?p&B[RsCNfnN#EFAoeyJWToel"
+    }
+  },
+  "conclusion": "The four-way portfolio is operational. Glucose+SBVA won or tied every instance in this small independent sample, but earlier matched trials include raw-SAT wins, so all trajectories remain useful."
+}

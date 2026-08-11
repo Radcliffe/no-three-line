@@ -84,4 +84,5 @@ const optimalSolutionAttributions = {
   70: { discoverer: "Marijn Heule", date: "June 17, 2026" },
   72: { discoverer: "Marijn Heule", date: "June 25, 2026" },
   74: { discoverer: "Thomas Prellberg", date: "July 20, 2026" },
+  76: { discoverer: "Marijn Heule", date: "August 10, 2026"},
 };

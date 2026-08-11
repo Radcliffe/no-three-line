@@ -1,0 +1,552 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{url}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{Fully Symmetric No-Three-in-Line Configurations:\\
+a Structural Reduction, Exhaustive Verification to $n=64$,\\
+and the Failure of the First-Moment Heuristic}
+\author{Claude (Anthropic), with D.\ (project direction)}
+\date{August 8, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The no-three-in-line problem asks whether the $n\times n$ grid contains
+$2n$ points with no three collinear.
+We study the subclass of configurations invariant under the full dihedral
+symmetry group $D_4$ of the square,
+for which the known solutions occur at $n=2,4,10$
+and Guy and Kelly conjectured in 1968 that no others exist.
+We reduce the problem exactly to a search over involutions of
+$\{1,\dots,m\}$, where $n=2m$,
+prove two arithmetic necessary conditions on such involutions ---
+a Sidon-type condition on a set of $m$ labels,
+which by itself rules out $n=8$ by hand and isolates the $n=10$ solution
+uniquely,
+and a distinctness condition on associated reduced fractions ---
+and use an optimized backtracking search to verify independently that no
+further solutions exist for any even $n\le 64$.
+We then show that the natural Guy--Kelly first-moment heuristic,
+adapted to this symmetry class,
+\emph{over}-predicts solutions by an unboundedly growing factor.
+Exact enumeration of all involutions satisfying the Sidon condition through
+$m=20$ reveals why:
+the minimum number of violated lines over the entire class follows a growing
+staircase $8, 16, 24, 32$,
+so the obstruction is extremal rather than probabilistic.
+We propose a certified-UNSAT SAT-solving campaign,
+sized at roughly $1{,}540$ variables and $10^{6}$--$10^{7}$ clauses at
+$n\approx 110$,
+as the practical route to extending the verified range beyond the reported
+frontier of $n=108$,
+and we formulate a defect-floor conjecture whose proof would settle the
+original question.
+\end{abstract}
+
+\section{Introduction}
+
+Dudeney's 1906 puzzle asks for $2n$ points on the $n\times n$ grid with no
+three collinear;
+since $n$ horizontal lines cover the grid and each may carry at most two
+chosen points, $2n$ is the trivial upper bound.
+Whether it is attained for every $n$ is the no-three-in-line problem.
+Guy and Kelly \cite{GuyKelly} conjectured on probabilistic grounds that only
+finitely many $n$ admit solutions,
+with at most $c\,n$ points selectable asymptotically for a constant
+$c<2$;
+their constant, as corrected by Ellmann (2004), is
+$\pi/\sqrt3 \approx 1.814$.
+Solutions are nevertheless known for every $n\le 70$ and for several larger
+sizes, the current record being $n=74$
+(Prellberg, July 2026; see \cite{FlamSite}).
+The complete solution counts for $n\le 20$ are in OEIS A000769.
+Activity in 2025--2026 has been intense:
+Prellberg and Riley enumerated the rotational classes \textsf{rot4} and
+\textsf{rct4} through the mid-50s using constraint programming and CUDA,
+and Heule applied SAT solvers to the same classes beginning June 2026
+\cite{FlamSite}.
+
+This report concerns the most symmetric class:
+configurations invariant under the full symmetry group of the square
+(Flammenkamp's class \textsf{full}).
+Three such configurations are known, at $n=2$, $4$, and $10$, and:
+
+\begin{conjecture}[Guy--Kelly Conjecture I, 1968]
+There are exactly three no-three-in-line configurations having the full
+symmetry of the grid.
+\end{conjecture}
+
+Flammenkamp's near-miss computations (2006) found the maximal point count
+achievable with full symmetry drifting steadily away from $2n$ for even
+$n\le 76$,
+and the class has reportedly been searched empty well beyond that
+(to $n=108$; we did not independently verify the endpoint and treat it as
+reported).
+Our contributions:
+an exact structural reduction (\S\ref{sec:model});
+two arithmetic obstructions with short proofs (\S\ref{sec:arith});
+independent exhaustive verification through $n=64$ (\S\ref{sec:search});
+a quantitative analysis showing the first-moment heuristic fails here and
+why (\S\ref{sec:heuristic});
+and concrete methods for extending the search beyond $n=108$
+(\S\ref{sec:beyond}).
+
+\section{The involution model}\label{sec:model}
+
+Throughout, a \emph{solution} means $2n$ grid points with no three collinear
+and full $D_4$ symmetry.
+Any solution has exactly two points in every row and every column.
+
+\begin{theorem}\label{thm:even}
+No solution exists for odd $n$.
+\end{theorem}
+
+\begin{proof}
+Center the grid so that the reflections are $x\mapsto -x$ and
+$y\mapsto -y$.
+For odd $n$ the center column $x=0$ consists of lattice points.
+If $(0,y)$ is chosen, any second point $(x,y)$ of its row forces its mirror
+$(-x,y)$, giving three in the row;
+so no point lies on the center column,
+contradicting the requirement of exactly two points per column.
+\end{proof}
+
+For even $n=2m$ we center the grid so that lattice points have both
+coordinates odd, in $\{\pm1,\pm3,\dots,\pm(n-1)\}$;
+we call these \emph{doubled-odd coordinates}.
+$D_4$ acts by coordinate sign changes and the swap $(x,y)\mapsto(y,x)$.
+
+\begin{theorem}\label{thm:inv}
+Solutions with $n=2m$ correspond bijectively to involutions $\sigma$ of
+$\{1,\dots,m\}$ with exactly $m\bmod 2$ fixed points such that the $4m$
+points
+\[
+P(\sigma)\;=\;\bigl\{\,\bigl(\pm(2\sigma(i)-1),\,\pm(2i-1)\bigr)\;:\;
+i=1,\dots,m\,\bigr\}
+\]
+contain no three collinear points.
+\end{theorem}
+
+\begin{proof}
+Each row $y=2i-1$ holds exactly two points,
+which the mirror $x\mapsto-x$ exchanges
+(a mirror-fixed point would need $x=0$, not a lattice value);
+write them $(\pm x_i,\,2i-1)$ with $x_i$ odd and positive.
+The mirror $y\mapsto -y$ forces rows $\pm(2i-1)$ to share the same $x_i$.
+The diagonal reflection maps the point set to itself,
+which states precisely that $i\mapsto (x_i+1)/2$ is an involution $\sigma$.
+A fixed point of $\sigma$ contributes the four points $(\pm a,\pm a)$ with
+$a=2i-1$,
+of which two lie on each long diagonal;
+two fixed points would put four points on the main diagonal,
+which contains a collinear triple,
+so $\sigma$ has at most one fixed point,
+and the parity of $m$ forces exactly $m \bmod 2$.
+Conversely, any such $\sigma$ with $P(\sigma)$ triple-free is a solution:
+rows and columns hold exactly two points by construction.
+\end{proof}
+
+\begin{corollary}
+If $n\equiv 0 \pmod 4$ the long diagonals are empty;
+if $n\equiv 2\pmod 4$ each long diagonal carries exactly two points.
+\end{corollary}
+
+This matches Flammenkamp's symmetry remarks \cite{FlamSym},
+derived there differently.
+The reduction is what makes the class tractable:
+the configuration space at $n=2m$ has size $(m-1)!!$ for even $m$ and
+$m\,(m-2)!!$ for odd $m$
+--- about $e^{81}$ at $n=108$ ---
+so all progress must come from pruning,
+and the theorems identify exactly what object is being pruned.
+
+\section{Arithmetic obstructions}\label{sec:arith}
+
+The two lemmas below translate specific line families into conditions on
+$\sigma$ alone.
+Both were verified to be exactly necessary against full enumeration for
+$m\le 13$.
+
+\begin{lemma}[Slope $\pm1$; the Sidon condition]\label{lem:S}
+For a pair orbit $\{i,j\}$, $i<j$, the eight points of $P(\sigma)$ arising
+from $i$ and $j$ place exactly two points on each of the four lines
+$x-y=\pm2(j-i)$ and $x-y=\pm2(i+j-1)$;
+a fixed orbit $\{f\}$ places one point on each of $x-y=\pm2(2f-1)$ and two
+on $x-y=0$.
+Consequently, in any solution the $m$ labels
+\[
+\mathcal L(\sigma)\;=\;\{\,j-i:\ \text{pairs}\,\}\;\cup\;
+\{\,i+j-1:\ \text{pairs}\,\}\;\cup\;\{\,2f-1:\ \text{fixed}\,\}
+\]
+are pairwise distinct.
+Conversely, every violation on a line of slope $\pm1$ is a label collision,
+so the condition characterizes this family exactly.
+\end{lemma}
+
+\begin{proof}
+Direct computation: the points $(2j-1,\,2i-1)$ and $(-(2i-1),\,-(2j-1))$ lie
+on $x-y=2(j-i)$,
+while $(2j-1,\,-(2i-1))$ and $(2i-1,\,-(2j-1))$ lie on $x-y=2(i+j-1)$;
+sign changes give the mirrored lines,
+and the diagonal reflection carries the slope $+1$ family to the slope $-1$
+family.
+Since each orbit contributes at most two points to any such line,
+three points on one line require contributions from two orbits,
+i.e.\ a repeated label.
+Within one orbit $j-i=i+j-1$ would force $i=\tfrac12$.
+\end{proof}
+
+The labels lie in $\{1,\dots,2m-1\}$,
+so a solution must realize $m$ distinct values from a range of size $2m-1$:
+a Sidon-flavored condition of density about one half,
+reminiscent of graceful labelings.
+It is remarkably restrictive in practice (Table~\ref{tab:filters}),
+and at $m=4$ it is already vacuous:
+
+\begin{corollary}\label{cor:n8}
+There is no fully symmetric solution for $n=8$.
+\end{corollary}
+
+\begin{proof}
+$m=4$ is even, so $\sigma$ is one of the three pairings of $\{1,2,3,4\}$.
+$(12)(34)$ has labels $\{1,2\}\cup\{1,6\}$;
+$(13)(24)$ has $\{2,3\}\cup\{2,5\}$;
+$(14)(23)$ has $\{3,4\}\cup\{1,4\}$.
+Each repeats a label.
+\end{proof}
+
+At $m=5$ exactly one involution satisfies Lemma~\ref{lem:S},
+namely $\sigma=(1\,5)(3\,4)$ with fixed point $2$ ---
+and it is the classical $10\times10$ solution,
+with doubled-odd points
+$(\pm9,\pm1),(\pm1,\pm9),(\pm7,\pm5),(\pm5,\pm7),(\pm3,\pm3)$.
+The dominant constraint of the problem therefore has a purely arithmetic
+description.
+
+\begin{lemma}[Central lines]\label{lem:R}
+Each pair orbit $\{i,j\}$ places two points on each line through the origin
+of slope $\pm(2i-1)/(2j-1)$ and $\pm(2j-1)/(2i-1)$,
+and a fixed orbit uses slopes $\pm1$.
+In any solution the reduced fractions $(2i-1)/(2j-1)$,
+taken together with their reciprocals,
+are pairwise distinct across orbits.
+\end{lemma}
+
+For example the orbits $\{2,5\}$ and $\{1,2\}$ are incompatible:
+$3/9$ and $1/3$ reduce to the same fraction.
+
+\begin{table}[t]
+\centering
+\caption{Exact filter strength of Lemmas~\ref{lem:S} and~\ref{lem:R},
+and the true solution counts, by full enumeration.}
+\label{tab:filters}
+\begin{tabular}{rrrrrrr}
+\toprule
+$n$ & $m$ & involutions & pass S & pass R & pass S$\wedge$R & solutions\\
+\midrule
+ 2 &  1 &       1 &   1 &      1 &   1 & 1\\
+ 4 &  2 &       1 &   1 &      1 &   1 & 1\\
+ 6 &  3 &       3 &   1 &      3 &   1 & 0\\
+ 8 &  4 &       3 &   0 &      3 &   0 & 0\\
+10 &  5 &      15 &   1 &     15 &   1 & 1\\
+12 &  6 &      15 &   1 &     15 &   1 & 0\\
+14 &  7 &     105 &   7 &    105 &   7 & 0\\
+16 &  8 &     105 &   4 &     93 &   3 & 0\\
+18 &  9 &     945 &  33 &    885 &  28 & 0\\
+20 & 10 &     945 &  15 &    885 &  15 & 0\\
+22 & 11 &   10395 & 162 &   9405 & 140 & 0\\
+24 & 12 &   10395 &  52 &   9405 &  41 & 0\\
+26 & 13 &  135135 & 623 & 124215 & 555 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Exhaustive verification through $n=64$}\label{sec:search}
+
+We implemented a depth-first search over involutions in C.
+State is the set of placed points together with a hash table counting,
+for every line spanned by two placed points,
+the number of point pairs on it;
+a count reaching three signals a collinear triple.
+The DFS discipline permits strict LIFO undo:
+hash entries are chained with head insertion,
+so an entry to be deleted on backtrack is always its bucket's head,
+and both insertion and deletion are $O(1)$ with a stack allocator.
+Branching pairs the smallest unmatched index with each available partner
+(or with itself when the fixed slot is open and $m$ is odd);
+this ordering beats largest-first by a factor of about fifteen in nodes.
+The engine was validated against an independent Python enumeration for all
+$m\le 13$ (identical solution sets and counts).
+
+\begin{theorem}[computational]\label{thm:64}
+The only fully symmetric no-three-in-line configurations with $n\le 64$
+occur at $n=2$, $4$, and $10$.
+Guy--Kelly Conjecture I holds through $n=64$.
+\end{theorem}
+
+Every run completed;
+Table~\ref{tab:nodes} lists node counts.
+Growth is a factor of roughly $3.4$ per unit of $m$ within a parity class,
+with even $m$ consistently cheaper
+(no fixed-point branch).
+Extrapolating this single-threaded engine gives about an hour at $n=70$,
+tens of hours at $n=80$,
+and an infeasible $10^{7}$ hours at $n=108$;
+Section~\ref{sec:beyond} addresses the gap.
+
+\begin{table}[t]
+\centering
+\caption{Search-tree sizes for the exhaustive runs (ascending branch order);
+all runs complete with zero solutions for $m\ge 6$ except $m$ omitted below
+$13$ for space.}
+\label{tab:nodes}
+\begin{tabular}{rrrr@{\qquad}rrrr}
+\toprule
+$m$ & $n$ & nodes & time & $m$ & $n$ & nodes & time\\
+\midrule
+13 & 26 &        508 & $<$0.01\,s & 23 & 46 &    130{,}870 & 0.95\,s\\
+14 & 28 &        415 & $<$0.01\,s & 24 & 48 &     95{,}898 & 0.70\,s\\
+15 & 30 &      1{,}472 & 0.01\,s  & 25 & 50 &    420{,}125 & 3.4\,s\\
+16 & 32 &      1{,}117 & $<$0.01\,s & 26 & 52 &  316{,}188 & 2.6\,s\\
+17 & 34 &      4{,}396 & 0.02\,s  & 27 & 54 &  1{,}388{,}368 & 13.2\,s\\
+18 & 36 &      3{,}281 & 0.02\,s  & 28 & 56 &    996{,}843 & 10.1\,s\\
+19 & 38 &     12{,}871 & 0.07\,s  & 29 & 58 &  4{,}604{,}519 & 48.9\,s\\
+20 & 40 &     10{,}283 & 0.07\,s  & 30 & 60 &  3{,}353{,}107 & 37.9\,s\\
+21 & 42 &     40{,}626 & 0.27\,s  & 31 & 62 & 15{,}551{,}991 & 197\,s\\
+22 & 44 &     30{,}765 & 0.22\,s  & 32 & 64 & 11{,}348{,}059 & 136\,s\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Why the first-moment heuristic fails}\label{sec:heuristic}
+
+Guy and Kelly's case for finiteness in the unrestricted problem is a
+first-moment computation:
+the expected number of solutions among random point sets tends to zero.
+The analogous estimate here would be
+$E(m)\approx N_{\mathrm{inv}}(m)\cdot e^{-\lambda(m)}$,
+where $N_{\mathrm{inv}}$ counts admissible involutions and $\lambda(m)$ is
+the mean number of violated constraints for a uniform random involution,
+treated as Poisson.
+Monte Carlo sampling (2{,}000--3{,}000 configurations per size) gives:
+the mean number of collinear \emph{triples} fits
+$T(m)\approx 4.7\,m\ln m$ cleanly across $5\le m\le 60$;
+violations arrive in $D_4$-orbits of bad lines with an observed clump factor
+of about $7.9$,
+so the natural Poisson variable is the number of violated line-orbits,
+whose mean $\lambda(m)$ we measured directly.
+Table~\ref{tab:moment} compares.
+
+\begin{table}[t]
+\centering
+\caption{The first-moment estimate versus reality.
+$\ln N_{\mathrm{inv}}$ is exact; $\lambda$ is the Monte Carlo mean number of
+violated line-orbits; the naive prediction is
+$\ln E = \ln N_{\mathrm{inv}} - \lambda$.}
+\label{tab:moment}
+\begin{tabular}{rrrrrl}
+\toprule
+$m$ & $n$ & $\ln N_{\mathrm{inv}}$ & $\lambda$ & $\ln E_{\text{naive}}$ &
+solutions\\
+\midrule
+ 6 &  12 &  2.71 &  2.18 & $+0.5$ & 0\\
+ 8 &  16 &  4.65 &  3.42 & $+1.2$ & 0\\
+10 &  20 &  6.85 &  5.23 & $+1.6$ & 0\\
+14 &  28 & 11.81 &  9.12 & $+2.7$ & 0\\
+20 &  40 & 20.30 & 16.01 & $+4.3$ & 0\\
+32 &  64 & 39.80 & 32.32 & $+7.5$ & 0\\
+54 & 108 & 81.05 & 68.37 & $+12.7$ & 0 (reported)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The estimate predicts $e^{4.3}\approx 73$ solutions at $n=40$ and
+$3\times10^{5}$ at $n=108$,
+against a verified count of zero through $n=64$.
+Unlike the unrestricted problem,
+where the first moment argues \emph{for} the conjecture,
+here it argues against it and is simply wrong ---
+by a factor growing without bound.
+
+The explanation is visible once one conditions on Lemma~\ref{lem:S}.
+We enumerated \emph{all} involutions satisfying the Sidon condition through
+$m=20$ and recorded, for each, the exact number of violated lines
+(Table~\ref{tab:defect}).
+The class minimum --- call it the \emph{defect floor} $D(m)$ ---
+is not merely positive:
+it climbs a staircase $8\to16\to24\to32$,
+stepping up roughly every five or six values of $m$,
+with odd $m$ (one fixed point) consistently one step below neighboring even
+$m$.
+The survival probability is not $e^{-\lambda}$;
+on the visible range it is exactly zero,
+because the constraint system has a hard extremal core that random-model
+reasoning cannot see.
+This is the reduced-model form of the near-miss drift Flammenkamp observed
+in the raw grid data,
+and it suggests where a proof should come from.
+
+\begin{table}[t]
+\centering
+\caption{Exact enumeration of all Lemma-S survivors:
+counts, mean violated lines, and the class minimum (defect floor).}
+\label{tab:defect}
+\begin{tabular}{rrrrr}
+\toprule
+$m$ & $n$ & survivors & mean violated lines & $D(m)$\\
+\midrule
+ 5 & 10 &          1 &   0.0 &  0\\
+ 6 & 12 &          1 &  16.0 & 16\\
+ 7 & 14 &          7 &  13.7 &  8\\
+ 8 & 16 &          4 &  25.0 & 16\\
+ 9 & 18 &         33 &  27.8 &  8\\
+10 & 20 &         15 &  35.7 & 16\\
+11 & 22 &        162 &  40.4 & 16\\
+12 & 24 &         52 &  46.1 & 16\\
+13 & 26 &        623 &  55.1 & 16\\
+14 & 28 &        257 &  61.2 & 24\\
+15 & 30 &      3{,}628 &  70.1 & 16\\
+16 & 32 &      1{,}589 &  78.5 & 24\\
+17 & 34 &     23{,}334 &  85.2 & 16\\
+18 & 36 &     11{,}417 &  91.1 & 24\\
+19 & 38 &    172{,}853 & 100.6 & 24\\
+20 & 40 &     75{,}375 & 108.5 & 32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{conjecture}[defect floor]\label{conj:floor}
+Let $D(m)$ be the minimum number of violated lines over all involutions of
+$\{1,\dots,m\}$ satisfying Lemma~\ref{lem:S}.
+Then $D(m)\ge 8$ for all $m\ge 6$, and $D(m)\to\infty$.
+\end{conjecture}
+
+Either statement implies Conjecture I for the corresponding range;
+the first is verified for $6\le m\le 20$ by the enumeration above and
+implicitly for $m\le 32$ by Theorem~\ref{thm:64}.
+Because the violated families realizing the minima are lines of slope
+$\pm1$, central lines, and other small-slope families ---
+all described by linear conditions on $(i,\sigma(i))$ ---
+Conjecture~\ref{conj:floor} is a statement in additive combinatorics about
+label-distinct involutions,
+plausibly approachable by discrepancy or Fourier-analytic methods applied to
+the permutation matrix of $\sigma$.
+
+\section{Beyond $n=108$}\label{sec:beyond}
+
+\subsection{Certified SAT}
+
+The involution model yields a compact propositional encoding.
+Variables are candidate orbits:
+pairs $\{i,j\}$ with $i<j$,
+plus singletons when $m$ is odd ---
+$1{,}540$ variables at $n=110$.
+Constraints:
+exactly one chosen orbit contains each index;
+a binary clause $(\lnot a\vee\lnot b)$ for every pair of orbits whose
+combined point set contains a collinear triple
+(this subsumes Lemmas~\ref{lem:S} and~\ref{lem:R},
+all $2{+}1$ and $2{+}2$ collisions,
+and the at-most-one-fixed rule;
+precomputation is a trivial $O(10^{6})$ pair check at $m=55$);
+and a ternary clause for each line receiving one point from each of three
+orbits,
+generated line-major over lines of the doubled-odd grid with at least three
+candidate points and pruned of clauses subsumed by binary conflicts.
+We estimate $10^{6}$--$10^{7}$ clauses at $n\approx110$,
+comfortably inside the range of CaDiCaL or Kissat with DRAT/LRAT proof
+logging,
+giving a machine-checkable nonexistence certificate for each $n$.
+Heule's June 2026 SAT results on the much larger \textsf{rot4} and
+\textsf{rct4} classes \cite{FlamSite} indicate the technology is more than
+adequate;
+the full class is the smallest of the symmetric classes.
+Implementation checks:
+$n=10$ must be satisfiable with the unique model $\sigma=(1\,5)(3\,4)$,
+fixed point $2$;
+every other even $n\le 64$ must be unsatisfiable,
+cross-checked against Theorem~\ref{thm:64}.
+A cardinality relaxation of the same encoding
+(minimize the number of violated lines)
+extends the $D(m)$ table of Conjecture~\ref{conj:floor} far past $m=20$.
+
+\subsection{Sidon-first enumeration}
+
+The Lemma-S survivor counts
+$1,1,1,0,1,1,7,4,33,15,162,52,623,257,3628,1589,23334,11417,172853,75375$
+for $m=1,\dots,20$
+grow by a factor of roughly five to seven per $\Delta m=2$,
+vastly below $(m-1)!!$.
+A search that enumerates label-distinct involutions as its outer loop ---
+label bookkeeping is a single bitmask ---
+and applies geometric checks lazily prunes the dominant constraint at
+near-zero cost and should improve on the present engine by orders of
+magnitude.
+The engine here already supports splitting at the root for
+parallel or time-sliced execution,
+and a CUDA port has direct precedent in Riley's enumeration of
+\textsf{rot4} classes \cite{FlamSite}.
+
+\section{Conclusions}
+
+The full-symmetry class reduces exactly to involutions with a
+Sidon-type label condition carrying most of the constraint weight;
+the known solution list is complete through $n=64$ by independent
+verification;
+and the data locate the true obstruction in a growing extremal defect floor
+rather than in probabilistic thinning ---
+indeed the standard heuristic points the wrong way here,
+which we regard as the most interesting single finding.
+The two live paths are a certified-UNSAT campaign,
+which should pass $n=108$ with modest hardware,
+and a proof of the defect-floor conjecture,
+which would settle Guy--Kelly Conjecture I outright.
+
+\begin{thebibliography}{9}
+\bibitem{GuyKelly}
+R.~K. Guy and P.~A. Kelly,
+\emph{The no-three-in-line problem},
+Canad. Math. Bull. \textbf{11} (1968), 527--531.
+
+\bibitem{Flam92}
+A.~Flammenkamp,
+\emph{Progress in the no-three-in-line problem},
+J. Combin. Theory Ser. A \textbf{60} (1992), 305--311.
+
+\bibitem{Flam98}
+A.~Flammenkamp,
+\emph{Progress in the no-three-in-line problem, II},
+J. Combin. Theory Ser. A \textbf{81} (1998), 108--113.
+
+\bibitem{FlamSite}
+A.~Flammenkamp,
+\emph{The no-three-in-line problem},
+\url{https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html},
+version of 2026-07-31, accessed 2026-08-08.
+
+\bibitem{FlamSym}
+A.~Flammenkamp,
+\emph{Symmetries in no-three-in-line configurations},
+\url{https://wwwhomes.uni-bielefeld.de/achim/no3in/symmetry_remarks.html},
+accessed 2026-08-08.
+
+\bibitem{HJSW}
+R.~R. Hall, T.~H. Jackson, A.~Sudbery, and K.~Wild,
+\emph{Some advances in the no-three-in-line problem},
+J. Combin. Theory Ser. A \textbf{18} (1975), 336--341.
+\end{thebibliography}
+
+\end{document}

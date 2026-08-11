@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-07",
+  "dratChecker": {
+    "name": "drat-trim",
+    "source": "https://github.com/marijnheule/drat-trim",
+    "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "binarySha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+  },
+  "lratConversion": {
+    "producer": "drat-trim -L",
+    "proofLines": 13,
+    "proofBytes": 315,
+    "proofSha256": "b01acd1454664fbdedb8d3ac639b18a62348d9cecf9149f6bf5dd90baa9fa123"
+  },
+  "lratCheckers": [
+    {
+      "name": "lrat-check",
+      "source": "https://github.com/marijnheule/drat-trim",
+      "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+      "binarySha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea",
+      "validExitCode": 0,
+      "validMarker": "c VERIFIED",
+      "truncatedExitCode": 1,
+      "truncatedMarker": "c NOT VERIFIED"
+    },
+    {
+      "name": "CakeLPR",
+      "source": "https://github.com/tanyongkiam/cake_lpr",
+      "commit": "a36874a8b750b43fe4b385b8ddbf5b033e46a3fa",
+      "platform": "arm64",
+      "buildTarget": "make cake_lpr_arm8",
+      "assemblySha256": "95b64883edc0cb09feedbcb1ebec233e2490f5b458fdda9dc29c212ed916f00c",
+      "binarySha256": "2fee767af4478ed817f8bdf6feea5866e5e59f1f67c2a4477e98ee961612881d",
+      "validExitCode": 0,
+      "validMarker": "s VERIFIED UNSAT",
+      "truncatedExitCode": 0,
+      "truncatedOutput": "c empty clause not derived at end of proof"
+    }
+  ],
+  "regression": {
+    "formula": "pigeonhole principle with 4 pigeons and 3 holes",
+    "variables": 12,
+    "clauses": 22,
+    "formulaSha256": "8500d387f53eb4e57f524c2cd18c838c712e8fe4ca6c45474074a157aa39a1e4",
+    "proofProducer": "glucose42 via PySAT",
+    "proofLines": 7,
+    "proofSha256": "1afe748c369959e9fe77f413039b551ff4a72828bea2d4f4ade58bdf8dc0c41d",
+    "semanticChecker": "cadical195 via PySAT",
+    "semanticAdditionsAccepted": 7,
+    "dratTrimValidStatus": "VERIFIED",
+    "dratTrimCorruptStatus": "NOT VERIFIED",
+    "lratCheckValidStatus": "VERIFIED",
+    "lratCheckTruncatedStatus": "NOT VERIFIED",
+    "cakeLprValidStatus": "VERIFIED UNSAT",
+    "cakeLprTruncatedRejected": true
+  },
+  "conclusion": "The pipeline verifies DRUP with drat-trim, converts it to LRAT, and independently verifies LRAT. Success requires an explicit verification marker in addition to exit code zero, which correctly rejects CakeLPR's zero-exit negative case."
+}
