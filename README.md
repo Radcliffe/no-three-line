@@ -117,7 +117,21 @@ python3 convert_optimal_solutions.py \
 
 The converter validates that every parsed solution is square, uses a recognized symmetry class, fits the 90-character alphabet, and selects exactly two cells per row.
 
-The bundle currently covers 70 sizes from 3 through 74; it omits 71, 73, and 75 through 90. Those omitted sizes are the ones for which the app offers to report a discovery, so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
+The bundle currently covers 70 sizes from 3 through 76; it omits 75 and 77 through 90. Those omitted sizes are the ones for which the app offers to report a discovery, so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
+
+## Adding new solutions
+
+Monitor [Flammenkamp's site](https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html) for announcements
+of new solutions. When a solution is announced for a new size, perform the following updates:
+
+1. Update the README.md with the current list of sizes with known solutions.
+2. Look up the new solutions in the database and copy them into `optimal-solutions.txt`.
+3. Regenerate the compact JavaScript data with `./convert.sh`.
+4. Add attributions for the discoveries in `ATTRIBUTION.md`.
+5. Update the lines marked `UPDATE` in `test/configuration-codec.js` and `test/game.test.js`.
+6. Run the tests with `npm test` and confirm that they pass.
+7. Manually verify that the new solutions load as expected.
+8. Commit the changes and push to the repository.
 
 ## Project structure
 

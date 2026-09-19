@@ -67,7 +67,9 @@ const optimalSolutions = {
   68: "oCEQcZkacPXImeiisEWBJPdjwq?7qx?CDOVSXe#5whk2KBQ67Kpv$j@6IAo13Ub3p2xo$4H8&G%Ub%@Hvnz1M4AGlyzful&LO9#5RYdahst08Fy0F9MSgmuZrDNNRJnYgTVLWTfrt",
   69: "cdhKXknQWuwRj6MAbnuBO4zDx48ZvHLhqFbQsRd28c?Ys2#5ecx0Fp&o$NW0IKO7Ge&D?Ll1t3Sqzimo!aj5I3Hr!9US$6@EY1Uy@TfEgVrGPlpBXy%9t7%ivCJVwk#NfACagJMZmPT",
   70: "oGYImUVfh6NMux&Vhsy8m6bFWnq5YOP8wT(CJP!MqCT19o%X&dtpt37SX3gnrO?#?Awgku(0DNRBx272jGKR@af#@EIEU4a5Jy!evHl1iov0eBzijZ%HKbsW$Lz9FQc4ADlk$QScdLpZr",
+  71: "cLp1XDTLmOYdtSeAxFKCuZ$7ilzQ!9q5#erGjEc0Kp#?)3VCWf@HRBvbjY%O!6G5mIlR(g@Ay4S1hNqM&s%2k6aPXDxhr4Tcwd?038Jo)WuPsHU8&Iz2i9NQ$7ZEwotByUgFVakMnfvb(Jn",
   72: "oYdXgMSflKiS#AKEGHm5qV&RfOmFGe%oww%Z$PT9b&?FXa(8C3xQrWk4y@(1r3BEz0jo)J[MsHn0q1LQ[Avy!I)25B?PdIjC!x$2Zcu46Y#gk8a7DDL7VtuNlUi6eJ@Nstvpz9hRpOUhnTcWb",
+  73: "cPVajNV8hQ?4JEOpuU(hzXl9SFZkoo@Iy7KHZnvc?Ou7WDEI)q@A]D!1XYz39W%)]gpj#Jity1[CHSrARLU028e$(Bcd[4x0#6K2swxe&Gm5YFNbtq&Cs6MMQbvi$PdBT3gGLmwr!5kT%fnRafl",
   74: "oPjisMeF(3IUoakeoJtBrbiW%LPERpyg)Gvdr8(1&9HjzE[57QUz<Yn6y0L1An!FcZ#27HlVfA?6$WgQu@[BcZw5O$]q<D?Od0Chl@!2xCSu%8]4&KYGv3VDMkxmq9fTaK#IsNXRbNht)4wXpJTSm",
   76: "obgOoUWblJogsLxKkpzMZKjqzIVxy8BDk6DMeh$Q[&!5(w@BV8>14muQd3a7FA<q$I<05YfH@Rl]{03Sm9wYf){2vCN2&y!d]anJR[>1?i%9H6)7A4nCWZr#(T#%?FGivENUterEOTtGsLXPuSchjPpXc",
 };
