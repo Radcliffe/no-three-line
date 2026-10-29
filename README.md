@@ -3,7 +3,7 @@
 A dependency-free web app for exploring the [no-three-in-line problem](https://en.wikipedia.org/wiki/No-three-in-line_problem): place `2n` points on an `n × n` grid 
 without allowing three selected points to lie on one straight line.
 
-The app supports grids from 3 × 3 through 90 × 90 and includes known configurations for selected sizes through 74.
+The app supports grids from 3 × 3 through 90 × 90 and includes known configurations for sizes 3 through 74, 76, and 78.
 
 ## Features
 
@@ -42,10 +42,11 @@ The suite checks compact-code validation and round trips, randomized incremental
 brute-force reference, every bundled optimal solution, reproducibility of the generated solution bundle, 
 and app behavior driven through a fake DOM.
 
-Three tests are pinned to the contents of the bundle and must be updated when a solution is added for a new size:
+The following tests check the contents of the bundle. `add_solution.py` updates their data when adding a new size:
 
 | Test | File | What to update |
 |---|---|---|
+| `every bundled optimal solution decodes and has no three in line` | `test/configuration-codec.test.js` | Update the solution count marked `UPDATE`. |
 | `the discovery notice is reachable only for sizes the bundle omits` | `test/game.test.js` | Remove the newly solved size from the expected list of unsolved sizes. |
 | `every bundled solution has a dated attribution summary` | `test/main.test.js` | Add a matching row to `optimal-solution-attributions.js` and `ATTRIBUTION.md`. |
 | `converter reproduces the checked-in solution bundle` | `test/converter.test.js` | Regenerate `optimal-solutions.generated.js` with `./convert.sh`. |
@@ -124,23 +125,36 @@ python3 convert_optimal_solutions.py \
 The converter validates that every parsed solution is square, uses a recognized symmetry class, 
 fits the 90-character alphabet, and selects exactly two cells per row.
 
-The bundle currently covers 74 sizes from 3 through 78; it omits 75, 77, and 79 through 90. 
+The bundle currently covers 74 sizes: 3 through 74, 76, and 78; it omits 75, 77, and 79 through 90.
 Those omitted sizes are the ones for which the app offers to report a discovery, 
 so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
 
 ## Adding new solutions
 
 Monitor [Flammenkamp's site](https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html) for announcements
-of new solutions. When a solution is announced for a new size, perform the following updates:
+and obtain the new configuration, discoverer, and discovery date. Then run:
 
-1. Update the README.md with the current list of sizes with known solutions.
-2. Look up the new solutions in the database and copy them into `optimal-solutions.txt`.
-3. Regenerate the compact JavaScript data with `./convert.sh`.
-4. Add attributions for the discoveries in `ATTRIBUTION.md` and `optimal-solution-attributions.js`.
-5. Update the lines marked `UPDATE` in `test/configuration-codec.js` and `test/game.test.js`.
-6. Run the tests with `npm test` and confirm that they pass.
-7. Manually verify that the new solutions load as expected.
-8. Commit the changes and push to the repository.
+```sh
+python3 add_solution.py
+```
+
+The script prompts for the square size `n`, the raw encoded configuration (including its symmetry character),
+the discoverer's name, and a date such as `October 28, 2026`. It requires Python 3.9 or newer and Node.js/npm,
+with no additional Python packages. It locates the repository relative to the script, so it can be run from any directory.
+
+Before editing, it checks the size, code, absence of three collinear points, and calendar date, and rejects
+sizes already bundled. Provide the discoverer and exact discovery date from the announcement; the new
+attribution is recorded with confidence `Explicit`.
+
+The script updates the known-size lists in this README, appends a decoded grid to `optimal-solutions.txt`,
+regenerates `optimal-solutions.generated.js`, adds credit in `ATTRIBUTION.md` and
+`optimal-solution-attributions.js`, and updates the lines marked `UPDATE` in
+`test/configuration-codec.test.js` and `test/game.test.js`. It then runs `npm test` and confirms success.
+If a write or the tests fail, it restores the original contents of the files it changed and exits with an error.
+It also stops before editing if the source records and generated bundle disagree or an expected update location is missing.
+
+After a successful update, manually verify that the new solution loads as expected, then commit and push the changes.
+Monitoring announcements, obtaining configurations, manual testing, committing, and pushing remain your responsibility.
 
 ## Project structure
 
@@ -154,6 +168,7 @@ of new solutions. When a solution is announced for a new size, perform the follo
 | `optimal-solution-attributions.js` | Discoverer and date summaries shown in the app |
 | `optimal-solutions.txt` | Source records used to generate the bundle |
 | `convert_optimal_solutions.py` | Source-record parser and compact-code generator |
+| `add_solution.py` | Interactive addition of a new size, attribution, documentation, and test updates |
 | `convert.sh` | Convenience regeneration command |
 | `ATTRIBUTION.md` | Discovery credits, dates, sources, and uncertainty notes |
 | `NOTICE` | Copyright and repository notice |
