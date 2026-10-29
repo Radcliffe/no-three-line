@@ -63,11 +63,30 @@ test("orbit-aware marking scales to the largest bundled configuration", () => {
   );
   const context = vm.createContext({});
   vm.runInContext(`${source}\nthis.solutions = optimalSolutions;`, context);
-  const code = context.solutions[74];
-  const elements = startApp(`?code=${encodeURIComponent(code)}`);
-  assert.equal(elements.gridSize.value, "74");
-  assert.equal(elements.activeCount.textContent, "148");
+  const size = Math.max(...Object.keys(context.solutions).map(Number));
+  const code = context.solutions[size];
+  let descriptions = 0;
+  const elements = startApp(`?code=${encodeURIComponent(code)}`, {
+    configureCodec(codec) {
+      const original = codec.LineIndex.prototype.describeLine;
+      codec.LineIndex.prototype.describeLine = function (...args) {
+        descriptions++;
+        return original.apply(this, args);
+      };
+    },
+  });
+  assert.equal(elements.gridSize.value, String(size));
+  assert.equal(elements.activeCount.textContent, String(2 * size));
   assert.equal(elements.configurationCode.value, code);
+  assert.equal(descriptions, 0, "loading should not calculate explanations");
+  const blocked = elements.grid.children.find((cell) => cell.classList.contains("blocked"));
+  elements.grid.dispatch("pointerover", { target: blocked });
+  assert.ok(descriptions > 0);
+  assert.equal(elements.lineExplanation.classList.contains("visible"), true);
+  const afterHover = descriptions;
+  elements.grid.dispatch("pointerout", { target: blocked });
+  elements.grid.dispatch("focusin", { target: blocked });
+  assert.equal(descriptions, afterHover, "focus should reuse the hover explanation");
 });
 
 test("an invalid code query reports an error without changing the default grid", () => {
@@ -121,6 +140,87 @@ test("changing symmetry refreshes orbit-aware illegal cells", () => {
   );
   assert.equal(oppositeCorner.classList.contains("orbit-explained"), true);
   assert.match(elements.lineExplanation.textContent, /outlined symmetry orbit/);
+});
+
+test("lazy orbit explanations are shared and invalidated by state changes", () => {
+  let explanations = 0;
+  const elements = startApp("", {
+    configureCodec(codec) {
+      const original = codec.LineIndex.prototype.findViolationLinesAfterAdding;
+      codec.LineIndex.prototype.findViolationLinesAfterAdding = function (...args) {
+        explanations++;
+        return original.apply(this, args);
+      };
+    },
+  });
+  const center = elements.__cellAt(1, 1);
+  const corner = elements.__cellAt(0, 0);
+  const opposite = elements.__cellAt(2, 2);
+  const hoverCorner = () => elements.grid.dispatch("pointerover", { target: corner });
+  elements.grid.dispatch("click", { target: center });
+  elements.symmetry.value = "rot2";
+  elements.symmetry.dispatch("change");
+  assert.equal(explanations, 0);
+  hoverCorner();
+  assert.equal(explanations, 1);
+  elements.grid.dispatch("focusin", { target: opposite });
+  assert.equal(explanations, 1, "orbit members should share an explanation");
+  assert.equal(center.classList.contains("line-source"), true);
+
+  elements.symmetry.value = "iden";
+  elements.symmetry.dispatch("change");
+  hoverCorner();
+  assert.equal(elements.lineExplanation.classList.contains("visible"), false);
+  elements.symmetry.value = "rot2";
+  elements.symmetry.dispatch("change");
+  hoverCorner();
+  assert.equal(explanations, 2);
+
+  elements.disableBlockedCells.checked = false;
+  elements.disableBlockedCells.dispatch("change");
+  hoverCorner();
+  assert.equal(elements.lineExplanation.classList.contains("visible"), false);
+  elements.disableBlockedCells.checked = true;
+  elements.disableBlockedCells.dispatch("change");
+  hoverCorner();
+  assert.equal(explanations, 3);
+
+  elements.grid.dispatch("click", { target: center });
+  hoverCorner();
+  assert.equal(elements.lineExplanation.classList.contains("visible"), false);
+  elements.undoBtn.dispatch("click");
+  hoverCorner();
+  assert.equal(explanations, 4);
+  assert.equal(center.classList.contains("line-source"), true);
+});
+
+test("violating-point explanations are lazy and refresh after editing", () => {
+  let descriptions = 0;
+  const elements = startApp("", {
+    configureCodec(codec) {
+      const original = codec.LineIndex.prototype.describeLine;
+      codec.LineIndex.prototype.describeLine = function (...args) {
+        descriptions++;
+        return original.apply(this, args);
+      };
+    },
+  });
+  elements.disableBlockedCells.checked = false;
+  elements.disableBlockedCells.dispatch("change");
+  for (let col = 0; col < 3; col++) {
+    elements.grid.dispatch("click", { target: elements.__cellAt(0, col) });
+  }
+  assert.equal(descriptions, 0);
+  elements.grid.dispatch("focusin", { target: elements.__cellAt(0, 1) });
+  assert.equal(descriptions, 1);
+  assert.match(elements.lineExplanation.textContent, /This point belongs to a violating line/);
+  for (let col = 0; col < 3; col++) {
+    assert.equal(elements.__cellAt(0, col).classList.contains("line-source"), true);
+  }
+  elements.grid.dispatch("click", { target: elements.__cellAt(0, 2) });
+  elements.grid.dispatch("focusin", { target: elements.__cellAt(0, 1) });
+  assert.equal(elements.lineExplanation.classList.contains("visible"), false);
+  assert.equal(descriptions, 1);
 });
 
 test("line violation highlights can be hidden and are enabled by default", () => {

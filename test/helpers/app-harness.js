@@ -97,7 +97,7 @@ class FakeElement {
 
 function startApp(
   search,
-  { clipboardFails = false, solutions = {}, attributions = {} } = {},
+  { clipboardFails = false, solutions = {}, attributions = {}, configureCodec = () => {} } = {},
 ) {
   const ids = [
     "gridSize", "grid", "activeCount", "lineWarning", "clearBtn",
@@ -170,6 +170,7 @@ function startApp(
   });
   context.globalThis = context;
   vm.runInContext(codecSource, context);
+  configureCodec(context.NoThreeLineCodec);
   vm.runInContext(mainSource, context);
   elements.__window = window;
   elements.__document = document;

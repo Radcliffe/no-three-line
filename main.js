@@ -134,18 +134,12 @@ function renderGrid(initialCells = []) {
 
 function updateDisplay() {
   clearLineExplanation();
+  // Board, symmetry, and display-option changes all pass through here.
+  cellLineExplanations.clear();
   const badCells = lineIndex.getViolationCells();
   const isOptimal = activeCells.size === size * 2 && badCells.size === 0;
   const blockedState = computeBlockedState();
   const blockedCells = blockedState.cells;
-  cellLineExplanations = blockedState.explanations;
-
-  for (const line of lineIndex.getViolationLines()) {
-    for (const [row, col] of line.points) {
-      const cellKey = key(row, col);
-      if (activeCells.has(cellKey)) addLineExplanations(cellKey, [line]);
-    }
-  }
 
   const nextActiveCells = new Set(activeCells);
   const nextBadCells = showLineViolations ? new Set(badCells) : new Set();
@@ -202,29 +196,16 @@ function addSetDifferences(target, first, second) {
   }
 }
 
-function addLineExplanations(cellKey, lines) {
-  let explanations = cellLineExplanations.get(cellKey);
-  if (!explanations) {
-    explanations = new Map();
-    cellLineExplanations.set(cellKey, explanations);
-  }
-  for (const line of lines) explanations.set(line.key, line);
-}
-
 function computeBlockedState() {
   const cells = new Set();
   const orbitCells = new Set();
-  const explanations = new Map();
-  if (!disableBlockedCells) return { cells, orbitCells, explanations };
+  if (!disableBlockedCells) return { cells, orbitCells };
 
-  cellLineExplanations = explanations;
   if (symmetry === "iden") {
     for (const blockedKey of lineIndex.getBlockedCells()) {
       cells.add(blockedKey);
-      const [row, col] = parseKey(blockedKey);
-      addLineExplanations(blockedKey, lineIndex.getBlockingLines(row, col));
     }
-    return { cells, orbitCells, explanations };
+    return { cells, orbitCells };
   }
 
   const processed = new Set();
@@ -237,16 +218,36 @@ function computeBlockedState() {
       processed.add(orbitKey);
       if (!activeCells.has(orbitKey)) candidates.push(parseKey(orbitKey));
     }
-    const lines = lineIndex.findViolationLinesAfterAdding(candidates);
-    if (lines.length === 0) continue;
+    if (!lineIndex.wouldCreateViolation(candidates)) continue;
     for (const [candidateRow, candidateCol] of candidates) {
       const candidateKey = key(candidateRow, candidateCol);
       cells.add(candidateKey);
       orbitCells.add(candidateKey);
-      addLineExplanations(candidateKey, lines);
     }
   }
-  return { cells, orbitCells, explanations };
+  return { cells, orbitCells };
+}
+
+function getCellLineExplanations(row, col) {
+  const cellKey = key(row, col);
+  if (cellLineExplanations.has(cellKey)) return cellLineExplanations.get(cellKey);
+
+  let lines = [];
+  if (displayedBadCells.has(cellKey)) {
+    lines = lineIndex.getBlockingLines(row, col).filter((line) => line.points.length >= 3);
+  } else if (displayedBlockedCells.has(cellKey)) {
+    if (symmetry === "iden") {
+      lines = lineIndex.getBlockingLines(row, col);
+    } else {
+      const candidates = Array.from(symmetricCellKeys(row, col))
+        .filter((orbitKey) => !activeCells.has(orbitKey));
+      lines = lineIndex.findViolationLinesAfterAdding(candidates.map(parseKey));
+      // Every inactive member of an orbit has the same move explanation.
+      for (const orbitKey of candidates) cellLineExplanations.set(orbitKey, lines);
+    }
+  }
+  cellLineExplanations.set(cellKey, lines);
+  return lines;
 }
 
 function clearLineExplanation() {
@@ -273,10 +274,8 @@ function showLineExplanation(cell) {
   clearLineExplanation();
   const cellKey = key(cell.dataset.row, cell.dataset.col);
   if (!showLineViolations && activeCells.has(cellKey)) return;
-  const explanationMap = cellLineExplanations.get(cellKey);
-  if (!explanationMap || explanationMap.size === 0) return;
-
-  const lines = Array.from(explanationMap.values());
+  const lines = getCellLineExplanations(Number(cell.dataset.row), Number(cell.dataset.col));
+  if (lines.length === 0) return;
   const orbit = symmetricCellKeys(cell.dataset.row, cell.dataset.col);
   if (cell.classList.contains("blocked") && orbit.size > 1) {
     for (const orbitKey of orbit) {
@@ -634,7 +633,7 @@ function toggleCell(row, col) {
         ([candidateRow, candidateCol]) =>
           !activeCells.has(key(candidateRow, candidateCol)),
       );
-      if (lineIndex.findViolationLinesAfterAdding(candidates).length > 0) {
+      if (lineIndex.wouldCreateViolation(candidates)) {
         return false;
       }
     }

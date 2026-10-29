@@ -284,6 +284,41 @@
       return violations;
     }
 
+    wouldCreateViolation(cells) {
+      const candidates = new Set();
+      // Validate all inputs before taking the fast path, as the detailed check does.
+      for (const [row, column] of cells) {
+        this.validateCell(row, column);
+        const key = cellKey(row, column);
+        if (!this.selectedCells.has(key)) candidates.add(key);
+      }
+
+      // One new point on a line through two selected points is already enough.
+      for (const key of candidates) {
+        if (this.blockedCells.has(key)) return true;
+      }
+
+      // Any remaining new violation must contain at least two new points.
+      const points = Array.from(candidates, (key) => key.split(",").map(Number));
+      for (let first = 0; first < points.length; first++) {
+        for (let second = first + 1; second < points.length; second++) {
+          const line = lineThrough(...points[first], ...points[second], this.size);
+          let count = 0;
+          let row = line.startRow;
+          let column = line.startColumn;
+          while (row >= 0 && row < this.size && column >= 0 && column < this.size) {
+            const key = cellKey(row, column);
+            if (this.selectedCells.has(key) || candidates.has(key)) {
+              if (++count === 3) return true;
+            }
+            row += line.stepRow;
+            column += line.stepColumn;
+          }
+        }
+      }
+      return false;
+    }
+
     findViolationLinesAfterAdding(cells) {
       const candidates = new Map();
       for (const [row, column] of cells) {

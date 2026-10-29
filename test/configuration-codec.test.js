@@ -162,6 +162,29 @@ test("prospective checks detect violations created by multiple added cells", () 
   assert.equal(index.getViolationCells().size, 0);
 });
 
+test("fast prospective checks handle duplicates, selected cells, and existing violations", () => {
+  const index = new LineIndex(5);
+  // The boolean path must never construct explanatory line objects.
+  index.describeLine = () => { throw new Error("Unexpected line description"); };
+  assert.equal(index.wouldCreateViolation([]), false);
+  assert.equal(index.wouldCreateViolation([[0, 0], [0, 0], [2, 2]]), false);
+  assert.equal(index.wouldCreateViolation([[0, 0], [1, 1], [2, 2]]), true);
+  index.add(1, 1);
+  assert.equal(index.wouldCreateViolation([[0, 0], [2, 2]]), true);
+  assert.equal(index.wouldCreateViolation([[1, 1], [0, 0], [0, 0]]), false);
+  index.add(2, 2);
+  assert.equal(index.wouldCreateViolation([[0, 0]]), true);
+  assert.throws(() => index.wouldCreateViolation([[0, 0], [5, 0]]), /outside the grid/);
+  index.add(0, 0);
+  assert.equal(index.wouldCreateViolation([[0, 0], [1, 1]]), false);
+  assert.equal(index.wouldCreateViolation([[0, 1]]), false);
+  assert.equal(index.wouldCreateViolation([[3, 3]]), true);
+  index.remove(1, 1);
+  index.remove(2, 2);
+  assert.equal(index.wouldCreateViolation([[3, 3]]), false);
+  assert.equal(index.selectedCells.size, 1);
+});
+
 test("prospective violation lines match brute force for random candidate sets", () => {
   const random = makeRandom(20260721);
   for (let trial = 0; trial < 300; trial++) {
@@ -201,6 +224,12 @@ test("prospective violation lines match brute force for random candidate sets", 
       index.findViolationLinesAfterAdding(candidates).length > 0,
       expected,
       `trial ${trial}`,
+    );
+    assert.equal(index.wouldCreateViolation(candidates), expected, `fast check, trial ${trial}`);
+    assert.equal(
+      index.wouldCreateViolation([...selected, ...candidates, ...candidates]),
+      expected,
+      `fast check with duplicates and selected cells, trial ${trial}`,
     );
   }
 });
