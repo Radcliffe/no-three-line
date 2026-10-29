@@ -91,6 +91,7 @@ Confidence labels:
 | 72 | `rot4` | Marijn Heule | June 25, 2026 | Explicit |
 | 74 | `rot4` | Thomas Prellberg | July 20, 2026 | Explicit |
 | 76 | `rot4` | Marijn Heule | August 10, 2026 | Explicit |
+| 78 | `rot4` | Thomas Prellberg | October 28, 2026 | Explicit |
 
 ## Primary sources
 

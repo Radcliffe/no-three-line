@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 const vm = require("node:vm");
-const numberOfSolutions = 73; // UPDATE
+const numberOfSolutions = 74; // UPDATE
 
 require("../configuration-codec.js");
 

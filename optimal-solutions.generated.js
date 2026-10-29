@@ -72,4 +72,5 @@ const optimalSolutions = {
   73: "cPVajNV8hQ?4JEOpuU(hzXl9SFZkoo@Iy7KHZnvc?Ou7WDEI)q@A]D!1XYz39W%)]gpj#Jity1[CHSrARLU028e$(Bcd[4x0#6K2swxe&Gm5YFNbtq&Cs6MMQbvi$PdBT3gGLmwr!5kT%fnRafl",
   74: "oPjisMeF(3IUoakeoJtBrbiW%LPERpyg)Gvdr8(1&9HjzE[57QUz<Yn6y0L1An!FcZ#27HlVfA?6$WgQu@[BcZw5O$]q<D?Od0Chl@!2xCSu%8]4&KYGv3VDMkxmq9fTaK#IsNXRbNht)4wXpJTSm",
   76: "obgOoUWblJogsLxKkpzMZKjqzIVxy8BDk6DMeh$Q[&!5(w@BV8>14muQd3a7FA<q$I<05YfH@Rl]{03Sm9wYf){2vCN2&y!d]anJR[>1?i%9H6)7A4nCWZr#(T#%?FGivENUterEOTtGsLXPuSchjPpXc",
+  78: "oXpUsG&cmQhYZs%dnKWnxFoJk2G6uPvl?&{Xm9WM@E(DMuw16bgV$0<Ab793HF}Bqx(y=4]O]afor7>3)ORaf5r5<0H8IP@1#y>!)e?4=EkZe[}JLt%8$Btj!Ti2CAUKqL[z{VwR#ISjvScDNghYpTdCzNlQi",
 };

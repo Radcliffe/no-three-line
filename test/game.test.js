@@ -231,8 +231,7 @@ test("the discovery notice is reachable only for sizes the bundle omits", () => 
   }
 
   assert.deepEqual(unsolved, [
-    75, 77, 78, 79, 80, 81, 82,      // UPDATE
-    83, 84, 85, 86, 87, 88, 89, 90,
+    75, 77, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, // UPDATE
   ]);
 });
 

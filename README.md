@@ -1,6 +1,7 @@
 # No-Three-in-Line Explorer
 
-A dependency-free web app for exploring the [no-three-in-line problem](https://en.wikipedia.org/wiki/No-three-in-line_problem): place `2n` points on an `n × n` grid without allowing three selected points to lie on one straight line.
+A dependency-free web app for exploring the [no-three-in-line problem](https://en.wikipedia.org/wiki/No-three-in-line_problem): place `2n` points on an `n × n` grid 
+without allowing three selected points to lie on one straight line.
 
 The app supports grids from 3 × 3 through 90 × 90 and includes known configurations for selected sizes through 74.
 
@@ -37,7 +38,9 @@ Run the dependency-free test suite with:
 npm test
 ```
 
-The suite checks compact-code validation and round trips, randomized incremental line-index updates against a brute-force reference, every bundled optimal solution, reproducibility of the generated solution bundle, and app behavior driven through a fake DOM.
+The suite checks compact-code validation and round trips, randomized incremental line-index updates against a 
+brute-force reference, every bundled optimal solution, reproducibility of the generated solution bundle, 
+and app behavior driven through a fake DOM.
 
 Three tests are pinned to the contents of the bundle and must be updated when a solution is added for a new size:
 
@@ -63,13 +66,15 @@ A code starts with one symmetry-class character:
 | `+` | `ort2` |
 | `*` | `full` |
 
-The remaining characters encode the two selected columns in every row, reading rows from top to bottom and columns from left to right. Column numbers use this 90-character alphabet:
+The remaining characters encode the two selected columns in every row, reading rows from top to bottom and columns 
+from left to right. Column numbers use this 90-character alphabet:
 
 ```text
 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$%&@?!()[]<>{}=*+|-/~^_:;,.
 ```
 
-Because a complete configuration contains exactly two selected cells in each row, an `n × n` configuration has one symmetry character followed by `2n` column characters.
+Because a complete configuration contains exactly two selected cells in each row, an `n × n` configuration has one 
+symmetry character followed by `2n` column characters.
 
 For example:
 
@@ -97,7 +102,8 @@ Add a `code` query parameter to open the app with a configuration already loaded
 http://localhost:8000/?code=o3545011706672324
 ```
 
-Codes containing URL punctuation such as `#`, `&`, or `+` must be URL-encoded. When constructing a link in JavaScript, use `encodeURIComponent(code)`.
+Codes containing URL punctuation such as `#`, `&`, or `+` must be URL-encoded. 
+When constructing a link in JavaScript, use `encodeURIComponent(code)`.
 
 ## Refresh the bundled configurations
 
@@ -115,9 +121,12 @@ python3 convert_optimal_solutions.py \
   -o optimal-solutions.generated.js
 ```
 
-The converter validates that every parsed solution is square, uses a recognized symmetry class, fits the 90-character alphabet, and selects exactly two cells per row.
+The converter validates that every parsed solution is square, uses a recognized symmetry class, 
+fits the 90-character alphabet, and selects exactly two cells per row.
 
-The bundle currently covers 70 sizes from 3 through 76; it omits 75 and 77 through 90. Those omitted sizes are the ones for which the app offers to report a discovery, so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
+The bundle currently covers 74 sizes from 3 through 78; it omits 75, 77, and 79 through 90. 
+Those omitted sizes are the ones for which the app offers to report a discovery, 
+so after regenerating the bundle, run `npm test` and update the pinned tests listed under [Tests](#tests).
 
 ## Adding new solutions
 
@@ -127,7 +136,7 @@ of new solutions. When a solution is announced for a new size, perform the follo
 1. Update the README.md with the current list of sizes with known solutions.
 2. Look up the new solutions in the database and copy them into `optimal-solutions.txt`.
 3. Regenerate the compact JavaScript data with `./convert.sh`.
-4. Add attributions for the discoveries in `ATTRIBUTION.md`.
+4. Add attributions for the discoveries in `ATTRIBUTION.md` and `optimal-solution-attributions.js`.
 5. Update the lines marked `UPDATE` in `test/configuration-codec.js` and `test/game.test.js`.
 6. Run the tests with `npm test` and confirm that they pass.
 7. Manually verify that the new solutions load as expected.
@@ -151,7 +160,9 @@ of new solutions. When a solution is announced for a new size, perform the follo
 
 ## Attribution and license
 
-Known configurations and their attempted historical attributions are documented in [ATTRIBUTION.md](ATTRIBUTION.md). Several older discovery credits are necessarily approximate because the surviving source records identify publications or enumeration dates rather than exact first discoveries.
+Known configurations and their attempted historical attributions are documented in [ATTRIBUTION.md](ATTRIBUTION.md). 
+Several older discovery credits are necessarily approximate because the surviving source records identify 
+publications or enumeration dates rather than exact first discoveries.
 
 AI tools including OpenAI GPT-5.5 and GPT-5.6 were used to develop this project.
 
